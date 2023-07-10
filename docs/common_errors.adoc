@@ -1,0 +1,20 @@
+== Common Errors
+
+* {empty}
++
+----
+Error: Problem when initialising an LP solver. InvocationTargetException was thrown Message: null
+The message of parent exception is: Could not initialize class gurobi.GurobiJni
+----
++
+This error may appear if you forgot to copy the Gurobi library files into the Multigain library. The corresponding command
+as from the installation instructions above is:
++
+[source,shell]
+----
+cp -r $GUROBI_HOME/lib/* lib/
+----
+
+
+
+

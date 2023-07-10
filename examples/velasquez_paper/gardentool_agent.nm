@@ -1,0 +1,62 @@
+// This example corresponds to the model from figure 2 of the paper "Controller Synthesis for Omega-Regular and Steady-State Specifications" by Alvaro Velasquez et al.
+
+mdp
+
+module lecture
+
+    state: [0..8] init 0;
+
+    [aright] state=0 -> 0.8: (state'=1) + 0.1: (state'=0) + 0.1: (state'=3);
+    [adown] state=0 -> 0.8: (state'=3) + 0.1: (state'=0) + 0.1: (state'=1);
+    [aleft] state=0 -> 0.9: (state'=0) + 0.1: (state'=3);
+    [aup] state=0 -> 0.9: (state'=0) + 0.1: (state'=1);
+
+    [bright] state=1 -> 0.8: (state'=2) + 0.1: (state'=1) + 0.1: (state'=4);
+    [bdown] state=1 -> 0.8: (state'=4) + 0.1: (state'=0) + 0.1: (state'=2);
+    [bleft] state=1 -> 0.8: (state'=0) + 0.1: (state'=1) + 0.1: (state'=4);
+    [bup] state=1 -> 0.8: (state'=1) + 0.1: (state'=0) + 0.1: (state'=2);
+
+    [cright] state=2 -> 0.9: (state'=2) + 0.1: (state'=5);
+    [cdown] state=2 -> 0.8: (state'=5) + 0.1: (state'=2) + 0.1: (state'=1);
+    [cleft] state=2 -> 0.8: (state'=1) + 0.1: (state'=2) + 0.1: (state'=5);
+    [cup] state=2 -> 0.9: (state'=2) + 0.1: (state'=1);
+
+    [dright] state=3 -> 0.8: (state'=4) + 0.1: (state'=0) + 0.1: (state'=6);
+    [ddown] state=3 -> 0.8: (state'=6) + 0.1: (state'=3) + 0.1: (state'=4);
+    [dleft] state=3 -> 0.8: (state'=3) + 0.1: (state'=0) + 0.1: (state'=6);
+    [dup] state=3 -> 0.8: (state'=0) + 0.1: (state'=3) + 0.1: (state'=4);
+
+    [eright] state=4 -> 0.8: (state'=5) + 0.1: (state'=1) + 0.1: (state'=7);
+    [edown] state=4 -> 0.8: (state'=7) + 0.1: (state'=3) + 0.1: (state'=5);
+    [eleft] state=4 -> 0.8: (state'=3) + 0.1: (state'=1) + 0.1: (state'=7);
+    [eup] state=4 -> 0.8: (state'=1) + 0.1: (state'=3) + 0.1: (state'=5);
+
+    [fright] state=5 -> 0.8: (state'=5) + 0.1: (state'=2) + 0.1: (state'=8);
+    [fdown] state=5 -> 0.8: (state'=8) + 0.1: (state'=5) + 0.1: (state'=4);
+    [fleft] state=5 -> 0.8: (state'=4) + 0.1: (state'=2) + 0.1: (state'=8);
+    [fup] state=5 -> 0.8: (state'=2) + 0.1: (state'=5) + 0.1: (state'=4);
+
+    [gright] state=6 -> 0.8: (state'=7) + 0.1: (state'=6) + 0.1: (state'=3);
+    [gdown] state=6 -> 0.9: (state'=6) + 0.1: (state'=7);
+    [gleft] state=6 -> 0.9: (state'=6) + 0.1: (state'=3);
+    [gup] state=6 -> 0.8: (state'=3) + 0.1: (state'=6) + 0.1: (state'=7);
+
+    [hright] state=7 -> 0.8: (state'=8) + 0.1: (state'=7) + 0.1: (state'=4);
+    [hdown] state=7 -> 0.8: (state'=7) + 0.1: (state'=6) + 0.1: (state'=8);
+    [hleft] state=7 -> 0.8: (state'=6) + 0.1: (state'=7) + 0.1: (state'=4);
+    [hup] state=7 -> 0.8: (state'=4) + 0.1: (state'=6) + 0.1: (state'=8);
+
+    [iright] state=8 -> 0.9: (state'=8) + 0.1: (state'=5);
+    [idown] state=8 -> 0.9: (state'=8) + 0.1: (state'=7);
+    [ileft] state=8 -> 0.8: (state'=7) + 0.1: (state'=8) + 0.1: (state'=5);
+    [iup] state=8 -> 0.8: (state'=5) + 0.1: (state'=8) + 0.1: (state'=7);
+
+endmodule
+
+label "home" = state=0;
+label "danger" = state=1 | state=7;
+label "tool" = state=8;
+
+rewards "extinguish"
+    (state=1 | state=7) : 1;
+endrewards

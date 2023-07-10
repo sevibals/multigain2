@@ -1,0 +1,4 @@
+multi(R{"withvirus"}max=? [S], R{"clean"}>=0.15 [S])
+multi(R{"withvirus"}max=? [S], R{"clean"}max=? [S])
+multi(R{"withvirus"}max=? [S],R{"clean"}>=0.15 [S], S>=0.1 ["noneInfected"])
+multi(R{"withvirus"}max=? [S],R{"clean"}>=0.15 [S], S>=0.1 ["noneInfected"], P>=1 [F "someFirewallBreached"])

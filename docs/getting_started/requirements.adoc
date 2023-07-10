@@ -1,0 +1,4 @@
+=== Requirements
+* Java 11+
+* gcc 12.1.0+
+

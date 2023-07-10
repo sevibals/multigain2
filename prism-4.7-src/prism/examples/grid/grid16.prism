@@ -1,0 +1,1296 @@
+mdp
+
+module grid
+
+	state: [0..255] init 0;
+
+	[right0] state=0 -> 0.8: (state'=1) + 0.1: (state'=0) + 0.1: (state'=16);
+	[down0] state=0 -> 0.8: (state'=16) + 0.1: (state'=0) + 0.1: (state'=1);
+	[left0] state=0 -> 0.9: (state'=0) + 0.1: (state'=16);
+	[up0] state=0 -> 0.9: (state'=0) + 0.1: (state'=1);
+
+	[right1] state=1 -> 0.8: (state'=2) + 0.1: (state'=1) + 0.1: (state'=17);
+	[down1] state=1 -> 0.8: (state'=17) + 0.1: (state'=0) + 0.1: (state'=2);
+	[left1] state=1 -> 0.8: (state'=0) + 0.1: (state'=1) + 0.1: (state'=17);
+	[up1] state=1 -> 0.8: (state'=1) + 0.1: (state'=0) + 0.1: (state'=2);
+
+	[right2] state=2 -> 0.8: (state'=3) + 0.1: (state'=2) + 0.1: (state'=18);
+	[down2] state=2 -> 0.8: (state'=18) + 0.1: (state'=1) + 0.1: (state'=3);
+	[left2] state=2 -> 0.8: (state'=1) + 0.1: (state'=2) + 0.1: (state'=18);
+	[up2] state=2 -> 0.8: (state'=2) + 0.1: (state'=1) + 0.1: (state'=3);
+
+	[right3] state=3 -> 0.8: (state'=4) + 0.1: (state'=3) + 0.1: (state'=19);
+	[down3] state=3 -> 0.8: (state'=19) + 0.1: (state'=2) + 0.1: (state'=4);
+	[left3] state=3 -> 0.8: (state'=2) + 0.1: (state'=3) + 0.1: (state'=19);
+	[up3] state=3 -> 0.8: (state'=3) + 0.1: (state'=2) + 0.1: (state'=4);
+
+	[right4] state=4 -> 0.8: (state'=5) + 0.1: (state'=4) + 0.1: (state'=20);
+	[down4] state=4 -> 0.8: (state'=20) + 0.1: (state'=3) + 0.1: (state'=5);
+	[left4] state=4 -> 0.8: (state'=3) + 0.1: (state'=4) + 0.1: (state'=20);
+	[up4] state=4 -> 0.8: (state'=4) + 0.1: (state'=3) + 0.1: (state'=5);
+
+	[right5] state=5 -> 0.8: (state'=6) + 0.1: (state'=5) + 0.1: (state'=21);
+	[down5] state=5 -> 0.8: (state'=21) + 0.1: (state'=4) + 0.1: (state'=6);
+	[left5] state=5 -> 0.8: (state'=4) + 0.1: (state'=5) + 0.1: (state'=21);
+	[up5] state=5 -> 0.8: (state'=5) + 0.1: (state'=4) + 0.1: (state'=6);
+
+	[right6] state=6 -> 0.8: (state'=7) + 0.1: (state'=6) + 0.1: (state'=22);
+	[down6] state=6 -> 0.8: (state'=22) + 0.1: (state'=5) + 0.1: (state'=7);
+	[left6] state=6 -> 0.8: (state'=5) + 0.1: (state'=6) + 0.1: (state'=22);
+	[up6] state=6 -> 0.8: (state'=6) + 0.1: (state'=5) + 0.1: (state'=7);
+
+	[right7] state=7 -> 0.8: (state'=8) + 0.1: (state'=7) + 0.1: (state'=23);
+	[down7] state=7 -> 0.8: (state'=23) + 0.1: (state'=6) + 0.1: (state'=8);
+	[left7] state=7 -> 0.8: (state'=6) + 0.1: (state'=7) + 0.1: (state'=23);
+	[up7] state=7 -> 0.8: (state'=7) + 0.1: (state'=6) + 0.1: (state'=8);
+
+	[right8] state=8 -> 0.8: (state'=9) + 0.1: (state'=8) + 0.1: (state'=24);
+	[down8] state=8 -> 0.8: (state'=24) + 0.1: (state'=7) + 0.1: (state'=9);
+	[left8] state=8 -> 0.8: (state'=7) + 0.1: (state'=8) + 0.1: (state'=24);
+	[up8] state=8 -> 0.8: (state'=8) + 0.1: (state'=7) + 0.1: (state'=9);
+
+	[right9] state=9 -> 0.8: (state'=10) + 0.1: (state'=9) + 0.1: (state'=25);
+	[down9] state=9 -> 0.8: (state'=25) + 0.1: (state'=8) + 0.1: (state'=10);
+	[left9] state=9 -> 0.8: (state'=8) + 0.1: (state'=9) + 0.1: (state'=25);
+	[up9] state=9 -> 0.8: (state'=9) + 0.1: (state'=8) + 0.1: (state'=10);
+
+	[right10] state=10 -> 0.8: (state'=11) + 0.1: (state'=10) + 0.1: (state'=26);
+	[down10] state=10 -> 0.8: (state'=26) + 0.1: (state'=9) + 0.1: (state'=11);
+	[left10] state=10 -> 0.8: (state'=9) + 0.1: (state'=10) + 0.1: (state'=26);
+	[up10] state=10 -> 0.8: (state'=10) + 0.1: (state'=9) + 0.1: (state'=11);
+
+	[right11] state=11 -> 0.8: (state'=12) + 0.1: (state'=11) + 0.1: (state'=27);
+	[down11] state=11 -> 0.8: (state'=27) + 0.1: (state'=10) + 0.1: (state'=12);
+	[left11] state=11 -> 0.8: (state'=10) + 0.1: (state'=11) + 0.1: (state'=27);
+	[up11] state=11 -> 0.8: (state'=11) + 0.1: (state'=10) + 0.1: (state'=12);
+
+	[right12] state=12 -> 0.8: (state'=13) + 0.1: (state'=12) + 0.1: (state'=28);
+	[down12] state=12 -> 0.8: (state'=28) + 0.1: (state'=11) + 0.1: (state'=13);
+	[left12] state=12 -> 0.8: (state'=11) + 0.1: (state'=12) + 0.1: (state'=28);
+	[up12] state=12 -> 0.8: (state'=12) + 0.1: (state'=11) + 0.1: (state'=13);
+
+	[right13] state=13 -> 0.8: (state'=14) + 0.1: (state'=13) + 0.1: (state'=29);
+	[down13] state=13 -> 0.8: (state'=29) + 0.1: (state'=12) + 0.1: (state'=14);
+	[left13] state=13 -> 0.8: (state'=12) + 0.1: (state'=13) + 0.1: (state'=29);
+	[up13] state=13 -> 0.8: (state'=13) + 0.1: (state'=12) + 0.1: (state'=14);
+
+	[right14] state=14 -> 0.8: (state'=15) + 0.1: (state'=14) + 0.1: (state'=30);
+	[down14] state=14 -> 0.8: (state'=30) + 0.1: (state'=13) + 0.1: (state'=15);
+	[left14] state=14 -> 0.8: (state'=13) + 0.1: (state'=14) + 0.1: (state'=30);
+	[up14] state=14 -> 0.8: (state'=14) + 0.1: (state'=13) + 0.1: (state'=15);
+
+	[right15] state=15 -> 0.9: (state'=15) + 0.1: (state'=31);
+	[down15] state=15 -> 0.8: (state'=31) + 0.1: (state'=14) + 0.1: (state'=15);
+	[left15] state=15 -> 0.8: (state'=14) + 0.1: (state'=15) + 0.1: (state'=31);
+	[up15] state=15 -> 0.9: (state'=15) + 0.1: (state'=14);
+
+	[right16] state=16 -> 0.8: (state'=17) + 0.1: (state'=0) + 0.1: (state'=32);
+	[down16] state=16 -> 0.8: (state'=32) + 0.1: (state'=16) + 0.1: (state'=17);
+	[left16] state=16 -> 0.8: (state'=16) + 0.1: (state'=0) + 0.1: (state'=32);
+	[up16] state=16 -> 0.8: (state'=0) + 0.1: (state'=16) + 0.1: (state'=17);
+
+	[right17] state=17 -> 0.8: (state'=18) + 0.1: (state'=1) + 0.1: (state'=33);
+	[down17] state=17 -> 0.8: (state'=33) + 0.1: (state'=16) + 0.1: (state'=18);
+	[left17] state=17 -> 0.8: (state'=16) + 0.1: (state'=1) + 0.1: (state'=33);
+	[up17] state=17 -> 0.8: (state'=1) + 0.1: (state'=16) + 0.1: (state'=18);
+
+	[right18] state=18 -> 0.8: (state'=19) + 0.1: (state'=2) + 0.1: (state'=34);
+	[down18] state=18 -> 0.8: (state'=34) + 0.1: (state'=17) + 0.1: (state'=19);
+	[left18] state=18 -> 0.8: (state'=17) + 0.1: (state'=2) + 0.1: (state'=34);
+	[up18] state=18 -> 0.8: (state'=2) + 0.1: (state'=17) + 0.1: (state'=19);
+
+	[right19] state=19 -> 0.8: (state'=20) + 0.1: (state'=3) + 0.1: (state'=35);
+	[down19] state=19 -> 0.8: (state'=35) + 0.1: (state'=18) + 0.1: (state'=20);
+	[left19] state=19 -> 0.8: (state'=18) + 0.1: (state'=3) + 0.1: (state'=35);
+	[up19] state=19 -> 0.8: (state'=3) + 0.1: (state'=18) + 0.1: (state'=20);
+
+	[right20] state=20 -> 0.8: (state'=21) + 0.1: (state'=4) + 0.1: (state'=36);
+	[down20] state=20 -> 0.8: (state'=36) + 0.1: (state'=19) + 0.1: (state'=21);
+	[left20] state=20 -> 0.8: (state'=19) + 0.1: (state'=4) + 0.1: (state'=36);
+	[up20] state=20 -> 0.8: (state'=4) + 0.1: (state'=19) + 0.1: (state'=21);
+
+	[right21] state=21 -> 0.8: (state'=22) + 0.1: (state'=5) + 0.1: (state'=37);
+	[down21] state=21 -> 0.8: (state'=37) + 0.1: (state'=20) + 0.1: (state'=22);
+	[left21] state=21 -> 0.8: (state'=20) + 0.1: (state'=5) + 0.1: (state'=37);
+	[up21] state=21 -> 0.8: (state'=5) + 0.1: (state'=20) + 0.1: (state'=22);
+
+	[right22] state=22 -> 0.8: (state'=23) + 0.1: (state'=6) + 0.1: (state'=38);
+	[down22] state=22 -> 0.8: (state'=38) + 0.1: (state'=21) + 0.1: (state'=23);
+	[left22] state=22 -> 0.8: (state'=21) + 0.1: (state'=6) + 0.1: (state'=38);
+	[up22] state=22 -> 0.8: (state'=6) + 0.1: (state'=21) + 0.1: (state'=23);
+
+	[right23] state=23 -> 0.8: (state'=24) + 0.1: (state'=7) + 0.1: (state'=39);
+	[down23] state=23 -> 0.8: (state'=39) + 0.1: (state'=22) + 0.1: (state'=24);
+	[left23] state=23 -> 0.8: (state'=22) + 0.1: (state'=7) + 0.1: (state'=39);
+	[up23] state=23 -> 0.8: (state'=7) + 0.1: (state'=22) + 0.1: (state'=24);
+
+	[right24] state=24 -> 0.8: (state'=25) + 0.1: (state'=8) + 0.1: (state'=40);
+	[down24] state=24 -> 0.8: (state'=40) + 0.1: (state'=23) + 0.1: (state'=25);
+	[left24] state=24 -> 0.8: (state'=23) + 0.1: (state'=8) + 0.1: (state'=40);
+	[up24] state=24 -> 0.8: (state'=8) + 0.1: (state'=23) + 0.1: (state'=25);
+
+	[right25] state=25 -> 0.8: (state'=26) + 0.1: (state'=9) + 0.1: (state'=41);
+	[down25] state=25 -> 0.8: (state'=41) + 0.1: (state'=24) + 0.1: (state'=26);
+	[left25] state=25 -> 0.8: (state'=24) + 0.1: (state'=9) + 0.1: (state'=41);
+	[up25] state=25 -> 0.8: (state'=9) + 0.1: (state'=24) + 0.1: (state'=26);
+
+	[right26] state=26 -> 0.8: (state'=27) + 0.1: (state'=10) + 0.1: (state'=42);
+	[down26] state=26 -> 0.8: (state'=42) + 0.1: (state'=25) + 0.1: (state'=27);
+	[left26] state=26 -> 0.8: (state'=25) + 0.1: (state'=10) + 0.1: (state'=42);
+	[up26] state=26 -> 0.8: (state'=10) + 0.1: (state'=25) + 0.1: (state'=27);
+
+	[right27] state=27 -> 0.8: (state'=28) + 0.1: (state'=11) + 0.1: (state'=43);
+	[down27] state=27 -> 0.8: (state'=43) + 0.1: (state'=26) + 0.1: (state'=28);
+	[left27] state=27 -> 0.8: (state'=26) + 0.1: (state'=11) + 0.1: (state'=43);
+	[up27] state=27 -> 0.8: (state'=11) + 0.1: (state'=26) + 0.1: (state'=28);
+
+	[right28] state=28 -> 0.8: (state'=29) + 0.1: (state'=12) + 0.1: (state'=44);
+	[down28] state=28 -> 0.8: (state'=44) + 0.1: (state'=27) + 0.1: (state'=29);
+	[left28] state=28 -> 0.8: (state'=27) + 0.1: (state'=12) + 0.1: (state'=44);
+	[up28] state=28 -> 0.8: (state'=12) + 0.1: (state'=27) + 0.1: (state'=29);
+
+	[right29] state=29 -> 0.8: (state'=30) + 0.1: (state'=13) + 0.1: (state'=45);
+	[down29] state=29 -> 0.8: (state'=45) + 0.1: (state'=28) + 0.1: (state'=30);
+	[left29] state=29 -> 0.8: (state'=28) + 0.1: (state'=13) + 0.1: (state'=45);
+	[up29] state=29 -> 0.8: (state'=13) + 0.1: (state'=28) + 0.1: (state'=30);
+
+	[right30] state=30 -> 0.8: (state'=31) + 0.1: (state'=14) + 0.1: (state'=46);
+	[down30] state=30 -> 0.8: (state'=46) + 0.1: (state'=29) + 0.1: (state'=31);
+	[left30] state=30 -> 0.8: (state'=29) + 0.1: (state'=14) + 0.1: (state'=46);
+	[up30] state=30 -> 0.8: (state'=14) + 0.1: (state'=29) + 0.1: (state'=31);
+
+	[right31] state=31 -> 0.8: (state'=31) + 0.1: (state'=15) + 0.1: (state'=47);
+	[down31] state=31 -> 0.8: (state'=47) + 0.1: (state'=30) + 0.1: (state'=31);
+	[left31] state=31 -> 0.8: (state'=30) + 0.1: (state'=15) + 0.1: (state'=47);
+	[up31] state=31 -> 0.8: (state'=15) + 0.1: (state'=30) + 0.1: (state'=31);
+
+	[right32] state=32 -> 0.8: (state'=33) + 0.1: (state'=16) + 0.1: (state'=48);
+	[down32] state=32 -> 0.8: (state'=48) + 0.1: (state'=32) + 0.1: (state'=33);
+	[left32] state=32 -> 0.8: (state'=32) + 0.1: (state'=16) + 0.1: (state'=48);
+	[up32] state=32 -> 0.8: (state'=16) + 0.1: (state'=32) + 0.1: (state'=33);
+
+	[right33] state=33 -> 0.8: (state'=34) + 0.1: (state'=17) + 0.1: (state'=49);
+	[down33] state=33 -> 0.8: (state'=49) + 0.1: (state'=32) + 0.1: (state'=34);
+	[left33] state=33 -> 0.8: (state'=32) + 0.1: (state'=17) + 0.1: (state'=49);
+	[up33] state=33 -> 0.8: (state'=17) + 0.1: (state'=32) + 0.1: (state'=34);
+
+	[right34] state=34 -> 0.8: (state'=35) + 0.1: (state'=18) + 0.1: (state'=50);
+	[down34] state=34 -> 0.8: (state'=50) + 0.1: (state'=33) + 0.1: (state'=35);
+	[left34] state=34 -> 0.8: (state'=33) + 0.1: (state'=18) + 0.1: (state'=50);
+	[up34] state=34 -> 0.8: (state'=18) + 0.1: (state'=33) + 0.1: (state'=35);
+
+	[right35] state=35 -> 0.8: (state'=36) + 0.1: (state'=19) + 0.1: (state'=51);
+	[down35] state=35 -> 0.8: (state'=51) + 0.1: (state'=34) + 0.1: (state'=36);
+	[left35] state=35 -> 0.8: (state'=34) + 0.1: (state'=19) + 0.1: (state'=51);
+	[up35] state=35 -> 0.8: (state'=19) + 0.1: (state'=34) + 0.1: (state'=36);
+
+	[right36] state=36 -> 0.8: (state'=37) + 0.1: (state'=20) + 0.1: (state'=52);
+	[down36] state=36 -> 0.8: (state'=52) + 0.1: (state'=35) + 0.1: (state'=37);
+	[left36] state=36 -> 0.8: (state'=35) + 0.1: (state'=20) + 0.1: (state'=52);
+	[up36] state=36 -> 0.8: (state'=20) + 0.1: (state'=35) + 0.1: (state'=37);
+
+	[right37] state=37 -> 0.8: (state'=38) + 0.1: (state'=21) + 0.1: (state'=53);
+	[down37] state=37 -> 0.8: (state'=53) + 0.1: (state'=36) + 0.1: (state'=38);
+	[left37] state=37 -> 0.8: (state'=36) + 0.1: (state'=21) + 0.1: (state'=53);
+	[up37] state=37 -> 0.8: (state'=21) + 0.1: (state'=36) + 0.1: (state'=38);
+
+	[right38] state=38 -> 0.8: (state'=39) + 0.1: (state'=22) + 0.1: (state'=54);
+	[down38] state=38 -> 0.8: (state'=54) + 0.1: (state'=37) + 0.1: (state'=39);
+	[left38] state=38 -> 0.8: (state'=37) + 0.1: (state'=22) + 0.1: (state'=54);
+	[up38] state=38 -> 0.8: (state'=22) + 0.1: (state'=37) + 0.1: (state'=39);
+
+	[right39] state=39 -> 0.8: (state'=40) + 0.1: (state'=23) + 0.1: (state'=55);
+	[down39] state=39 -> 0.8: (state'=55) + 0.1: (state'=38) + 0.1: (state'=40);
+	[left39] state=39 -> 0.8: (state'=38) + 0.1: (state'=23) + 0.1: (state'=55);
+	[up39] state=39 -> 0.8: (state'=23) + 0.1: (state'=38) + 0.1: (state'=40);
+
+	[right40] state=40 -> 0.8: (state'=41) + 0.1: (state'=24) + 0.1: (state'=56);
+	[down40] state=40 -> 0.8: (state'=56) + 0.1: (state'=39) + 0.1: (state'=41);
+	[left40] state=40 -> 0.8: (state'=39) + 0.1: (state'=24) + 0.1: (state'=56);
+	[up40] state=40 -> 0.8: (state'=24) + 0.1: (state'=39) + 0.1: (state'=41);
+
+	[right41] state=41 -> 0.8: (state'=42) + 0.1: (state'=25) + 0.1: (state'=57);
+	[down41] state=41 -> 0.8: (state'=57) + 0.1: (state'=40) + 0.1: (state'=42);
+	[left41] state=41 -> 0.8: (state'=40) + 0.1: (state'=25) + 0.1: (state'=57);
+	[up41] state=41 -> 0.8: (state'=25) + 0.1: (state'=40) + 0.1: (state'=42);
+
+	[right42] state=42 -> 0.8: (state'=43) + 0.1: (state'=26) + 0.1: (state'=58);
+	[down42] state=42 -> 0.8: (state'=58) + 0.1: (state'=41) + 0.1: (state'=43);
+	[left42] state=42 -> 0.8: (state'=41) + 0.1: (state'=26) + 0.1: (state'=58);
+	[up42] state=42 -> 0.8: (state'=26) + 0.1: (state'=41) + 0.1: (state'=43);
+
+	[right43] state=43 -> 0.8: (state'=44) + 0.1: (state'=27) + 0.1: (state'=59);
+	[down43] state=43 -> 0.8: (state'=59) + 0.1: (state'=42) + 0.1: (state'=44);
+	[left43] state=43 -> 0.8: (state'=42) + 0.1: (state'=27) + 0.1: (state'=59);
+	[up43] state=43 -> 0.8: (state'=27) + 0.1: (state'=42) + 0.1: (state'=44);
+
+	[right44] state=44 -> 0.8: (state'=45) + 0.1: (state'=28) + 0.1: (state'=60);
+	[down44] state=44 -> 0.8: (state'=60) + 0.1: (state'=43) + 0.1: (state'=45);
+	[left44] state=44 -> 0.8: (state'=43) + 0.1: (state'=28) + 0.1: (state'=60);
+	[up44] state=44 -> 0.8: (state'=28) + 0.1: (state'=43) + 0.1: (state'=45);
+
+	[right45] state=45 -> 0.8: (state'=46) + 0.1: (state'=29) + 0.1: (state'=61);
+	[down45] state=45 -> 0.8: (state'=61) + 0.1: (state'=44) + 0.1: (state'=46);
+	[left45] state=45 -> 0.8: (state'=44) + 0.1: (state'=29) + 0.1: (state'=61);
+	[up45] state=45 -> 0.8: (state'=29) + 0.1: (state'=44) + 0.1: (state'=46);
+
+	[right46] state=46 -> 0.8: (state'=47) + 0.1: (state'=30) + 0.1: (state'=62);
+	[down46] state=46 -> 0.8: (state'=62) + 0.1: (state'=45) + 0.1: (state'=47);
+	[left46] state=46 -> 0.8: (state'=45) + 0.1: (state'=30) + 0.1: (state'=62);
+	[up46] state=46 -> 0.8: (state'=30) + 0.1: (state'=45) + 0.1: (state'=47);
+
+	[right47] state=47 -> 0.8: (state'=47) + 0.1: (state'=31) + 0.1: (state'=63);
+	[down47] state=47 -> 0.8: (state'=63) + 0.1: (state'=46) + 0.1: (state'=47);
+	[left47] state=47 -> 0.8: (state'=46) + 0.1: (state'=31) + 0.1: (state'=63);
+	[up47] state=47 -> 0.8: (state'=31) + 0.1: (state'=46) + 0.1: (state'=47);
+
+	[right48] state=48 -> 0.8: (state'=49) + 0.1: (state'=32) + 0.1: (state'=64);
+	[down48] state=48 -> 0.8: (state'=64) + 0.1: (state'=48) + 0.1: (state'=49);
+	[left48] state=48 -> 0.8: (state'=48) + 0.1: (state'=32) + 0.1: (state'=64);
+	[up48] state=48 -> 0.8: (state'=32) + 0.1: (state'=48) + 0.1: (state'=49);
+
+	[right49] state=49 -> 0.8: (state'=50) + 0.1: (state'=33) + 0.1: (state'=65);
+	[down49] state=49 -> 0.8: (state'=65) + 0.1: (state'=48) + 0.1: (state'=50);
+	[left49] state=49 -> 0.8: (state'=48) + 0.1: (state'=33) + 0.1: (state'=65);
+	[up49] state=49 -> 0.8: (state'=33) + 0.1: (state'=48) + 0.1: (state'=50);
+
+	[right50] state=50 -> 0.8: (state'=51) + 0.1: (state'=34) + 0.1: (state'=66);
+	[down50] state=50 -> 0.8: (state'=66) + 0.1: (state'=49) + 0.1: (state'=51);
+	[left50] state=50 -> 0.8: (state'=49) + 0.1: (state'=34) + 0.1: (state'=66);
+	[up50] state=50 -> 0.8: (state'=34) + 0.1: (state'=49) + 0.1: (state'=51);
+
+	[right51] state=51 -> 0.8: (state'=52) + 0.1: (state'=35) + 0.1: (state'=67);
+	[down51] state=51 -> 0.8: (state'=67) + 0.1: (state'=50) + 0.1: (state'=52);
+	[left51] state=51 -> 0.8: (state'=50) + 0.1: (state'=35) + 0.1: (state'=67);
+	[up51] state=51 -> 0.8: (state'=35) + 0.1: (state'=50) + 0.1: (state'=52);
+
+	[right52] state=52 -> 0.8: (state'=53) + 0.1: (state'=36) + 0.1: (state'=68);
+	[down52] state=52 -> 0.8: (state'=68) + 0.1: (state'=51) + 0.1: (state'=53);
+	[left52] state=52 -> 0.8: (state'=51) + 0.1: (state'=36) + 0.1: (state'=68);
+	[up52] state=52 -> 0.8: (state'=36) + 0.1: (state'=51) + 0.1: (state'=53);
+
+	[right53] state=53 -> 0.8: (state'=54) + 0.1: (state'=37) + 0.1: (state'=69);
+	[down53] state=53 -> 0.8: (state'=69) + 0.1: (state'=52) + 0.1: (state'=54);
+	[left53] state=53 -> 0.8: (state'=52) + 0.1: (state'=37) + 0.1: (state'=69);
+	[up53] state=53 -> 0.8: (state'=37) + 0.1: (state'=52) + 0.1: (state'=54);
+
+	[right54] state=54 -> 0.8: (state'=55) + 0.1: (state'=38) + 0.1: (state'=70);
+	[down54] state=54 -> 0.8: (state'=70) + 0.1: (state'=53) + 0.1: (state'=55);
+	[left54] state=54 -> 0.8: (state'=53) + 0.1: (state'=38) + 0.1: (state'=70);
+	[up54] state=54 -> 0.8: (state'=38) + 0.1: (state'=53) + 0.1: (state'=55);
+
+	[right55] state=55 -> 0.8: (state'=56) + 0.1: (state'=39) + 0.1: (state'=71);
+	[down55] state=55 -> 0.8: (state'=71) + 0.1: (state'=54) + 0.1: (state'=56);
+	[left55] state=55 -> 0.8: (state'=54) + 0.1: (state'=39) + 0.1: (state'=71);
+	[up55] state=55 -> 0.8: (state'=39) + 0.1: (state'=54) + 0.1: (state'=56);
+
+	[right56] state=56 -> 0.8: (state'=57) + 0.1: (state'=40) + 0.1: (state'=72);
+	[down56] state=56 -> 0.8: (state'=72) + 0.1: (state'=55) + 0.1: (state'=57);
+	[left56] state=56 -> 0.8: (state'=55) + 0.1: (state'=40) + 0.1: (state'=72);
+	[up56] state=56 -> 0.8: (state'=40) + 0.1: (state'=55) + 0.1: (state'=57);
+
+	[right57] state=57 -> 0.8: (state'=58) + 0.1: (state'=41) + 0.1: (state'=73);
+	[down57] state=57 -> 0.8: (state'=73) + 0.1: (state'=56) + 0.1: (state'=58);
+	[left57] state=57 -> 0.8: (state'=56) + 0.1: (state'=41) + 0.1: (state'=73);
+	[up57] state=57 -> 0.8: (state'=41) + 0.1: (state'=56) + 0.1: (state'=58);
+
+	[right58] state=58 -> 0.8: (state'=59) + 0.1: (state'=42) + 0.1: (state'=74);
+	[down58] state=58 -> 0.8: (state'=74) + 0.1: (state'=57) + 0.1: (state'=59);
+	[left58] state=58 -> 0.8: (state'=57) + 0.1: (state'=42) + 0.1: (state'=74);
+	[up58] state=58 -> 0.8: (state'=42) + 0.1: (state'=57) + 0.1: (state'=59);
+
+	[right59] state=59 -> 0.8: (state'=60) + 0.1: (state'=43) + 0.1: (state'=75);
+	[down59] state=59 -> 0.8: (state'=75) + 0.1: (state'=58) + 0.1: (state'=60);
+	[left59] state=59 -> 0.8: (state'=58) + 0.1: (state'=43) + 0.1: (state'=75);
+	[up59] state=59 -> 0.8: (state'=43) + 0.1: (state'=58) + 0.1: (state'=60);
+
+	[right60] state=60 -> 0.8: (state'=61) + 0.1: (state'=44) + 0.1: (state'=76);
+	[down60] state=60 -> 0.8: (state'=76) + 0.1: (state'=59) + 0.1: (state'=61);
+	[left60] state=60 -> 0.8: (state'=59) + 0.1: (state'=44) + 0.1: (state'=76);
+	[up60] state=60 -> 0.8: (state'=44) + 0.1: (state'=59) + 0.1: (state'=61);
+
+	[right61] state=61 -> 0.8: (state'=62) + 0.1: (state'=45) + 0.1: (state'=77);
+	[down61] state=61 -> 0.8: (state'=77) + 0.1: (state'=60) + 0.1: (state'=62);
+	[left61] state=61 -> 0.8: (state'=60) + 0.1: (state'=45) + 0.1: (state'=77);
+	[up61] state=61 -> 0.8: (state'=45) + 0.1: (state'=60) + 0.1: (state'=62);
+
+	[right62] state=62 -> 0.8: (state'=63) + 0.1: (state'=46) + 0.1: (state'=78);
+	[down62] state=62 -> 0.8: (state'=78) + 0.1: (state'=61) + 0.1: (state'=63);
+	[left62] state=62 -> 0.8: (state'=61) + 0.1: (state'=46) + 0.1: (state'=78);
+	[up62] state=62 -> 0.8: (state'=46) + 0.1: (state'=61) + 0.1: (state'=63);
+
+	[right63] state=63 -> 0.8: (state'=63) + 0.1: (state'=47) + 0.1: (state'=79);
+	[down63] state=63 -> 0.8: (state'=79) + 0.1: (state'=62) + 0.1: (state'=63);
+	[left63] state=63 -> 0.8: (state'=62) + 0.1: (state'=47) + 0.1: (state'=79);
+	[up63] state=63 -> 0.8: (state'=47) + 0.1: (state'=62) + 0.1: (state'=63);
+
+	[right64] state=64 -> 0.8: (state'=65) + 0.1: (state'=48) + 0.1: (state'=80);
+	[down64] state=64 -> 0.8: (state'=80) + 0.1: (state'=64) + 0.1: (state'=65);
+	[left64] state=64 -> 0.8: (state'=64) + 0.1: (state'=48) + 0.1: (state'=80);
+	[up64] state=64 -> 0.8: (state'=48) + 0.1: (state'=64) + 0.1: (state'=65);
+
+	[right65] state=65 -> 0.8: (state'=66) + 0.1: (state'=49) + 0.1: (state'=81);
+	[down65] state=65 -> 0.8: (state'=81) + 0.1: (state'=64) + 0.1: (state'=66);
+	[left65] state=65 -> 0.8: (state'=64) + 0.1: (state'=49) + 0.1: (state'=81);
+	[up65] state=65 -> 0.8: (state'=49) + 0.1: (state'=64) + 0.1: (state'=66);
+
+	[right66] state=66 -> 0.8: (state'=67) + 0.1: (state'=50) + 0.1: (state'=82);
+	[down66] state=66 -> 0.8: (state'=82) + 0.1: (state'=65) + 0.1: (state'=67);
+	[left66] state=66 -> 0.8: (state'=65) + 0.1: (state'=50) + 0.1: (state'=82);
+	[up66] state=66 -> 0.8: (state'=50) + 0.1: (state'=65) + 0.1: (state'=67);
+
+	[right67] state=67 -> 0.8: (state'=68) + 0.1: (state'=51) + 0.1: (state'=83);
+	[down67] state=67 -> 0.8: (state'=83) + 0.1: (state'=66) + 0.1: (state'=68);
+	[left67] state=67 -> 0.8: (state'=66) + 0.1: (state'=51) + 0.1: (state'=83);
+	[up67] state=67 -> 0.8: (state'=51) + 0.1: (state'=66) + 0.1: (state'=68);
+
+	[right68] state=68 -> 0.8: (state'=69) + 0.1: (state'=52) + 0.1: (state'=84);
+	[down68] state=68 -> 0.8: (state'=84) + 0.1: (state'=67) + 0.1: (state'=69);
+	[left68] state=68 -> 0.8: (state'=67) + 0.1: (state'=52) + 0.1: (state'=84);
+	[up68] state=68 -> 0.8: (state'=52) + 0.1: (state'=67) + 0.1: (state'=69);
+
+	[right69] state=69 -> 0.8: (state'=70) + 0.1: (state'=53) + 0.1: (state'=85);
+	[down69] state=69 -> 0.8: (state'=85) + 0.1: (state'=68) + 0.1: (state'=70);
+	[left69] state=69 -> 0.8: (state'=68) + 0.1: (state'=53) + 0.1: (state'=85);
+	[up69] state=69 -> 0.8: (state'=53) + 0.1: (state'=68) + 0.1: (state'=70);
+
+	[right70] state=70 -> 0.8: (state'=71) + 0.1: (state'=54) + 0.1: (state'=86);
+	[down70] state=70 -> 0.8: (state'=86) + 0.1: (state'=69) + 0.1: (state'=71);
+	[left70] state=70 -> 0.8: (state'=69) + 0.1: (state'=54) + 0.1: (state'=86);
+	[up70] state=70 -> 0.8: (state'=54) + 0.1: (state'=69) + 0.1: (state'=71);
+
+	[right71] state=71 -> 0.8: (state'=72) + 0.1: (state'=55) + 0.1: (state'=87);
+	[down71] state=71 -> 0.8: (state'=87) + 0.1: (state'=70) + 0.1: (state'=72);
+	[left71] state=71 -> 0.8: (state'=70) + 0.1: (state'=55) + 0.1: (state'=87);
+	[up71] state=71 -> 0.8: (state'=55) + 0.1: (state'=70) + 0.1: (state'=72);
+
+	[right72] state=72 -> 0.8: (state'=73) + 0.1: (state'=56) + 0.1: (state'=88);
+	[down72] state=72 -> 0.8: (state'=88) + 0.1: (state'=71) + 0.1: (state'=73);
+	[left72] state=72 -> 0.8: (state'=71) + 0.1: (state'=56) + 0.1: (state'=88);
+	[up72] state=72 -> 0.8: (state'=56) + 0.1: (state'=71) + 0.1: (state'=73);
+
+	[right73] state=73 -> 0.8: (state'=74) + 0.1: (state'=57) + 0.1: (state'=89);
+	[down73] state=73 -> 0.8: (state'=89) + 0.1: (state'=72) + 0.1: (state'=74);
+	[left73] state=73 -> 0.8: (state'=72) + 0.1: (state'=57) + 0.1: (state'=89);
+	[up73] state=73 -> 0.8: (state'=57) + 0.1: (state'=72) + 0.1: (state'=74);
+
+	[right74] state=74 -> 0.8: (state'=75) + 0.1: (state'=58) + 0.1: (state'=90);
+	[down74] state=74 -> 0.8: (state'=90) + 0.1: (state'=73) + 0.1: (state'=75);
+	[left74] state=74 -> 0.8: (state'=73) + 0.1: (state'=58) + 0.1: (state'=90);
+	[up74] state=74 -> 0.8: (state'=58) + 0.1: (state'=73) + 0.1: (state'=75);
+
+	[right75] state=75 -> 0.8: (state'=76) + 0.1: (state'=59) + 0.1: (state'=91);
+	[down75] state=75 -> 0.8: (state'=91) + 0.1: (state'=74) + 0.1: (state'=76);
+	[left75] state=75 -> 0.8: (state'=74) + 0.1: (state'=59) + 0.1: (state'=91);
+	[up75] state=75 -> 0.8: (state'=59) + 0.1: (state'=74) + 0.1: (state'=76);
+
+	[right76] state=76 -> 0.8: (state'=77) + 0.1: (state'=60) + 0.1: (state'=92);
+	[down76] state=76 -> 0.8: (state'=92) + 0.1: (state'=75) + 0.1: (state'=77);
+	[left76] state=76 -> 0.8: (state'=75) + 0.1: (state'=60) + 0.1: (state'=92);
+	[up76] state=76 -> 0.8: (state'=60) + 0.1: (state'=75) + 0.1: (state'=77);
+
+	[right77] state=77 -> 0.8: (state'=78) + 0.1: (state'=61) + 0.1: (state'=93);
+	[down77] state=77 -> 0.8: (state'=93) + 0.1: (state'=76) + 0.1: (state'=78);
+	[left77] state=77 -> 0.8: (state'=76) + 0.1: (state'=61) + 0.1: (state'=93);
+	[up77] state=77 -> 0.8: (state'=61) + 0.1: (state'=76) + 0.1: (state'=78);
+
+	[right78] state=78 -> 0.8: (state'=79) + 0.1: (state'=62) + 0.1: (state'=94);
+	[down78] state=78 -> 0.8: (state'=94) + 0.1: (state'=77) + 0.1: (state'=79);
+	[left78] state=78 -> 0.8: (state'=77) + 0.1: (state'=62) + 0.1: (state'=94);
+	[up78] state=78 -> 0.8: (state'=62) + 0.1: (state'=77) + 0.1: (state'=79);
+
+	[right79] state=79 -> 0.8: (state'=79) + 0.1: (state'=63) + 0.1: (state'=95);
+	[down79] state=79 -> 0.8: (state'=95) + 0.1: (state'=78) + 0.1: (state'=79);
+	[left79] state=79 -> 0.8: (state'=78) + 0.1: (state'=63) + 0.1: (state'=95);
+	[up79] state=79 -> 0.8: (state'=63) + 0.1: (state'=78) + 0.1: (state'=79);
+
+	[right80] state=80 -> 0.8: (state'=81) + 0.1: (state'=64) + 0.1: (state'=96);
+	[down80] state=80 -> 0.8: (state'=96) + 0.1: (state'=80) + 0.1: (state'=81);
+	[left80] state=80 -> 0.8: (state'=80) + 0.1: (state'=64) + 0.1: (state'=96);
+	[up80] state=80 -> 0.8: (state'=64) + 0.1: (state'=80) + 0.1: (state'=81);
+
+	[right81] state=81 -> 0.8: (state'=82) + 0.1: (state'=65) + 0.1: (state'=97);
+	[down81] state=81 -> 0.8: (state'=97) + 0.1: (state'=80) + 0.1: (state'=82);
+	[left81] state=81 -> 0.8: (state'=80) + 0.1: (state'=65) + 0.1: (state'=97);
+	[up81] state=81 -> 0.8: (state'=65) + 0.1: (state'=80) + 0.1: (state'=82);
+
+	[right82] state=82 -> 0.8: (state'=83) + 0.1: (state'=66) + 0.1: (state'=98);
+	[down82] state=82 -> 0.8: (state'=98) + 0.1: (state'=81) + 0.1: (state'=83);
+	[left82] state=82 -> 0.8: (state'=81) + 0.1: (state'=66) + 0.1: (state'=98);
+	[up82] state=82 -> 0.8: (state'=66) + 0.1: (state'=81) + 0.1: (state'=83);
+
+	[right83] state=83 -> 0.8: (state'=84) + 0.1: (state'=67) + 0.1: (state'=99);
+	[down83] state=83 -> 0.8: (state'=99) + 0.1: (state'=82) + 0.1: (state'=84);
+	[left83] state=83 -> 0.8: (state'=82) + 0.1: (state'=67) + 0.1: (state'=99);
+	[up83] state=83 -> 0.8: (state'=67) + 0.1: (state'=82) + 0.1: (state'=84);
+
+	[right84] state=84 -> 0.8: (state'=85) + 0.1: (state'=68) + 0.1: (state'=100);
+	[down84] state=84 -> 0.8: (state'=100) + 0.1: (state'=83) + 0.1: (state'=85);
+	[left84] state=84 -> 0.8: (state'=83) + 0.1: (state'=68) + 0.1: (state'=100);
+	[up84] state=84 -> 0.8: (state'=68) + 0.1: (state'=83) + 0.1: (state'=85);
+
+	[right85] state=85 -> 0.8: (state'=86) + 0.1: (state'=69) + 0.1: (state'=101);
+	[down85] state=85 -> 0.8: (state'=101) + 0.1: (state'=84) + 0.1: (state'=86);
+	[left85] state=85 -> 0.8: (state'=84) + 0.1: (state'=69) + 0.1: (state'=101);
+	[up85] state=85 -> 0.8: (state'=69) + 0.1: (state'=84) + 0.1: (state'=86);
+
+	[right86] state=86 -> 0.8: (state'=87) + 0.1: (state'=70) + 0.1: (state'=102);
+	[down86] state=86 -> 0.8: (state'=102) + 0.1: (state'=85) + 0.1: (state'=87);
+	[left86] state=86 -> 0.8: (state'=85) + 0.1: (state'=70) + 0.1: (state'=102);
+	[up86] state=86 -> 0.8: (state'=70) + 0.1: (state'=85) + 0.1: (state'=87);
+
+	[right87] state=87 -> 0.8: (state'=88) + 0.1: (state'=71) + 0.1: (state'=103);
+	[down87] state=87 -> 0.8: (state'=103) + 0.1: (state'=86) + 0.1: (state'=88);
+	[left87] state=87 -> 0.8: (state'=86) + 0.1: (state'=71) + 0.1: (state'=103);
+	[up87] state=87 -> 0.8: (state'=71) + 0.1: (state'=86) + 0.1: (state'=88);
+
+	[right88] state=88 -> 0.8: (state'=89) + 0.1: (state'=72) + 0.1: (state'=104);
+	[down88] state=88 -> 0.8: (state'=104) + 0.1: (state'=87) + 0.1: (state'=89);
+	[left88] state=88 -> 0.8: (state'=87) + 0.1: (state'=72) + 0.1: (state'=104);
+	[up88] state=88 -> 0.8: (state'=72) + 0.1: (state'=87) + 0.1: (state'=89);
+
+	[right89] state=89 -> 0.8: (state'=90) + 0.1: (state'=73) + 0.1: (state'=105);
+	[down89] state=89 -> 0.8: (state'=105) + 0.1: (state'=88) + 0.1: (state'=90);
+	[left89] state=89 -> 0.8: (state'=88) + 0.1: (state'=73) + 0.1: (state'=105);
+	[up89] state=89 -> 0.8: (state'=73) + 0.1: (state'=88) + 0.1: (state'=90);
+
+	[right90] state=90 -> 0.8: (state'=91) + 0.1: (state'=74) + 0.1: (state'=106);
+	[down90] state=90 -> 0.8: (state'=106) + 0.1: (state'=89) + 0.1: (state'=91);
+	[left90] state=90 -> 0.8: (state'=89) + 0.1: (state'=74) + 0.1: (state'=106);
+	[up90] state=90 -> 0.8: (state'=74) + 0.1: (state'=89) + 0.1: (state'=91);
+
+	[right91] state=91 -> 0.8: (state'=92) + 0.1: (state'=75) + 0.1: (state'=107);
+	[down91] state=91 -> 0.8: (state'=107) + 0.1: (state'=90) + 0.1: (state'=92);
+	[left91] state=91 -> 0.8: (state'=90) + 0.1: (state'=75) + 0.1: (state'=107);
+	[up91] state=91 -> 0.8: (state'=75) + 0.1: (state'=90) + 0.1: (state'=92);
+
+	[right92] state=92 -> 0.8: (state'=93) + 0.1: (state'=76) + 0.1: (state'=108);
+	[down92] state=92 -> 0.8: (state'=108) + 0.1: (state'=91) + 0.1: (state'=93);
+	[left92] state=92 -> 0.8: (state'=91) + 0.1: (state'=76) + 0.1: (state'=108);
+	[up92] state=92 -> 0.8: (state'=76) + 0.1: (state'=91) + 0.1: (state'=93);
+
+	[right93] state=93 -> 0.8: (state'=94) + 0.1: (state'=77) + 0.1: (state'=109);
+	[down93] state=93 -> 0.8: (state'=109) + 0.1: (state'=92) + 0.1: (state'=94);
+	[left93] state=93 -> 0.8: (state'=92) + 0.1: (state'=77) + 0.1: (state'=109);
+	[up93] state=93 -> 0.8: (state'=77) + 0.1: (state'=92) + 0.1: (state'=94);
+
+	[right94] state=94 -> 0.8: (state'=95) + 0.1: (state'=78) + 0.1: (state'=110);
+	[down94] state=94 -> 0.8: (state'=110) + 0.1: (state'=93) + 0.1: (state'=95);
+	[left94] state=94 -> 0.8: (state'=93) + 0.1: (state'=78) + 0.1: (state'=110);
+	[up94] state=94 -> 0.8: (state'=78) + 0.1: (state'=93) + 0.1: (state'=95);
+
+	[right95] state=95 -> 0.8: (state'=95) + 0.1: (state'=79) + 0.1: (state'=111);
+	[down95] state=95 -> 0.8: (state'=111) + 0.1: (state'=94) + 0.1: (state'=95);
+	[left95] state=95 -> 0.8: (state'=94) + 0.1: (state'=79) + 0.1: (state'=111);
+	[up95] state=95 -> 0.8: (state'=79) + 0.1: (state'=94) + 0.1: (state'=95);
+
+	[right96] state=96 -> 0.8: (state'=97) + 0.1: (state'=80) + 0.1: (state'=112);
+	[down96] state=96 -> 0.8: (state'=112) + 0.1: (state'=96) + 0.1: (state'=97);
+	[left96] state=96 -> 0.8: (state'=96) + 0.1: (state'=80) + 0.1: (state'=112);
+	[up96] state=96 -> 0.8: (state'=80) + 0.1: (state'=96) + 0.1: (state'=97);
+
+	[right97] state=97 -> 0.8: (state'=98) + 0.1: (state'=81) + 0.1: (state'=113);
+	[down97] state=97 -> 0.8: (state'=113) + 0.1: (state'=96) + 0.1: (state'=98);
+	[left97] state=97 -> 0.8: (state'=96) + 0.1: (state'=81) + 0.1: (state'=113);
+	[up97] state=97 -> 0.8: (state'=81) + 0.1: (state'=96) + 0.1: (state'=98);
+
+	[right98] state=98 -> 0.8: (state'=99) + 0.1: (state'=82) + 0.1: (state'=114);
+	[down98] state=98 -> 0.8: (state'=114) + 0.1: (state'=97) + 0.1: (state'=99);
+	[left98] state=98 -> 0.8: (state'=97) + 0.1: (state'=82) + 0.1: (state'=114);
+	[up98] state=98 -> 0.8: (state'=82) + 0.1: (state'=97) + 0.1: (state'=99);
+
+	[right99] state=99 -> 0.8: (state'=100) + 0.1: (state'=83) + 0.1: (state'=115);
+	[down99] state=99 -> 0.8: (state'=115) + 0.1: (state'=98) + 0.1: (state'=100);
+	[left99] state=99 -> 0.8: (state'=98) + 0.1: (state'=83) + 0.1: (state'=115);
+	[up99] state=99 -> 0.8: (state'=83) + 0.1: (state'=98) + 0.1: (state'=100);
+
+	[right100] state=100 -> 0.8: (state'=101) + 0.1: (state'=84) + 0.1: (state'=116);
+	[down100] state=100 -> 0.8: (state'=116) + 0.1: (state'=99) + 0.1: (state'=101);
+	[left100] state=100 -> 0.8: (state'=99) + 0.1: (state'=84) + 0.1: (state'=116);
+	[up100] state=100 -> 0.8: (state'=84) + 0.1: (state'=99) + 0.1: (state'=101);
+
+	[right101] state=101 -> 0.8: (state'=102) + 0.1: (state'=85) + 0.1: (state'=117);
+	[down101] state=101 -> 0.8: (state'=117) + 0.1: (state'=100) + 0.1: (state'=102);
+	[left101] state=101 -> 0.8: (state'=100) + 0.1: (state'=85) + 0.1: (state'=117);
+	[up101] state=101 -> 0.8: (state'=85) + 0.1: (state'=100) + 0.1: (state'=102);
+
+	[right102] state=102 -> 0.8: (state'=103) + 0.1: (state'=86) + 0.1: (state'=118);
+	[down102] state=102 -> 0.8: (state'=118) + 0.1: (state'=101) + 0.1: (state'=103);
+	[left102] state=102 -> 0.8: (state'=101) + 0.1: (state'=86) + 0.1: (state'=118);
+	[up102] state=102 -> 0.8: (state'=86) + 0.1: (state'=101) + 0.1: (state'=103);
+
+	[right103] state=103 -> 0.8: (state'=104) + 0.1: (state'=87) + 0.1: (state'=119);
+	[down103] state=103 -> 0.8: (state'=119) + 0.1: (state'=102) + 0.1: (state'=104);
+	[left103] state=103 -> 0.8: (state'=102) + 0.1: (state'=87) + 0.1: (state'=119);
+	[up103] state=103 -> 0.8: (state'=87) + 0.1: (state'=102) + 0.1: (state'=104);
+
+	[right104] state=104 -> 0.8: (state'=105) + 0.1: (state'=88) + 0.1: (state'=120);
+	[down104] state=104 -> 0.8: (state'=120) + 0.1: (state'=103) + 0.1: (state'=105);
+	[left104] state=104 -> 0.8: (state'=103) + 0.1: (state'=88) + 0.1: (state'=120);
+	[up104] state=104 -> 0.8: (state'=88) + 0.1: (state'=103) + 0.1: (state'=105);
+
+	[right105] state=105 -> 0.8: (state'=106) + 0.1: (state'=89) + 0.1: (state'=121);
+	[down105] state=105 -> 0.8: (state'=121) + 0.1: (state'=104) + 0.1: (state'=106);
+	[left105] state=105 -> 0.8: (state'=104) + 0.1: (state'=89) + 0.1: (state'=121);
+	[up105] state=105 -> 0.8: (state'=89) + 0.1: (state'=104) + 0.1: (state'=106);
+
+	[right106] state=106 -> 0.8: (state'=107) + 0.1: (state'=90) + 0.1: (state'=122);
+	[down106] state=106 -> 0.8: (state'=122) + 0.1: (state'=105) + 0.1: (state'=107);
+	[left106] state=106 -> 0.8: (state'=105) + 0.1: (state'=90) + 0.1: (state'=122);
+	[up106] state=106 -> 0.8: (state'=90) + 0.1: (state'=105) + 0.1: (state'=107);
+
+	[right107] state=107 -> 0.8: (state'=108) + 0.1: (state'=91) + 0.1: (state'=123);
+	[down107] state=107 -> 0.8: (state'=123) + 0.1: (state'=106) + 0.1: (state'=108);
+	[left107] state=107 -> 0.8: (state'=106) + 0.1: (state'=91) + 0.1: (state'=123);
+	[up107] state=107 -> 0.8: (state'=91) + 0.1: (state'=106) + 0.1: (state'=108);
+
+	[right108] state=108 -> 0.8: (state'=109) + 0.1: (state'=92) + 0.1: (state'=124);
+	[down108] state=108 -> 0.8: (state'=124) + 0.1: (state'=107) + 0.1: (state'=109);
+	[left108] state=108 -> 0.8: (state'=107) + 0.1: (state'=92) + 0.1: (state'=124);
+	[up108] state=108 -> 0.8: (state'=92) + 0.1: (state'=107) + 0.1: (state'=109);
+
+	[right109] state=109 -> 0.8: (state'=110) + 0.1: (state'=93) + 0.1: (state'=125);
+	[down109] state=109 -> 0.8: (state'=125) + 0.1: (state'=108) + 0.1: (state'=110);
+	[left109] state=109 -> 0.8: (state'=108) + 0.1: (state'=93) + 0.1: (state'=125);
+	[up109] state=109 -> 0.8: (state'=93) + 0.1: (state'=108) + 0.1: (state'=110);
+
+	[right110] state=110 -> 0.8: (state'=111) + 0.1: (state'=94) + 0.1: (state'=126);
+	[down110] state=110 -> 0.8: (state'=126) + 0.1: (state'=109) + 0.1: (state'=111);
+	[left110] state=110 -> 0.8: (state'=109) + 0.1: (state'=94) + 0.1: (state'=126);
+	[up110] state=110 -> 0.8: (state'=94) + 0.1: (state'=109) + 0.1: (state'=111);
+
+	[right111] state=111 -> 0.8: (state'=111) + 0.1: (state'=95) + 0.1: (state'=127);
+	[down111] state=111 -> 0.8: (state'=127) + 0.1: (state'=110) + 0.1: (state'=111);
+	[left111] state=111 -> 0.8: (state'=110) + 0.1: (state'=95) + 0.1: (state'=127);
+	[up111] state=111 -> 0.8: (state'=95) + 0.1: (state'=110) + 0.1: (state'=111);
+
+	[right112] state=112 -> 0.8: (state'=113) + 0.1: (state'=96) + 0.1: (state'=128);
+	[down112] state=112 -> 0.8: (state'=128) + 0.1: (state'=112) + 0.1: (state'=113);
+	[left112] state=112 -> 0.8: (state'=112) + 0.1: (state'=96) + 0.1: (state'=128);
+	[up112] state=112 -> 0.8: (state'=96) + 0.1: (state'=112) + 0.1: (state'=113);
+
+	[right113] state=113 -> 0.8: (state'=114) + 0.1: (state'=97) + 0.1: (state'=129);
+	[down113] state=113 -> 0.8: (state'=129) + 0.1: (state'=112) + 0.1: (state'=114);
+	[left113] state=113 -> 0.8: (state'=112) + 0.1: (state'=97) + 0.1: (state'=129);
+	[up113] state=113 -> 0.8: (state'=97) + 0.1: (state'=112) + 0.1: (state'=114);
+
+	[right114] state=114 -> 0.8: (state'=115) + 0.1: (state'=98) + 0.1: (state'=130);
+	[down114] state=114 -> 0.8: (state'=130) + 0.1: (state'=113) + 0.1: (state'=115);
+	[left114] state=114 -> 0.8: (state'=113) + 0.1: (state'=98) + 0.1: (state'=130);
+	[up114] state=114 -> 0.8: (state'=98) + 0.1: (state'=113) + 0.1: (state'=115);
+
+	[right115] state=115 -> 0.8: (state'=116) + 0.1: (state'=99) + 0.1: (state'=131);
+	[down115] state=115 -> 0.8: (state'=131) + 0.1: (state'=114) + 0.1: (state'=116);
+	[left115] state=115 -> 0.8: (state'=114) + 0.1: (state'=99) + 0.1: (state'=131);
+	[up115] state=115 -> 0.8: (state'=99) + 0.1: (state'=114) + 0.1: (state'=116);
+
+	[right116] state=116 -> 0.8: (state'=117) + 0.1: (state'=100) + 0.1: (state'=132);
+	[down116] state=116 -> 0.8: (state'=132) + 0.1: (state'=115) + 0.1: (state'=117);
+	[left116] state=116 -> 0.8: (state'=115) + 0.1: (state'=100) + 0.1: (state'=132);
+	[up116] state=116 -> 0.8: (state'=100) + 0.1: (state'=115) + 0.1: (state'=117);
+
+	[right117] state=117 -> 0.8: (state'=118) + 0.1: (state'=101) + 0.1: (state'=133);
+	[down117] state=117 -> 0.8: (state'=133) + 0.1: (state'=116) + 0.1: (state'=118);
+	[left117] state=117 -> 0.8: (state'=116) + 0.1: (state'=101) + 0.1: (state'=133);
+	[up117] state=117 -> 0.8: (state'=101) + 0.1: (state'=116) + 0.1: (state'=118);
+
+	[right118] state=118 -> 0.8: (state'=119) + 0.1: (state'=102) + 0.1: (state'=134);
+	[down118] state=118 -> 0.8: (state'=134) + 0.1: (state'=117) + 0.1: (state'=119);
+	[left118] state=118 -> 0.8: (state'=117) + 0.1: (state'=102) + 0.1: (state'=134);
+	[up118] state=118 -> 0.8: (state'=102) + 0.1: (state'=117) + 0.1: (state'=119);
+
+	[right119] state=119 -> 0.8: (state'=120) + 0.1: (state'=103) + 0.1: (state'=135);
+	[down119] state=119 -> 0.8: (state'=135) + 0.1: (state'=118) + 0.1: (state'=120);
+	[left119] state=119 -> 0.8: (state'=118) + 0.1: (state'=103) + 0.1: (state'=135);
+	[up119] state=119 -> 0.8: (state'=103) + 0.1: (state'=118) + 0.1: (state'=120);
+
+	[right120] state=120 -> 0.8: (state'=121) + 0.1: (state'=104) + 0.1: (state'=136);
+	[down120] state=120 -> 0.8: (state'=136) + 0.1: (state'=119) + 0.1: (state'=121);
+	[left120] state=120 -> 0.8: (state'=119) + 0.1: (state'=104) + 0.1: (state'=136);
+	[up120] state=120 -> 0.8: (state'=104) + 0.1: (state'=119) + 0.1: (state'=121);
+
+	[right121] state=121 -> 0.8: (state'=122) + 0.1: (state'=105) + 0.1: (state'=137);
+	[down121] state=121 -> 0.8: (state'=137) + 0.1: (state'=120) + 0.1: (state'=122);
+	[left121] state=121 -> 0.8: (state'=120) + 0.1: (state'=105) + 0.1: (state'=137);
+	[up121] state=121 -> 0.8: (state'=105) + 0.1: (state'=120) + 0.1: (state'=122);
+
+	[right122] state=122 -> 0.8: (state'=123) + 0.1: (state'=106) + 0.1: (state'=138);
+	[down122] state=122 -> 0.8: (state'=138) + 0.1: (state'=121) + 0.1: (state'=123);
+	[left122] state=122 -> 0.8: (state'=121) + 0.1: (state'=106) + 0.1: (state'=138);
+	[up122] state=122 -> 0.8: (state'=106) + 0.1: (state'=121) + 0.1: (state'=123);
+
+	[right123] state=123 -> 0.8: (state'=124) + 0.1: (state'=107) + 0.1: (state'=139);
+	[down123] state=123 -> 0.8: (state'=139) + 0.1: (state'=122) + 0.1: (state'=124);
+	[left123] state=123 -> 0.8: (state'=122) + 0.1: (state'=107) + 0.1: (state'=139);
+	[up123] state=123 -> 0.8: (state'=107) + 0.1: (state'=122) + 0.1: (state'=124);
+
+	[right124] state=124 -> 0.8: (state'=125) + 0.1: (state'=108) + 0.1: (state'=140);
+	[down124] state=124 -> 0.8: (state'=140) + 0.1: (state'=123) + 0.1: (state'=125);
+	[left124] state=124 -> 0.8: (state'=123) + 0.1: (state'=108) + 0.1: (state'=140);
+	[up124] state=124 -> 0.8: (state'=108) + 0.1: (state'=123) + 0.1: (state'=125);
+
+	[right125] state=125 -> 0.8: (state'=126) + 0.1: (state'=109) + 0.1: (state'=141);
+	[down125] state=125 -> 0.8: (state'=141) + 0.1: (state'=124) + 0.1: (state'=126);
+	[left125] state=125 -> 0.8: (state'=124) + 0.1: (state'=109) + 0.1: (state'=141);
+	[up125] state=125 -> 0.8: (state'=109) + 0.1: (state'=124) + 0.1: (state'=126);
+
+	[right126] state=126 -> 0.8: (state'=127) + 0.1: (state'=110) + 0.1: (state'=142);
+	[down126] state=126 -> 0.8: (state'=142) + 0.1: (state'=125) + 0.1: (state'=127);
+	[left126] state=126 -> 0.8: (state'=125) + 0.1: (state'=110) + 0.1: (state'=142);
+	[up126] state=126 -> 0.8: (state'=110) + 0.1: (state'=125) + 0.1: (state'=127);
+
+	[right127] state=127 -> 0.8: (state'=127) + 0.1: (state'=111) + 0.1: (state'=143);
+	[down127] state=127 -> 0.8: (state'=143) + 0.1: (state'=126) + 0.1: (state'=127);
+	[left127] state=127 -> 0.8: (state'=126) + 0.1: (state'=111) + 0.1: (state'=143);
+	[up127] state=127 -> 0.8: (state'=111) + 0.1: (state'=126) + 0.1: (state'=127);
+
+	[right128] state=128 -> 0.8: (state'=129) + 0.1: (state'=112) + 0.1: (state'=144);
+	[down128] state=128 -> 0.8: (state'=144) + 0.1: (state'=128) + 0.1: (state'=129);
+	[left128] state=128 -> 0.8: (state'=128) + 0.1: (state'=112) + 0.1: (state'=144);
+	[up128] state=128 -> 0.8: (state'=112) + 0.1: (state'=128) + 0.1: (state'=129);
+
+	[right129] state=129 -> 0.8: (state'=130) + 0.1: (state'=113) + 0.1: (state'=145);
+	[down129] state=129 -> 0.8: (state'=145) + 0.1: (state'=128) + 0.1: (state'=130);
+	[left129] state=129 -> 0.8: (state'=128) + 0.1: (state'=113) + 0.1: (state'=145);
+	[up129] state=129 -> 0.8: (state'=113) + 0.1: (state'=128) + 0.1: (state'=130);
+
+	[right130] state=130 -> 0.8: (state'=131) + 0.1: (state'=114) + 0.1: (state'=146);
+	[down130] state=130 -> 0.8: (state'=146) + 0.1: (state'=129) + 0.1: (state'=131);
+	[left130] state=130 -> 0.8: (state'=129) + 0.1: (state'=114) + 0.1: (state'=146);
+	[up130] state=130 -> 0.8: (state'=114) + 0.1: (state'=129) + 0.1: (state'=131);
+
+	[right131] state=131 -> 0.8: (state'=132) + 0.1: (state'=115) + 0.1: (state'=147);
+	[down131] state=131 -> 0.8: (state'=147) + 0.1: (state'=130) + 0.1: (state'=132);
+	[left131] state=131 -> 0.8: (state'=130) + 0.1: (state'=115) + 0.1: (state'=147);
+	[up131] state=131 -> 0.8: (state'=115) + 0.1: (state'=130) + 0.1: (state'=132);
+
+	[right132] state=132 -> 0.8: (state'=133) + 0.1: (state'=116) + 0.1: (state'=148);
+	[down132] state=132 -> 0.8: (state'=148) + 0.1: (state'=131) + 0.1: (state'=133);
+	[left132] state=132 -> 0.8: (state'=131) + 0.1: (state'=116) + 0.1: (state'=148);
+	[up132] state=132 -> 0.8: (state'=116) + 0.1: (state'=131) + 0.1: (state'=133);
+
+	[right133] state=133 -> 0.8: (state'=134) + 0.1: (state'=117) + 0.1: (state'=149);
+	[down133] state=133 -> 0.8: (state'=149) + 0.1: (state'=132) + 0.1: (state'=134);
+	[left133] state=133 -> 0.8: (state'=132) + 0.1: (state'=117) + 0.1: (state'=149);
+	[up133] state=133 -> 0.8: (state'=117) + 0.1: (state'=132) + 0.1: (state'=134);
+
+	[right134] state=134 -> 0.8: (state'=135) + 0.1: (state'=118) + 0.1: (state'=150);
+	[down134] state=134 -> 0.8: (state'=150) + 0.1: (state'=133) + 0.1: (state'=135);
+	[left134] state=134 -> 0.8: (state'=133) + 0.1: (state'=118) + 0.1: (state'=150);
+	[up134] state=134 -> 0.8: (state'=118) + 0.1: (state'=133) + 0.1: (state'=135);
+
+	[right135] state=135 -> 0.8: (state'=136) + 0.1: (state'=119) + 0.1: (state'=151);
+	[down135] state=135 -> 0.8: (state'=151) + 0.1: (state'=134) + 0.1: (state'=136);
+	[left135] state=135 -> 0.8: (state'=134) + 0.1: (state'=119) + 0.1: (state'=151);
+	[up135] state=135 -> 0.8: (state'=119) + 0.1: (state'=134) + 0.1: (state'=136);
+
+	[right136] state=136 -> 0.8: (state'=137) + 0.1: (state'=120) + 0.1: (state'=152);
+	[down136] state=136 -> 0.8: (state'=152) + 0.1: (state'=135) + 0.1: (state'=137);
+	[left136] state=136 -> 0.8: (state'=135) + 0.1: (state'=120) + 0.1: (state'=152);
+	[up136] state=136 -> 0.8: (state'=120) + 0.1: (state'=135) + 0.1: (state'=137);
+
+	[right137] state=137 -> 0.8: (state'=138) + 0.1: (state'=121) + 0.1: (state'=153);
+	[down137] state=137 -> 0.8: (state'=153) + 0.1: (state'=136) + 0.1: (state'=138);
+	[left137] state=137 -> 0.8: (state'=136) + 0.1: (state'=121) + 0.1: (state'=153);
+	[up137] state=137 -> 0.8: (state'=121) + 0.1: (state'=136) + 0.1: (state'=138);
+
+	[right138] state=138 -> 0.8: (state'=139) + 0.1: (state'=122) + 0.1: (state'=154);
+	[down138] state=138 -> 0.8: (state'=154) + 0.1: (state'=137) + 0.1: (state'=139);
+	[left138] state=138 -> 0.8: (state'=137) + 0.1: (state'=122) + 0.1: (state'=154);
+	[up138] state=138 -> 0.8: (state'=122) + 0.1: (state'=137) + 0.1: (state'=139);
+
+	[right139] state=139 -> 0.8: (state'=140) + 0.1: (state'=123) + 0.1: (state'=155);
+	[down139] state=139 -> 0.8: (state'=155) + 0.1: (state'=138) + 0.1: (state'=140);
+	[left139] state=139 -> 0.8: (state'=138) + 0.1: (state'=123) + 0.1: (state'=155);
+	[up139] state=139 -> 0.8: (state'=123) + 0.1: (state'=138) + 0.1: (state'=140);
+
+	[right140] state=140 -> 0.8: (state'=141) + 0.1: (state'=124) + 0.1: (state'=156);
+	[down140] state=140 -> 0.8: (state'=156) + 0.1: (state'=139) + 0.1: (state'=141);
+	[left140] state=140 -> 0.8: (state'=139) + 0.1: (state'=124) + 0.1: (state'=156);
+	[up140] state=140 -> 0.8: (state'=124) + 0.1: (state'=139) + 0.1: (state'=141);
+
+	[right141] state=141 -> 0.8: (state'=142) + 0.1: (state'=125) + 0.1: (state'=157);
+	[down141] state=141 -> 0.8: (state'=157) + 0.1: (state'=140) + 0.1: (state'=142);
+	[left141] state=141 -> 0.8: (state'=140) + 0.1: (state'=125) + 0.1: (state'=157);
+	[up141] state=141 -> 0.8: (state'=125) + 0.1: (state'=140) + 0.1: (state'=142);
+
+	[right142] state=142 -> 0.8: (state'=143) + 0.1: (state'=126) + 0.1: (state'=158);
+	[down142] state=142 -> 0.8: (state'=158) + 0.1: (state'=141) + 0.1: (state'=143);
+	[left142] state=142 -> 0.8: (state'=141) + 0.1: (state'=126) + 0.1: (state'=158);
+	[up142] state=142 -> 0.8: (state'=126) + 0.1: (state'=141) + 0.1: (state'=143);
+
+	[right143] state=143 -> 0.8: (state'=143) + 0.1: (state'=127) + 0.1: (state'=159);
+	[down143] state=143 -> 0.8: (state'=159) + 0.1: (state'=142) + 0.1: (state'=143);
+	[left143] state=143 -> 0.8: (state'=142) + 0.1: (state'=127) + 0.1: (state'=159);
+	[up143] state=143 -> 0.8: (state'=127) + 0.1: (state'=142) + 0.1: (state'=143);
+
+	[right144] state=144 -> 0.8: (state'=145) + 0.1: (state'=128) + 0.1: (state'=160);
+	[down144] state=144 -> 0.8: (state'=160) + 0.1: (state'=144) + 0.1: (state'=145);
+	[left144] state=144 -> 0.8: (state'=144) + 0.1: (state'=128) + 0.1: (state'=160);
+	[up144] state=144 -> 0.8: (state'=128) + 0.1: (state'=144) + 0.1: (state'=145);
+
+	[right145] state=145 -> 0.8: (state'=146) + 0.1: (state'=129) + 0.1: (state'=161);
+	[down145] state=145 -> 0.8: (state'=161) + 0.1: (state'=144) + 0.1: (state'=146);
+	[left145] state=145 -> 0.8: (state'=144) + 0.1: (state'=129) + 0.1: (state'=161);
+	[up145] state=145 -> 0.8: (state'=129) + 0.1: (state'=144) + 0.1: (state'=146);
+
+	[right146] state=146 -> 0.8: (state'=147) + 0.1: (state'=130) + 0.1: (state'=162);
+	[down146] state=146 -> 0.8: (state'=162) + 0.1: (state'=145) + 0.1: (state'=147);
+	[left146] state=146 -> 0.8: (state'=145) + 0.1: (state'=130) + 0.1: (state'=162);
+	[up146] state=146 -> 0.8: (state'=130) + 0.1: (state'=145) + 0.1: (state'=147);
+
+	[right147] state=147 -> 0.8: (state'=148) + 0.1: (state'=131) + 0.1: (state'=163);
+	[down147] state=147 -> 0.8: (state'=163) + 0.1: (state'=146) + 0.1: (state'=148);
+	[left147] state=147 -> 0.8: (state'=146) + 0.1: (state'=131) + 0.1: (state'=163);
+	[up147] state=147 -> 0.8: (state'=131) + 0.1: (state'=146) + 0.1: (state'=148);
+
+	[right148] state=148 -> 0.8: (state'=149) + 0.1: (state'=132) + 0.1: (state'=164);
+	[down148] state=148 -> 0.8: (state'=164) + 0.1: (state'=147) + 0.1: (state'=149);
+	[left148] state=148 -> 0.8: (state'=147) + 0.1: (state'=132) + 0.1: (state'=164);
+	[up148] state=148 -> 0.8: (state'=132) + 0.1: (state'=147) + 0.1: (state'=149);
+
+	[right149] state=149 -> 0.8: (state'=150) + 0.1: (state'=133) + 0.1: (state'=165);
+	[down149] state=149 -> 0.8: (state'=165) + 0.1: (state'=148) + 0.1: (state'=150);
+	[left149] state=149 -> 0.8: (state'=148) + 0.1: (state'=133) + 0.1: (state'=165);
+	[up149] state=149 -> 0.8: (state'=133) + 0.1: (state'=148) + 0.1: (state'=150);
+
+	[right150] state=150 -> 0.8: (state'=151) + 0.1: (state'=134) + 0.1: (state'=166);
+	[down150] state=150 -> 0.8: (state'=166) + 0.1: (state'=149) + 0.1: (state'=151);
+	[left150] state=150 -> 0.8: (state'=149) + 0.1: (state'=134) + 0.1: (state'=166);
+	[up150] state=150 -> 0.8: (state'=134) + 0.1: (state'=149) + 0.1: (state'=151);
+
+	[right151] state=151 -> 0.8: (state'=152) + 0.1: (state'=135) + 0.1: (state'=167);
+	[down151] state=151 -> 0.8: (state'=167) + 0.1: (state'=150) + 0.1: (state'=152);
+	[left151] state=151 -> 0.8: (state'=150) + 0.1: (state'=135) + 0.1: (state'=167);
+	[up151] state=151 -> 0.8: (state'=135) + 0.1: (state'=150) + 0.1: (state'=152);
+
+	[right152] state=152 -> 0.8: (state'=153) + 0.1: (state'=136) + 0.1: (state'=168);
+	[down152] state=152 -> 0.8: (state'=168) + 0.1: (state'=151) + 0.1: (state'=153);
+	[left152] state=152 -> 0.8: (state'=151) + 0.1: (state'=136) + 0.1: (state'=168);
+	[up152] state=152 -> 0.8: (state'=136) + 0.1: (state'=151) + 0.1: (state'=153);
+
+	[right153] state=153 -> 0.8: (state'=154) + 0.1: (state'=137) + 0.1: (state'=169);
+	[down153] state=153 -> 0.8: (state'=169) + 0.1: (state'=152) + 0.1: (state'=154);
+	[left153] state=153 -> 0.8: (state'=152) + 0.1: (state'=137) + 0.1: (state'=169);
+	[up153] state=153 -> 0.8: (state'=137) + 0.1: (state'=152) + 0.1: (state'=154);
+
+	[right154] state=154 -> 0.8: (state'=155) + 0.1: (state'=138) + 0.1: (state'=170);
+	[down154] state=154 -> 0.8: (state'=170) + 0.1: (state'=153) + 0.1: (state'=155);
+	[left154] state=154 -> 0.8: (state'=153) + 0.1: (state'=138) + 0.1: (state'=170);
+	[up154] state=154 -> 0.8: (state'=138) + 0.1: (state'=153) + 0.1: (state'=155);
+
+	[right155] state=155 -> 0.8: (state'=156) + 0.1: (state'=139) + 0.1: (state'=171);
+	[down155] state=155 -> 0.8: (state'=171) + 0.1: (state'=154) + 0.1: (state'=156);
+	[left155] state=155 -> 0.8: (state'=154) + 0.1: (state'=139) + 0.1: (state'=171);
+	[up155] state=155 -> 0.8: (state'=139) + 0.1: (state'=154) + 0.1: (state'=156);
+
+	[right156] state=156 -> 0.8: (state'=157) + 0.1: (state'=140) + 0.1: (state'=172);
+	[down156] state=156 -> 0.8: (state'=172) + 0.1: (state'=155) + 0.1: (state'=157);
+	[left156] state=156 -> 0.8: (state'=155) + 0.1: (state'=140) + 0.1: (state'=172);
+	[up156] state=156 -> 0.8: (state'=140) + 0.1: (state'=155) + 0.1: (state'=157);
+
+	[right157] state=157 -> 0.8: (state'=158) + 0.1: (state'=141) + 0.1: (state'=173);
+	[down157] state=157 -> 0.8: (state'=173) + 0.1: (state'=156) + 0.1: (state'=158);
+	[left157] state=157 -> 0.8: (state'=156) + 0.1: (state'=141) + 0.1: (state'=173);
+	[up157] state=157 -> 0.8: (state'=141) + 0.1: (state'=156) + 0.1: (state'=158);
+
+	[right158] state=158 -> 0.8: (state'=159) + 0.1: (state'=142) + 0.1: (state'=174);
+	[down158] state=158 -> 0.8: (state'=174) + 0.1: (state'=157) + 0.1: (state'=159);
+	[left158] state=158 -> 0.8: (state'=157) + 0.1: (state'=142) + 0.1: (state'=174);
+	[up158] state=158 -> 0.8: (state'=142) + 0.1: (state'=157) + 0.1: (state'=159);
+
+	[right159] state=159 -> 0.8: (state'=159) + 0.1: (state'=143) + 0.1: (state'=175);
+	[down159] state=159 -> 0.8: (state'=175) + 0.1: (state'=158) + 0.1: (state'=159);
+	[left159] state=159 -> 0.8: (state'=158) + 0.1: (state'=143) + 0.1: (state'=175);
+	[up159] state=159 -> 0.8: (state'=143) + 0.1: (state'=158) + 0.1: (state'=159);
+
+	[right160] state=160 -> 0.8: (state'=161) + 0.1: (state'=144) + 0.1: (state'=176);
+	[down160] state=160 -> 0.8: (state'=176) + 0.1: (state'=160) + 0.1: (state'=161);
+	[left160] state=160 -> 0.8: (state'=160) + 0.1: (state'=144) + 0.1: (state'=176);
+	[up160] state=160 -> 0.8: (state'=144) + 0.1: (state'=160) + 0.1: (state'=161);
+
+	[right161] state=161 -> 0.8: (state'=162) + 0.1: (state'=145) + 0.1: (state'=177);
+	[down161] state=161 -> 0.8: (state'=177) + 0.1: (state'=160) + 0.1: (state'=162);
+	[left161] state=161 -> 0.8: (state'=160) + 0.1: (state'=145) + 0.1: (state'=177);
+	[up161] state=161 -> 0.8: (state'=145) + 0.1: (state'=160) + 0.1: (state'=162);
+
+	[right162] state=162 -> 0.8: (state'=163) + 0.1: (state'=146) + 0.1: (state'=178);
+	[down162] state=162 -> 0.8: (state'=178) + 0.1: (state'=161) + 0.1: (state'=163);
+	[left162] state=162 -> 0.8: (state'=161) + 0.1: (state'=146) + 0.1: (state'=178);
+	[up162] state=162 -> 0.8: (state'=146) + 0.1: (state'=161) + 0.1: (state'=163);
+
+	[right163] state=163 -> 0.8: (state'=164) + 0.1: (state'=147) + 0.1: (state'=179);
+	[down163] state=163 -> 0.8: (state'=179) + 0.1: (state'=162) + 0.1: (state'=164);
+	[left163] state=163 -> 0.8: (state'=162) + 0.1: (state'=147) + 0.1: (state'=179);
+	[up163] state=163 -> 0.8: (state'=147) + 0.1: (state'=162) + 0.1: (state'=164);
+
+	[right164] state=164 -> 0.8: (state'=165) + 0.1: (state'=148) + 0.1: (state'=180);
+	[down164] state=164 -> 0.8: (state'=180) + 0.1: (state'=163) + 0.1: (state'=165);
+	[left164] state=164 -> 0.8: (state'=163) + 0.1: (state'=148) + 0.1: (state'=180);
+	[up164] state=164 -> 0.8: (state'=148) + 0.1: (state'=163) + 0.1: (state'=165);
+
+	[right165] state=165 -> 0.8: (state'=166) + 0.1: (state'=149) + 0.1: (state'=181);
+	[down165] state=165 -> 0.8: (state'=181) + 0.1: (state'=164) + 0.1: (state'=166);
+	[left165] state=165 -> 0.8: (state'=164) + 0.1: (state'=149) + 0.1: (state'=181);
+	[up165] state=165 -> 0.8: (state'=149) + 0.1: (state'=164) + 0.1: (state'=166);
+
+	[right166] state=166 -> 0.8: (state'=167) + 0.1: (state'=150) + 0.1: (state'=182);
+	[down166] state=166 -> 0.8: (state'=182) + 0.1: (state'=165) + 0.1: (state'=167);
+	[left166] state=166 -> 0.8: (state'=165) + 0.1: (state'=150) + 0.1: (state'=182);
+	[up166] state=166 -> 0.8: (state'=150) + 0.1: (state'=165) + 0.1: (state'=167);
+
+	[right167] state=167 -> 0.8: (state'=168) + 0.1: (state'=151) + 0.1: (state'=183);
+	[down167] state=167 -> 0.8: (state'=183) + 0.1: (state'=166) + 0.1: (state'=168);
+	[left167] state=167 -> 0.8: (state'=166) + 0.1: (state'=151) + 0.1: (state'=183);
+	[up167] state=167 -> 0.8: (state'=151) + 0.1: (state'=166) + 0.1: (state'=168);
+
+	[right168] state=168 -> 0.8: (state'=169) + 0.1: (state'=152) + 0.1: (state'=184);
+	[down168] state=168 -> 0.8: (state'=184) + 0.1: (state'=167) + 0.1: (state'=169);
+	[left168] state=168 -> 0.8: (state'=167) + 0.1: (state'=152) + 0.1: (state'=184);
+	[up168] state=168 -> 0.8: (state'=152) + 0.1: (state'=167) + 0.1: (state'=169);
+
+	[right169] state=169 -> 0.8: (state'=170) + 0.1: (state'=153) + 0.1: (state'=185);
+	[down169] state=169 -> 0.8: (state'=185) + 0.1: (state'=168) + 0.1: (state'=170);
+	[left169] state=169 -> 0.8: (state'=168) + 0.1: (state'=153) + 0.1: (state'=185);
+	[up169] state=169 -> 0.8: (state'=153) + 0.1: (state'=168) + 0.1: (state'=170);
+
+	[right170] state=170 -> 0.8: (state'=171) + 0.1: (state'=154) + 0.1: (state'=186);
+	[down170] state=170 -> 0.8: (state'=186) + 0.1: (state'=169) + 0.1: (state'=171);
+	[left170] state=170 -> 0.8: (state'=169) + 0.1: (state'=154) + 0.1: (state'=186);
+	[up170] state=170 -> 0.8: (state'=154) + 0.1: (state'=169) + 0.1: (state'=171);
+
+	[right171] state=171 -> 0.8: (state'=172) + 0.1: (state'=155) + 0.1: (state'=187);
+	[down171] state=171 -> 0.8: (state'=187) + 0.1: (state'=170) + 0.1: (state'=172);
+	[left171] state=171 -> 0.8: (state'=170) + 0.1: (state'=155) + 0.1: (state'=187);
+	[up171] state=171 -> 0.8: (state'=155) + 0.1: (state'=170) + 0.1: (state'=172);
+
+	[right172] state=172 -> 0.8: (state'=173) + 0.1: (state'=156) + 0.1: (state'=188);
+	[down172] state=172 -> 0.8: (state'=188) + 0.1: (state'=171) + 0.1: (state'=173);
+	[left172] state=172 -> 0.8: (state'=171) + 0.1: (state'=156) + 0.1: (state'=188);
+	[up172] state=172 -> 0.8: (state'=156) + 0.1: (state'=171) + 0.1: (state'=173);
+
+	[right173] state=173 -> 0.8: (state'=174) + 0.1: (state'=157) + 0.1: (state'=189);
+	[down173] state=173 -> 0.8: (state'=189) + 0.1: (state'=172) + 0.1: (state'=174);
+	[left173] state=173 -> 0.8: (state'=172) + 0.1: (state'=157) + 0.1: (state'=189);
+	[up173] state=173 -> 0.8: (state'=157) + 0.1: (state'=172) + 0.1: (state'=174);
+
+	[right174] state=174 -> 0.8: (state'=175) + 0.1: (state'=158) + 0.1: (state'=190);
+	[down174] state=174 -> 0.8: (state'=190) + 0.1: (state'=173) + 0.1: (state'=175);
+	[left174] state=174 -> 0.8: (state'=173) + 0.1: (state'=158) + 0.1: (state'=190);
+	[up174] state=174 -> 0.8: (state'=158) + 0.1: (state'=173) + 0.1: (state'=175);
+
+	[right175] state=175 -> 0.8: (state'=175) + 0.1: (state'=159) + 0.1: (state'=191);
+	[down175] state=175 -> 0.8: (state'=191) + 0.1: (state'=174) + 0.1: (state'=175);
+	[left175] state=175 -> 0.8: (state'=174) + 0.1: (state'=159) + 0.1: (state'=191);
+	[up175] state=175 -> 0.8: (state'=159) + 0.1: (state'=174) + 0.1: (state'=175);
+
+	[right176] state=176 -> 0.8: (state'=177) + 0.1: (state'=160) + 0.1: (state'=192);
+	[down176] state=176 -> 0.8: (state'=192) + 0.1: (state'=176) + 0.1: (state'=177);
+	[left176] state=176 -> 0.8: (state'=176) + 0.1: (state'=160) + 0.1: (state'=192);
+	[up176] state=176 -> 0.8: (state'=160) + 0.1: (state'=176) + 0.1: (state'=177);
+
+	[right177] state=177 -> 0.8: (state'=178) + 0.1: (state'=161) + 0.1: (state'=193);
+	[down177] state=177 -> 0.8: (state'=193) + 0.1: (state'=176) + 0.1: (state'=178);
+	[left177] state=177 -> 0.8: (state'=176) + 0.1: (state'=161) + 0.1: (state'=193);
+	[up177] state=177 -> 0.8: (state'=161) + 0.1: (state'=176) + 0.1: (state'=178);
+
+	[right178] state=178 -> 0.8: (state'=179) + 0.1: (state'=162) + 0.1: (state'=194);
+	[down178] state=178 -> 0.8: (state'=194) + 0.1: (state'=177) + 0.1: (state'=179);
+	[left178] state=178 -> 0.8: (state'=177) + 0.1: (state'=162) + 0.1: (state'=194);
+	[up178] state=178 -> 0.8: (state'=162) + 0.1: (state'=177) + 0.1: (state'=179);
+
+	[right179] state=179 -> 0.8: (state'=180) + 0.1: (state'=163) + 0.1: (state'=195);
+	[down179] state=179 -> 0.8: (state'=195) + 0.1: (state'=178) + 0.1: (state'=180);
+	[left179] state=179 -> 0.8: (state'=178) + 0.1: (state'=163) + 0.1: (state'=195);
+	[up179] state=179 -> 0.8: (state'=163) + 0.1: (state'=178) + 0.1: (state'=180);
+
+	[right180] state=180 -> 0.8: (state'=181) + 0.1: (state'=164) + 0.1: (state'=196);
+	[down180] state=180 -> 0.8: (state'=196) + 0.1: (state'=179) + 0.1: (state'=181);
+	[left180] state=180 -> 0.8: (state'=179) + 0.1: (state'=164) + 0.1: (state'=196);
+	[up180] state=180 -> 0.8: (state'=164) + 0.1: (state'=179) + 0.1: (state'=181);
+
+	[right181] state=181 -> 0.8: (state'=182) + 0.1: (state'=165) + 0.1: (state'=197);
+	[down181] state=181 -> 0.8: (state'=197) + 0.1: (state'=180) + 0.1: (state'=182);
+	[left181] state=181 -> 0.8: (state'=180) + 0.1: (state'=165) + 0.1: (state'=197);
+	[up181] state=181 -> 0.8: (state'=165) + 0.1: (state'=180) + 0.1: (state'=182);
+
+	[right182] state=182 -> 0.8: (state'=183) + 0.1: (state'=166) + 0.1: (state'=198);
+	[down182] state=182 -> 0.8: (state'=198) + 0.1: (state'=181) + 0.1: (state'=183);
+	[left182] state=182 -> 0.8: (state'=181) + 0.1: (state'=166) + 0.1: (state'=198);
+	[up182] state=182 -> 0.8: (state'=166) + 0.1: (state'=181) + 0.1: (state'=183);
+
+	[right183] state=183 -> 0.8: (state'=184) + 0.1: (state'=167) + 0.1: (state'=199);
+	[down183] state=183 -> 0.8: (state'=199) + 0.1: (state'=182) + 0.1: (state'=184);
+	[left183] state=183 -> 0.8: (state'=182) + 0.1: (state'=167) + 0.1: (state'=199);
+	[up183] state=183 -> 0.8: (state'=167) + 0.1: (state'=182) + 0.1: (state'=184);
+
+	[right184] state=184 -> 0.8: (state'=185) + 0.1: (state'=168) + 0.1: (state'=200);
+	[down184] state=184 -> 0.8: (state'=200) + 0.1: (state'=183) + 0.1: (state'=185);
+	[left184] state=184 -> 0.8: (state'=183) + 0.1: (state'=168) + 0.1: (state'=200);
+	[up184] state=184 -> 0.8: (state'=168) + 0.1: (state'=183) + 0.1: (state'=185);
+
+	[right185] state=185 -> 0.8: (state'=186) + 0.1: (state'=169) + 0.1: (state'=201);
+	[down185] state=185 -> 0.8: (state'=201) + 0.1: (state'=184) + 0.1: (state'=186);
+	[left185] state=185 -> 0.8: (state'=184) + 0.1: (state'=169) + 0.1: (state'=201);
+	[up185] state=185 -> 0.8: (state'=169) + 0.1: (state'=184) + 0.1: (state'=186);
+
+	[right186] state=186 -> 0.8: (state'=187) + 0.1: (state'=170) + 0.1: (state'=202);
+	[down186] state=186 -> 0.8: (state'=202) + 0.1: (state'=185) + 0.1: (state'=187);
+	[left186] state=186 -> 0.8: (state'=185) + 0.1: (state'=170) + 0.1: (state'=202);
+	[up186] state=186 -> 0.8: (state'=170) + 0.1: (state'=185) + 0.1: (state'=187);
+
+	[right187] state=187 -> 0.8: (state'=188) + 0.1: (state'=171) + 0.1: (state'=203);
+	[down187] state=187 -> 0.8: (state'=203) + 0.1: (state'=186) + 0.1: (state'=188);
+	[left187] state=187 -> 0.8: (state'=186) + 0.1: (state'=171) + 0.1: (state'=203);
+	[up187] state=187 -> 0.8: (state'=171) + 0.1: (state'=186) + 0.1: (state'=188);
+
+	[right188] state=188 -> 0.8: (state'=189) + 0.1: (state'=172) + 0.1: (state'=204);
+	[down188] state=188 -> 0.8: (state'=204) + 0.1: (state'=187) + 0.1: (state'=189);
+	[left188] state=188 -> 0.8: (state'=187) + 0.1: (state'=172) + 0.1: (state'=204);
+	[up188] state=188 -> 0.8: (state'=172) + 0.1: (state'=187) + 0.1: (state'=189);
+
+	[right189] state=189 -> 0.8: (state'=190) + 0.1: (state'=173) + 0.1: (state'=205);
+	[down189] state=189 -> 0.8: (state'=205) + 0.1: (state'=188) + 0.1: (state'=190);
+	[left189] state=189 -> 0.8: (state'=188) + 0.1: (state'=173) + 0.1: (state'=205);
+	[up189] state=189 -> 0.8: (state'=173) + 0.1: (state'=188) + 0.1: (state'=190);
+
+	[right190] state=190 -> 0.8: (state'=191) + 0.1: (state'=174) + 0.1: (state'=206);
+	[down190] state=190 -> 0.8: (state'=206) + 0.1: (state'=189) + 0.1: (state'=191);
+	[left190] state=190 -> 0.8: (state'=189) + 0.1: (state'=174) + 0.1: (state'=206);
+	[up190] state=190 -> 0.8: (state'=174) + 0.1: (state'=189) + 0.1: (state'=191);
+
+	[right191] state=191 -> 0.8: (state'=191) + 0.1: (state'=175) + 0.1: (state'=207);
+	[down191] state=191 -> 0.8: (state'=207) + 0.1: (state'=190) + 0.1: (state'=191);
+	[left191] state=191 -> 0.8: (state'=190) + 0.1: (state'=175) + 0.1: (state'=207);
+	[up191] state=191 -> 0.8: (state'=175) + 0.1: (state'=190) + 0.1: (state'=191);
+
+	[right192] state=192 -> 0.8: (state'=193) + 0.1: (state'=176) + 0.1: (state'=208);
+	[down192] state=192 -> 0.8: (state'=208) + 0.1: (state'=192) + 0.1: (state'=193);
+	[left192] state=192 -> 0.8: (state'=192) + 0.1: (state'=176) + 0.1: (state'=208);
+	[up192] state=192 -> 0.8: (state'=176) + 0.1: (state'=192) + 0.1: (state'=193);
+
+	[right193] state=193 -> 0.8: (state'=194) + 0.1: (state'=177) + 0.1: (state'=209);
+	[down193] state=193 -> 0.8: (state'=209) + 0.1: (state'=192) + 0.1: (state'=194);
+	[left193] state=193 -> 0.8: (state'=192) + 0.1: (state'=177) + 0.1: (state'=209);
+	[up193] state=193 -> 0.8: (state'=177) + 0.1: (state'=192) + 0.1: (state'=194);
+
+	[right194] state=194 -> 0.8: (state'=195) + 0.1: (state'=178) + 0.1: (state'=210);
+	[down194] state=194 -> 0.8: (state'=210) + 0.1: (state'=193) + 0.1: (state'=195);
+	[left194] state=194 -> 0.8: (state'=193) + 0.1: (state'=178) + 0.1: (state'=210);
+	[up194] state=194 -> 0.8: (state'=178) + 0.1: (state'=193) + 0.1: (state'=195);
+
+	[right195] state=195 -> 0.8: (state'=196) + 0.1: (state'=179) + 0.1: (state'=211);
+	[down195] state=195 -> 0.8: (state'=211) + 0.1: (state'=194) + 0.1: (state'=196);
+	[left195] state=195 -> 0.8: (state'=194) + 0.1: (state'=179) + 0.1: (state'=211);
+	[up195] state=195 -> 0.8: (state'=179) + 0.1: (state'=194) + 0.1: (state'=196);
+
+	[right196] state=196 -> 0.8: (state'=197) + 0.1: (state'=180) + 0.1: (state'=212);
+	[down196] state=196 -> 0.8: (state'=212) + 0.1: (state'=195) + 0.1: (state'=197);
+	[left196] state=196 -> 0.8: (state'=195) + 0.1: (state'=180) + 0.1: (state'=212);
+	[up196] state=196 -> 0.8: (state'=180) + 0.1: (state'=195) + 0.1: (state'=197);
+
+	[right197] state=197 -> 0.8: (state'=198) + 0.1: (state'=181) + 0.1: (state'=213);
+	[down197] state=197 -> 0.8: (state'=213) + 0.1: (state'=196) + 0.1: (state'=198);
+	[left197] state=197 -> 0.8: (state'=196) + 0.1: (state'=181) + 0.1: (state'=213);
+	[up197] state=197 -> 0.8: (state'=181) + 0.1: (state'=196) + 0.1: (state'=198);
+
+	[right198] state=198 -> 0.8: (state'=199) + 0.1: (state'=182) + 0.1: (state'=214);
+	[down198] state=198 -> 0.8: (state'=214) + 0.1: (state'=197) + 0.1: (state'=199);
+	[left198] state=198 -> 0.8: (state'=197) + 0.1: (state'=182) + 0.1: (state'=214);
+	[up198] state=198 -> 0.8: (state'=182) + 0.1: (state'=197) + 0.1: (state'=199);
+
+	[right199] state=199 -> 0.8: (state'=200) + 0.1: (state'=183) + 0.1: (state'=215);
+	[down199] state=199 -> 0.8: (state'=215) + 0.1: (state'=198) + 0.1: (state'=200);
+	[left199] state=199 -> 0.8: (state'=198) + 0.1: (state'=183) + 0.1: (state'=215);
+	[up199] state=199 -> 0.8: (state'=183) + 0.1: (state'=198) + 0.1: (state'=200);
+
+	[right200] state=200 -> 0.8: (state'=201) + 0.1: (state'=184) + 0.1: (state'=216);
+	[down200] state=200 -> 0.8: (state'=216) + 0.1: (state'=199) + 0.1: (state'=201);
+	[left200] state=200 -> 0.8: (state'=199) + 0.1: (state'=184) + 0.1: (state'=216);
+	[up200] state=200 -> 0.8: (state'=184) + 0.1: (state'=199) + 0.1: (state'=201);
+
+	[right201] state=201 -> 0.8: (state'=202) + 0.1: (state'=185) + 0.1: (state'=217);
+	[down201] state=201 -> 0.8: (state'=217) + 0.1: (state'=200) + 0.1: (state'=202);
+	[left201] state=201 -> 0.8: (state'=200) + 0.1: (state'=185) + 0.1: (state'=217);
+	[up201] state=201 -> 0.8: (state'=185) + 0.1: (state'=200) + 0.1: (state'=202);
+
+	[right202] state=202 -> 0.8: (state'=203) + 0.1: (state'=186) + 0.1: (state'=218);
+	[down202] state=202 -> 0.8: (state'=218) + 0.1: (state'=201) + 0.1: (state'=203);
+	[left202] state=202 -> 0.8: (state'=201) + 0.1: (state'=186) + 0.1: (state'=218);
+	[up202] state=202 -> 0.8: (state'=186) + 0.1: (state'=201) + 0.1: (state'=203);
+
+	[right203] state=203 -> 0.8: (state'=204) + 0.1: (state'=187) + 0.1: (state'=219);
+	[down203] state=203 -> 0.8: (state'=219) + 0.1: (state'=202) + 0.1: (state'=204);
+	[left203] state=203 -> 0.8: (state'=202) + 0.1: (state'=187) + 0.1: (state'=219);
+	[up203] state=203 -> 0.8: (state'=187) + 0.1: (state'=202) + 0.1: (state'=204);
+
+	[right204] state=204 -> 0.8: (state'=205) + 0.1: (state'=188) + 0.1: (state'=220);
+	[down204] state=204 -> 0.8: (state'=220) + 0.1: (state'=203) + 0.1: (state'=205);
+	[left204] state=204 -> 0.8: (state'=203) + 0.1: (state'=188) + 0.1: (state'=220);
+	[up204] state=204 -> 0.8: (state'=188) + 0.1: (state'=203) + 0.1: (state'=205);
+
+	[right205] state=205 -> 0.8: (state'=206) + 0.1: (state'=189) + 0.1: (state'=221);
+	[down205] state=205 -> 0.8: (state'=221) + 0.1: (state'=204) + 0.1: (state'=206);
+	[left205] state=205 -> 0.8: (state'=204) + 0.1: (state'=189) + 0.1: (state'=221);
+	[up205] state=205 -> 0.8: (state'=189) + 0.1: (state'=204) + 0.1: (state'=206);
+
+	[right206] state=206 -> 0.8: (state'=207) + 0.1: (state'=190) + 0.1: (state'=222);
+	[down206] state=206 -> 0.8: (state'=222) + 0.1: (state'=205) + 0.1: (state'=207);
+	[left206] state=206 -> 0.8: (state'=205) + 0.1: (state'=190) + 0.1: (state'=222);
+	[up206] state=206 -> 0.8: (state'=190) + 0.1: (state'=205) + 0.1: (state'=207);
+
+	[right207] state=207 -> 0.8: (state'=207) + 0.1: (state'=191) + 0.1: (state'=223);
+	[down207] state=207 -> 0.8: (state'=223) + 0.1: (state'=206) + 0.1: (state'=207);
+	[left207] state=207 -> 0.8: (state'=206) + 0.1: (state'=191) + 0.1: (state'=223);
+	[up207] state=207 -> 0.8: (state'=191) + 0.1: (state'=206) + 0.1: (state'=207);
+
+	[right208] state=208 -> 0.8: (state'=209) + 0.1: (state'=192) + 0.1: (state'=224);
+	[down208] state=208 -> 0.8: (state'=224) + 0.1: (state'=208) + 0.1: (state'=209);
+	[left208] state=208 -> 0.8: (state'=208) + 0.1: (state'=192) + 0.1: (state'=224);
+	[up208] state=208 -> 0.8: (state'=192) + 0.1: (state'=208) + 0.1: (state'=209);
+
+	[right209] state=209 -> 0.8: (state'=210) + 0.1: (state'=193) + 0.1: (state'=225);
+	[down209] state=209 -> 0.8: (state'=225) + 0.1: (state'=208) + 0.1: (state'=210);
+	[left209] state=209 -> 0.8: (state'=208) + 0.1: (state'=193) + 0.1: (state'=225);
+	[up209] state=209 -> 0.8: (state'=193) + 0.1: (state'=208) + 0.1: (state'=210);
+
+	[right210] state=210 -> 0.8: (state'=211) + 0.1: (state'=194) + 0.1: (state'=226);
+	[down210] state=210 -> 0.8: (state'=226) + 0.1: (state'=209) + 0.1: (state'=211);
+	[left210] state=210 -> 0.8: (state'=209) + 0.1: (state'=194) + 0.1: (state'=226);
+	[up210] state=210 -> 0.8: (state'=194) + 0.1: (state'=209) + 0.1: (state'=211);
+
+	[right211] state=211 -> 0.8: (state'=212) + 0.1: (state'=195) + 0.1: (state'=227);
+	[down211] state=211 -> 0.8: (state'=227) + 0.1: (state'=210) + 0.1: (state'=212);
+	[left211] state=211 -> 0.8: (state'=210) + 0.1: (state'=195) + 0.1: (state'=227);
+	[up211] state=211 -> 0.8: (state'=195) + 0.1: (state'=210) + 0.1: (state'=212);
+
+	[right212] state=212 -> 0.8: (state'=213) + 0.1: (state'=196) + 0.1: (state'=228);
+	[down212] state=212 -> 0.8: (state'=228) + 0.1: (state'=211) + 0.1: (state'=213);
+	[left212] state=212 -> 0.8: (state'=211) + 0.1: (state'=196) + 0.1: (state'=228);
+	[up212] state=212 -> 0.8: (state'=196) + 0.1: (state'=211) + 0.1: (state'=213);
+
+	[right213] state=213 -> 0.8: (state'=214) + 0.1: (state'=197) + 0.1: (state'=229);
+	[down213] state=213 -> 0.8: (state'=229) + 0.1: (state'=212) + 0.1: (state'=214);
+	[left213] state=213 -> 0.8: (state'=212) + 0.1: (state'=197) + 0.1: (state'=229);
+	[up213] state=213 -> 0.8: (state'=197) + 0.1: (state'=212) + 0.1: (state'=214);
+
+	[right214] state=214 -> 0.8: (state'=215) + 0.1: (state'=198) + 0.1: (state'=230);
+	[down214] state=214 -> 0.8: (state'=230) + 0.1: (state'=213) + 0.1: (state'=215);
+	[left214] state=214 -> 0.8: (state'=213) + 0.1: (state'=198) + 0.1: (state'=230);
+	[up214] state=214 -> 0.8: (state'=198) + 0.1: (state'=213) + 0.1: (state'=215);
+
+	[right215] state=215 -> 0.8: (state'=216) + 0.1: (state'=199) + 0.1: (state'=231);
+	[down215] state=215 -> 0.8: (state'=231) + 0.1: (state'=214) + 0.1: (state'=216);
+	[left215] state=215 -> 0.8: (state'=214) + 0.1: (state'=199) + 0.1: (state'=231);
+	[up215] state=215 -> 0.8: (state'=199) + 0.1: (state'=214) + 0.1: (state'=216);
+
+	[right216] state=216 -> 0.8: (state'=217) + 0.1: (state'=200) + 0.1: (state'=232);
+	[down216] state=216 -> 0.8: (state'=232) + 0.1: (state'=215) + 0.1: (state'=217);
+	[left216] state=216 -> 0.8: (state'=215) + 0.1: (state'=200) + 0.1: (state'=232);
+	[up216] state=216 -> 0.8: (state'=200) + 0.1: (state'=215) + 0.1: (state'=217);
+
+	[right217] state=217 -> 0.8: (state'=218) + 0.1: (state'=201) + 0.1: (state'=233);
+	[down217] state=217 -> 0.8: (state'=233) + 0.1: (state'=216) + 0.1: (state'=218);
+	[left217] state=217 -> 0.8: (state'=216) + 0.1: (state'=201) + 0.1: (state'=233);
+	[up217] state=217 -> 0.8: (state'=201) + 0.1: (state'=216) + 0.1: (state'=218);
+
+	[right218] state=218 -> 0.8: (state'=219) + 0.1: (state'=202) + 0.1: (state'=234);
+	[down218] state=218 -> 0.8: (state'=234) + 0.1: (state'=217) + 0.1: (state'=219);
+	[left218] state=218 -> 0.8: (state'=217) + 0.1: (state'=202) + 0.1: (state'=234);
+	[up218] state=218 -> 0.8: (state'=202) + 0.1: (state'=217) + 0.1: (state'=219);
+
+	[right219] state=219 -> 0.8: (state'=220) + 0.1: (state'=203) + 0.1: (state'=235);
+	[down219] state=219 -> 0.8: (state'=235) + 0.1: (state'=218) + 0.1: (state'=220);
+	[left219] state=219 -> 0.8: (state'=218) + 0.1: (state'=203) + 0.1: (state'=235);
+	[up219] state=219 -> 0.8: (state'=203) + 0.1: (state'=218) + 0.1: (state'=220);
+
+	[right220] state=220 -> 0.8: (state'=221) + 0.1: (state'=204) + 0.1: (state'=236);
+	[down220] state=220 -> 0.8: (state'=236) + 0.1: (state'=219) + 0.1: (state'=221);
+	[left220] state=220 -> 0.8: (state'=219) + 0.1: (state'=204) + 0.1: (state'=236);
+	[up220] state=220 -> 0.8: (state'=204) + 0.1: (state'=219) + 0.1: (state'=221);
+
+	[right221] state=221 -> 0.8: (state'=222) + 0.1: (state'=205) + 0.1: (state'=237);
+	[down221] state=221 -> 0.8: (state'=237) + 0.1: (state'=220) + 0.1: (state'=222);
+	[left221] state=221 -> 0.8: (state'=220) + 0.1: (state'=205) + 0.1: (state'=237);
+	[up221] state=221 -> 0.8: (state'=205) + 0.1: (state'=220) + 0.1: (state'=222);
+
+	[right222] state=222 -> 0.8: (state'=223) + 0.1: (state'=206) + 0.1: (state'=238);
+	[down222] state=222 -> 0.8: (state'=238) + 0.1: (state'=221) + 0.1: (state'=223);
+	[left222] state=222 -> 0.8: (state'=221) + 0.1: (state'=206) + 0.1: (state'=238);
+	[up222] state=222 -> 0.8: (state'=206) + 0.1: (state'=221) + 0.1: (state'=223);
+
+	[right223] state=223 -> 0.8: (state'=223) + 0.1: (state'=207) + 0.1: (state'=239);
+	[down223] state=223 -> 0.8: (state'=239) + 0.1: (state'=222) + 0.1: (state'=223);
+	[left223] state=223 -> 0.8: (state'=222) + 0.1: (state'=207) + 0.1: (state'=239);
+	[up223] state=223 -> 0.8: (state'=207) + 0.1: (state'=222) + 0.1: (state'=223);
+
+	[right224] state=224 -> 0.8: (state'=225) + 0.1: (state'=208) + 0.1: (state'=240);
+	[down224] state=224 -> 0.8: (state'=240) + 0.1: (state'=224) + 0.1: (state'=225);
+	[left224] state=224 -> 0.8: (state'=224) + 0.1: (state'=208) + 0.1: (state'=240);
+	[up224] state=224 -> 0.8: (state'=208) + 0.1: (state'=224) + 0.1: (state'=225);
+
+	[right225] state=225 -> 0.8: (state'=226) + 0.1: (state'=209) + 0.1: (state'=241);
+	[down225] state=225 -> 0.8: (state'=241) + 0.1: (state'=224) + 0.1: (state'=226);
+	[left225] state=225 -> 0.8: (state'=224) + 0.1: (state'=209) + 0.1: (state'=241);
+	[up225] state=225 -> 0.8: (state'=209) + 0.1: (state'=224) + 0.1: (state'=226);
+
+	[right226] state=226 -> 0.8: (state'=227) + 0.1: (state'=210) + 0.1: (state'=242);
+	[down226] state=226 -> 0.8: (state'=242) + 0.1: (state'=225) + 0.1: (state'=227);
+	[left226] state=226 -> 0.8: (state'=225) + 0.1: (state'=210) + 0.1: (state'=242);
+	[up226] state=226 -> 0.8: (state'=210) + 0.1: (state'=225) + 0.1: (state'=227);
+
+	[right227] state=227 -> 0.8: (state'=228) + 0.1: (state'=211) + 0.1: (state'=243);
+	[down227] state=227 -> 0.8: (state'=243) + 0.1: (state'=226) + 0.1: (state'=228);
+	[left227] state=227 -> 0.8: (state'=226) + 0.1: (state'=211) + 0.1: (state'=243);
+	[up227] state=227 -> 0.8: (state'=211) + 0.1: (state'=226) + 0.1: (state'=228);
+
+	[right228] state=228 -> 0.8: (state'=229) + 0.1: (state'=212) + 0.1: (state'=244);
+	[down228] state=228 -> 0.8: (state'=244) + 0.1: (state'=227) + 0.1: (state'=229);
+	[left228] state=228 -> 0.8: (state'=227) + 0.1: (state'=212) + 0.1: (state'=244);
+	[up228] state=228 -> 0.8: (state'=212) + 0.1: (state'=227) + 0.1: (state'=229);
+
+	[right229] state=229 -> 0.8: (state'=230) + 0.1: (state'=213) + 0.1: (state'=245);
+	[down229] state=229 -> 0.8: (state'=245) + 0.1: (state'=228) + 0.1: (state'=230);
+	[left229] state=229 -> 0.8: (state'=228) + 0.1: (state'=213) + 0.1: (state'=245);
+	[up229] state=229 -> 0.8: (state'=213) + 0.1: (state'=228) + 0.1: (state'=230);
+
+	[right230] state=230 -> 0.8: (state'=231) + 0.1: (state'=214) + 0.1: (state'=246);
+	[down230] state=230 -> 0.8: (state'=246) + 0.1: (state'=229) + 0.1: (state'=231);
+	[left230] state=230 -> 0.8: (state'=229) + 0.1: (state'=214) + 0.1: (state'=246);
+	[up230] state=230 -> 0.8: (state'=214) + 0.1: (state'=229) + 0.1: (state'=231);
+
+	[right231] state=231 -> 0.8: (state'=232) + 0.1: (state'=215) + 0.1: (state'=247);
+	[down231] state=231 -> 0.8: (state'=247) + 0.1: (state'=230) + 0.1: (state'=232);
+	[left231] state=231 -> 0.8: (state'=230) + 0.1: (state'=215) + 0.1: (state'=247);
+	[up231] state=231 -> 0.8: (state'=215) + 0.1: (state'=230) + 0.1: (state'=232);
+
+	[right232] state=232 -> 0.8: (state'=233) + 0.1: (state'=216) + 0.1: (state'=248);
+	[down232] state=232 -> 0.8: (state'=248) + 0.1: (state'=231) + 0.1: (state'=233);
+	[left232] state=232 -> 0.8: (state'=231) + 0.1: (state'=216) + 0.1: (state'=248);
+	[up232] state=232 -> 0.8: (state'=216) + 0.1: (state'=231) + 0.1: (state'=233);
+
+	[right233] state=233 -> 0.8: (state'=234) + 0.1: (state'=217) + 0.1: (state'=249);
+	[down233] state=233 -> 0.8: (state'=249) + 0.1: (state'=232) + 0.1: (state'=234);
+	[left233] state=233 -> 0.8: (state'=232) + 0.1: (state'=217) + 0.1: (state'=249);
+	[up233] state=233 -> 0.8: (state'=217) + 0.1: (state'=232) + 0.1: (state'=234);
+
+	[right234] state=234 -> 0.8: (state'=235) + 0.1: (state'=218) + 0.1: (state'=250);
+	[down234] state=234 -> 0.8: (state'=250) + 0.1: (state'=233) + 0.1: (state'=235);
+	[left234] state=234 -> 0.8: (state'=233) + 0.1: (state'=218) + 0.1: (state'=250);
+	[up234] state=234 -> 0.8: (state'=218) + 0.1: (state'=233) + 0.1: (state'=235);
+
+	[right235] state=235 -> 0.8: (state'=236) + 0.1: (state'=219) + 0.1: (state'=251);
+	[down235] state=235 -> 0.8: (state'=251) + 0.1: (state'=234) + 0.1: (state'=236);
+	[left235] state=235 -> 0.8: (state'=234) + 0.1: (state'=219) + 0.1: (state'=251);
+	[up235] state=235 -> 0.8: (state'=219) + 0.1: (state'=234) + 0.1: (state'=236);
+
+	[right236] state=236 -> 0.8: (state'=237) + 0.1: (state'=220) + 0.1: (state'=252);
+	[down236] state=236 -> 0.8: (state'=252) + 0.1: (state'=235) + 0.1: (state'=237);
+	[left236] state=236 -> 0.8: (state'=235) + 0.1: (state'=220) + 0.1: (state'=252);
+	[up236] state=236 -> 0.8: (state'=220) + 0.1: (state'=235) + 0.1: (state'=237);
+
+	[right237] state=237 -> 0.8: (state'=238) + 0.1: (state'=221) + 0.1: (state'=253);
+	[down237] state=237 -> 0.8: (state'=253) + 0.1: (state'=236) + 0.1: (state'=238);
+	[left237] state=237 -> 0.8: (state'=236) + 0.1: (state'=221) + 0.1: (state'=253);
+	[up237] state=237 -> 0.8: (state'=221) + 0.1: (state'=236) + 0.1: (state'=238);
+
+	[right238] state=238 -> 0.8: (state'=239) + 0.1: (state'=222) + 0.1: (state'=254);
+	[down238] state=238 -> 0.8: (state'=254) + 0.1: (state'=237) + 0.1: (state'=239);
+	[left238] state=238 -> 0.8: (state'=237) + 0.1: (state'=222) + 0.1: (state'=254);
+	[up238] state=238 -> 0.8: (state'=222) + 0.1: (state'=237) + 0.1: (state'=239);
+
+	[right239] state=239 -> 0.8: (state'=239) + 0.1: (state'=223) + 0.1: (state'=255);
+	[down239] state=239 -> 0.8: (state'=255) + 0.1: (state'=238) + 0.1: (state'=239);
+	[left239] state=239 -> 0.8: (state'=238) + 0.1: (state'=223) + 0.1: (state'=255);
+	[up239] state=239 -> 0.8: (state'=223) + 0.1: (state'=238) + 0.1: (state'=239);
+
+	[right240] state=240 -> 0.8: (state'=241) + 0.1: (state'=224) + 0.1: (state'=240);
+	[down240] state=240 -> 0.9: (state'=240) + 0.1: (state'=241);
+	[left240] state=240 -> 0.9: (state'=240) + 0.1: (state'=224);
+	[up240] state=240 -> 0.8: (state'=224) + 0.1: (state'=240) + 0.1: (state'=241);
+
+	[right241] state=241 -> 0.8: (state'=242) + 0.1: (state'=225) + 0.1: (state'=241);
+	[down241] state=241 -> 0.8: (state'=241) + 0.1: (state'=240) + 0.1: (state'=242);
+	[left241] state=241 -> 0.8: (state'=240) + 0.1: (state'=225) + 0.1: (state'=241);
+	[up241] state=241 -> 0.8: (state'=225) + 0.1: (state'=240) + 0.1: (state'=242);
+
+	[right242] state=242 -> 0.8: (state'=243) + 0.1: (state'=226) + 0.1: (state'=242);
+	[down242] state=242 -> 0.8: (state'=242) + 0.1: (state'=241) + 0.1: (state'=243);
+	[left242] state=242 -> 0.8: (state'=241) + 0.1: (state'=226) + 0.1: (state'=242);
+	[up242] state=242 -> 0.8: (state'=226) + 0.1: (state'=241) + 0.1: (state'=243);
+
+	[right243] state=243 -> 0.8: (state'=244) + 0.1: (state'=227) + 0.1: (state'=243);
+	[down243] state=243 -> 0.8: (state'=243) + 0.1: (state'=242) + 0.1: (state'=244);
+	[left243] state=243 -> 0.8: (state'=242) + 0.1: (state'=227) + 0.1: (state'=243);
+	[up243] state=243 -> 0.8: (state'=227) + 0.1: (state'=242) + 0.1: (state'=244);
+
+	[right244] state=244 -> 0.8: (state'=245) + 0.1: (state'=228) + 0.1: (state'=244);
+	[down244] state=244 -> 0.8: (state'=244) + 0.1: (state'=243) + 0.1: (state'=245);
+	[left244] state=244 -> 0.8: (state'=243) + 0.1: (state'=228) + 0.1: (state'=244);
+	[up244] state=244 -> 0.8: (state'=228) + 0.1: (state'=243) + 0.1: (state'=245);
+
+	[right245] state=245 -> 0.8: (state'=246) + 0.1: (state'=229) + 0.1: (state'=245);
+	[down245] state=245 -> 0.8: (state'=245) + 0.1: (state'=244) + 0.1: (state'=246);
+	[left245] state=245 -> 0.8: (state'=244) + 0.1: (state'=229) + 0.1: (state'=245);
+	[up245] state=245 -> 0.8: (state'=229) + 0.1: (state'=244) + 0.1: (state'=246);
+
+	[right246] state=246 -> 0.8: (state'=247) + 0.1: (state'=230) + 0.1: (state'=246);
+	[down246] state=246 -> 0.8: (state'=246) + 0.1: (state'=245) + 0.1: (state'=247);
+	[left246] state=246 -> 0.8: (state'=245) + 0.1: (state'=230) + 0.1: (state'=246);
+	[up246] state=246 -> 0.8: (state'=230) + 0.1: (state'=245) + 0.1: (state'=247);
+
+	[right247] state=247 -> 0.8: (state'=248) + 0.1: (state'=231) + 0.1: (state'=247);
+	[down247] state=247 -> 0.8: (state'=247) + 0.1: (state'=246) + 0.1: (state'=248);
+	[left247] state=247 -> 0.8: (state'=246) + 0.1: (state'=231) + 0.1: (state'=247);
+	[up247] state=247 -> 0.8: (state'=231) + 0.1: (state'=246) + 0.1: (state'=248);
+
+	[right248] state=248 -> 0.8: (state'=249) + 0.1: (state'=232) + 0.1: (state'=248);
+	[down248] state=248 -> 0.8: (state'=248) + 0.1: (state'=247) + 0.1: (state'=249);
+	[left248] state=248 -> 0.8: (state'=247) + 0.1: (state'=232) + 0.1: (state'=248);
+	[up248] state=248 -> 0.8: (state'=232) + 0.1: (state'=247) + 0.1: (state'=249);
+
+	[right249] state=249 -> 0.8: (state'=250) + 0.1: (state'=233) + 0.1: (state'=249);
+	[down249] state=249 -> 0.8: (state'=249) + 0.1: (state'=248) + 0.1: (state'=250);
+	[left249] state=249 -> 0.8: (state'=248) + 0.1: (state'=233) + 0.1: (state'=249);
+	[up249] state=249 -> 0.8: (state'=233) + 0.1: (state'=248) + 0.1: (state'=250);
+
+	[right250] state=250 -> 0.8: (state'=251) + 0.1: (state'=234) + 0.1: (state'=250);
+	[down250] state=250 -> 0.8: (state'=250) + 0.1: (state'=249) + 0.1: (state'=251);
+	[left250] state=250 -> 0.8: (state'=249) + 0.1: (state'=234) + 0.1: (state'=250);
+	[up250] state=250 -> 0.8: (state'=234) + 0.1: (state'=249) + 0.1: (state'=251);
+
+	[right251] state=251 -> 0.8: (state'=252) + 0.1: (state'=235) + 0.1: (state'=251);
+	[down251] state=251 -> 0.8: (state'=251) + 0.1: (state'=250) + 0.1: (state'=252);
+	[left251] state=251 -> 0.8: (state'=250) + 0.1: (state'=235) + 0.1: (state'=251);
+	[up251] state=251 -> 0.8: (state'=235) + 0.1: (state'=250) + 0.1: (state'=252);
+
+	[right252] state=252 -> 0.8: (state'=253) + 0.1: (state'=236) + 0.1: (state'=252);
+	[down252] state=252 -> 0.8: (state'=252) + 0.1: (state'=251) + 0.1: (state'=253);
+	[left252] state=252 -> 0.8: (state'=251) + 0.1: (state'=236) + 0.1: (state'=252);
+	[up252] state=252 -> 0.8: (state'=236) + 0.1: (state'=251) + 0.1: (state'=253);
+
+	[right253] state=253 -> 0.8: (state'=254) + 0.1: (state'=237) + 0.1: (state'=253);
+	[down253] state=253 -> 0.8: (state'=253) + 0.1: (state'=252) + 0.1: (state'=254);
+	[left253] state=253 -> 0.8: (state'=252) + 0.1: (state'=237) + 0.1: (state'=253);
+	[up253] state=253 -> 0.8: (state'=237) + 0.1: (state'=252) + 0.1: (state'=254);
+
+	[right254] state=254 -> 0.8: (state'=255) + 0.1: (state'=238) + 0.1: (state'=254);
+	[down254] state=254 -> 0.8: (state'=254) + 0.1: (state'=253) + 0.1: (state'=255);
+	[left254] state=254 -> 0.8: (state'=253) + 0.1: (state'=238) + 0.1: (state'=254);
+	[up254] state=254 -> 0.8: (state'=238) + 0.1: (state'=253) + 0.1: (state'=255);
+
+	[right255] state=255 -> 0.9: (state'=255) + 0.1: (state'=239);
+	[down255] state=255 -> 0.9: (state'=255) + 0.1: (state'=254);
+	[left255] state=255 -> 0.8: (state'=254) + 0.1: (state'=239) + 0.1: (state'=255);
+	[up255] state=255 -> 0.8: (state'=239) + 0.1: (state'=254) + 0.1: (state'=255);
+
+endmodule
+
+label "a" = state=51 | state=61 | state=127 | state=118 | state=81 | state=41 | state=102 | state=181 | state=54 | state=136 | state=120 | state=70 | state=122 | state=152 | state=58 | state=167 | state=190 | state=57 | state=182 | state=210 | state=237 | state=238 | state=168 | state=31 | state=33 | state=114 | state=206 | state=104 | state=146 | state=73 | state=63 | state=132 | state=131 | state=184 | state=75 | state=50 | state=117 | state=253 | state=228 | state=125 | state=213 | state=199 | state=6 | state=242 | state=60 | state=169 | state=8 | state=11 | state=186 | state=235 | state=106 | state=211 | state=3 | state=230 | state=170 | state=179 | state=115 | state=252 | state=129 | state=216 | state=124 | state=185 | state=255 | state=1;
+label "b" = state=53 | state=138 | state=221 | state=203 | state=97 | state=162 | state=155 | state=214 | state=25 | state=202 | state=244 | state=9 | state=5 | state=141 | state=198 | state=65 | state=248 | state=4 | state=180 | state=164 | state=52 | state=137 | state=72 | state=135 | state=113 | state=43 | state=14 | state=229 | state=227 | state=24 | state=145 | state=212 | state=231 | state=103 | state=44 | state=76 | state=189 | state=119 | state=66 | state=243 | state=36 | state=172 | state=250 | state=239 | state=98 | state=195 | state=62 | state=10 | state=193 | state=111 | state=46 | state=19 | state=154 | state=112 | state=166 | state=187 | state=27 | state=68 | state=23 | state=13 | state=110 | state=35 | state=183 | state=134;
+label "c" = state=47 | state=192 | state=107 | state=15 | state=218 | state=207 | state=128 | state=82 | state=150 | state=2 | state=151 | state=143 | state=108 | state=86 | state=200 | state=241 | state=87 | state=139 | state=173 | state=157 | state=147 | state=7 | state=219 | state=28 | state=34 | state=96 | state=222 | state=196 | state=99 | state=29 | state=236 | state=85 | state=249 | state=232 | state=79 | state=16 | state=163 | state=71 | state=93 | state=89 | state=159 | state=121 | state=240 | state=233 | state=55 | state=69 | state=101 | state=59 | state=74 | state=64 | state=90 | state=80 | state=40 | state=30 | state=158 | state=22 | state=174 | state=32 | state=226 | state=67 | state=45 | state=223 | state=12 | state=176;
+label "d" = state=0 | state=17 | state=18 | state=20 | state=21 | state=26 | state=37 | state=38 | state=39 | state=42 | state=48 | state=49 | state=56 | state=77 | state=78 | state=83 | state=84 | state=88 | state=91 | state=92 | state=94 | state=95 | state=100 | state=105 | state=109 | state=116 | state=123 | state=126 | state=130 | state=133 | state=140 | state=142 | state=144 | state=148 | state=149 | state=153 | state=156 | state=160 | state=161 | state=165 | state=171 | state=175 | state=177 | state=178 | state=188 | state=191 | state=194 | state=197 | state=201 | state=204 | state=205 | state=208 | state=209 | state=215 | state=217 | state=220 | state=224 | state=225 | state=234 | state=245 | state=246 | state=247 | state=251 | state=254;
+
+rewards "default"
+    state=47 | state=192 | state=107 | state=15 | state=218 | state=207 | state=128 | state=82 | state=150 | state=2 | state=151 | state=143 | state=108 | state=86 | state=200 | state=241 | state=87 | state=139 | state=173 | state=157 | state=147 | state=7 | state=219 | state=28 | state=34 | state=96 | state=222 | state=196 | state=99 | state=29 | state=236 | state=85 | state=249 | state=232 | state=79 | state=16 | state=163 | state=71 | state=93 | state=89 | state=159 | state=121 | state=240 | state=233 | state=55 | state=69 | state=101 | state=59 | state=74 | state=64 | state=90 | state=80 | state=40 | state=30 | state=158 | state=22 | state=174 | state=32 | state=226 | state=67 | state=45 | state=223 | state=12 | state=176 : 1;
+endrewards

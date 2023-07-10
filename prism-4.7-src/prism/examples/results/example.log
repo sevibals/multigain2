@@ -1,0 +1,223 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Mon Aug 08 21:24:49 CEST 2022
+Hostname: JakobMac.local
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism examples/example.nm examples/example.props --gurobi
+
+Parsing model file "examples/example.nm"...
+
+Type:        MDP
+Modules:     lecture 
+Variables:   state 
+
+Parsing properties file "examples/example.props"...
+
+4 properties:
+(1) multi(R{"reward1"}max=? [ S ])
+(2) multi(R{"reward1"}max=? [ S ], R{"reward2"}>=0.25 [ S ])
+(3) multi(R{"reward1"}max=? [ S ], R{"reward2"}>=0.25 [ S ], S>=0.25 [ "ssLabel" ])
+(4) multi(R{"reward1"}max=? [ S ], R{"reward2"}>=0.25 [ S ], S>=0.25 [ "ssLabel" ], P>=1 [ F state!=2 ])
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"reward1"}max=? [ S ])
+
+Warning: Switching to explicit engine to allow verification of the formula.
+
+Building model...
+
+Computing reachable states... 5 states
+Reachable states exploration and model construction done in 0.006 secs.
+Sorting reachable states list...
+
+Time for model construction: 0.024 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        MDP
+States:      5 (1 initial)
+Transitions: 10
+Choices:     7
+Max/avg:     3/1.40
+Computing end components.
+Finished computing end components.
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-07-03
+Warning: Gurobi version mismatch between Java 9.5.1 and C library 9.5.2
+Warning: Gurobi version mismatch between Java 9.5.1 and Jni 9.5.2
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+Set parameter Quad to value 1
+LP problem construction finished in 0.03 s.
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15 rows, 19 columns and 42 nonzeros
+Model fingerprint: 0xab771a65
+Coefficient statistics:
+  Matrix range     [3e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 13 rows and 10 columns
+Presolve time: 0.01s
+Presolved: 2 rows, 9 columns, 7 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.0150000e-01   7.500000e-04   0.000000e+00      0s
+       1    5.0000000e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 1 iterations and 0.01 seconds (0.00 work units)
+Optimal objective  5.000000000e-01
+LP solving took 0.016 s.
+
+Value in the initial state: 0.4999999999999999
+
+Time for model checking: 0.058 seconds.
+
+Result: 0.4999999999999999
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"reward1"}max=? [ S ], R{"reward2"}>=0.25 [ S ])
+
+Warning: Switching to explicit engine to allow verification of the formula.
+Computing end components.
+Finished computing end components.
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-07-03
+Warning: Gurobi version mismatch between Java 9.5.1 and C library 9.5.2
+Warning: Gurobi version mismatch between Java 9.5.1 and Jni 9.5.2
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+Set parameter Quad to value 1
+LP problem construction finished in 0.001 s.
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 16 rows, 19 columns and 43 nonzeros
+Model fingerprint: 0x1f42a33f
+Coefficient statistics:
+  Matrix range     [3e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e-01, 1e+00]
+Presolve removed 14 rows and 10 columns
+Presolve time: 0.00s
+Presolved: 2 rows, 9 columns, 7 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.5125000e-01   6.250000e-04   0.000000e+00      0s
+       1    2.5000000e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 1 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  2.500000000e-01
+LP solving took 0.001 s.
+
+Value in the initial state: 0.24999999999999994
+
+Time for model checking: 0.003 seconds.
+
+Result: 0.24999999999999994
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"reward1"}max=? [ S ], R{"reward2"}>=0.25 [ S ], S>=0.25 [ "ssLabel" ])
+
+Warning: Switching to explicit engine to allow verification of the formula.
+Computing end components.
+Finished computing end components.
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-07-03
+Warning: Gurobi version mismatch between Java 9.5.1 and C library 9.5.2
+Warning: Gurobi version mismatch between Java 9.5.1 and Jni 9.5.2
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+Set parameter Quad to value 1
+LP problem construction finished in 0.003 s.
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 17 rows, 19 columns and 47 nonzeros
+Model fingerprint: 0x17997116
+Coefficient statistics:
+  Matrix range     [3e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e-01, 1e+00]
+Presolve removed 15 rows and 10 columns
+Presolve time: 0.00s
+Presolved: 2 rows, 9 columns, 7 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.5125000e-01   1.256250e-01   0.000000e+00      0s
+       2    1.2500000e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  1.250000000e-01
+LP solving took 0.0 s.
+
+Value in the initial state: 0.12499999999999997
+
+Time for model checking: 0.004 seconds.
+
+Result: 0.12499999999999997
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"reward1"}max=? [ S ], R{"reward2"}>=0.25 [ S ], S>=0.25 [ "ssLabel" ], P>=1 [ F state!=2 ])
+
+Warning: Switching to explicit engine to allow verification of the formula.
+
+Building deterministic automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.
+Time for DRA translation: 0.012 seconds.
+
+Constructing MDP-DRA product...
+Time for product construction: 0.001 seconds, product has 6 states (5 initial), 11 transitions, 8 choices, dist max/avg = 3/1.33.
+Computing end components.
+Finished computing end components.
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-07-03
+Warning: Gurobi version mismatch between Java 9.5.1 and C library 9.5.2
+Warning: Gurobi version mismatch between Java 9.5.1 and Jni 9.5.2
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+Set parameter Quad to value 1
+LP problem construction finished in 0.008 s.
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 18 rows, 19 columns and 48 nonzeros
+Model fingerprint: 0x0eb8cb38
+Coefficient statistics:
+  Matrix range     [3e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e-01, 1e+00]
+Presolve removed 16 rows and 11 columns
+Presolve time: 0.00s
+Presolved: 2 rows, 8 columns, 6 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -0.0000000e+00   1.250000e-01   0.000000e+00      0s
+       1   -0.0000000e+00   0.000000e+00   0.000000e+00      0s
+
+Solved in 1 iterations and 0.00 seconds (0.00 work units)
+Optimal objective -0.000000000e+00
+LP solving took 0.001 s.
+
+Value in the initial state: -0.0
+
+Time for model checking: 0.03 seconds.
+
+Result: -0.0
+
+---------------------------------------------------------------------
+
+Note: There were 5 warnings during computation.
+

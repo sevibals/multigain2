@@ -1,0 +1,35 @@
+mdp
+
+module lecture
+
+    state: [0..4] init 0;
+
+    [a] state=0 -> 0.4: (state'=1) + 0.6: (state'=2);
+    [b] state=0 -> 0.7: (state'=2) + 0.3: (state'=3);
+    [c] state=0 -> 0.4: (state'=2) + 0.6: (state'=3);
+    [d] state=0 -> 0.7: (state'=3) + 0.3: (state'=4);
+
+
+endmodule
+
+rewards "reward1"
+	 state=0 : 0;
+	 state=1 : 0;
+	 state=2 : 1;
+	 state=3 : 0;
+     state=4 : 0;
+endrewards
+
+rewards "reward2"
+	 state=0 : 0;
+	 state=1 : 0;
+	 state=2 : 0;
+	 state=3 : 1;
+     state=4 : 0;
+endrewards
+
+
+
+
+
+

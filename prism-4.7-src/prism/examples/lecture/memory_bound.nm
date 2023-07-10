@@ -1,0 +1,16 @@
+// This model corresponds to example 2/ figure 2 of the paper "LTL-Constrained Steady-State Policy Synthesis" by Jan Křetı́nský
+
+mdp
+
+module lecture
+
+    state: [0..1] init 0;
+
+    [a] state=0 -> (state'=0);
+    [b] state=0 -> (state'=1);
+    [c] state=1 -> (state'=0);
+
+endmodule
+
+label "s" = state=0;
+label "t" = state=1;

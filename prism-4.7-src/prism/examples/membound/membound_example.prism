@@ -1,0 +1,14 @@
+mdp
+
+module membound
+
+	state: [0..2] init 0;
+
+	[a] state=0 -> (state'=1);
+	[b] state=1 -> (state'=0);
+	[c] state=0 -> (state'=2);
+	[d] state=2 -> (state'=1);
+endmodule
+
+label "ss" = state=0 | state=1;
+label "acc" = state=2;

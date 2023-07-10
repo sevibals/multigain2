@@ -1,0 +1,2 @@
+multi(R{"reward1"}max=? [S], R{"reward2"}max=? [S], R{"reward3"}max=? [S], P>=1 [ G state!=1 ], S>=0.5 [ "someLabel" ])
+

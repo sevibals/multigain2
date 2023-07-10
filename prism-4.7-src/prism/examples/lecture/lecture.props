@@ -1,0 +1,11 @@
+// multi rewards
+multi(R{"reward1"}max=? [S])
+multi(R{"reward1"}max=? [S], R{"reward2"}>=0.25 [S])
+
+//steady state
+multi(R{"reward1"}max=? [S], R{"reward2"}>=0.25 [S], S>=0.25 ["ssLabel"], S<=0.25 ["ssLabel"])
+
+//LTL
+multi(R{"reward1"}max=? [S], R{"reward2"}>=0.25 [S], S>=0.25 ["ssLabel"], S<=0.25 ["ssLabel"], P>=1 [F state!=2])
+
+

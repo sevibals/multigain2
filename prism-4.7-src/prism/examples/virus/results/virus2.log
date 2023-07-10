@@ -1,0 +1,312 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Mon Aug 08 21:32:18 CEST 2022
+Hostname: JakobMac.local
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism examples/virus/virus2.nm examples/virus/virus2.props --exportpareto examples/virus/results/virus2.pareto --gurobi
+
+Parsing model file "examples/virus/virus2.nm"...
+
+Type:        MDP
+Modules:     n11 n21 n12 n22 
+Variables:   s11 s21 s12 s22 
+
+Parsing properties file "examples/virus/virus2.props"...
+
+4 properties:
+(1) multi(R{"withvirus"}max=? [ S ], R{"clean"}>=0.15 [ S ])
+(2) multi(R{"withvirus"}max=? [ S ], R{"clean"}max=? [ S ])
+(3) multi(R{"withvirus"}max=? [ S ], R{"clean"}>=0.15 [ S ], S>=0.1 [ "noneInfected" ])
+(4) multi(R{"withvirus"}max=? [ S ], R{"clean"}>=0.15 [ S ], S>=0.1 [ "noneInfected" ], P>=1 [ F "someFirewallBreached" ])
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"withvirus"}max=? [ S ], R{"clean"}>=0.15 [ S ])
+
+Warning: Switching to explicit engine to allow verification of the formula.
+
+Building model...
+
+Computing reachable states... 80 states
+Reachable states exploration and model construction done in 0.025 secs.
+Sorting reachable states list...
+
+Time for model construction: 0.052 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        MDP
+States:      80 (1 initial)
+Transitions: 526
+Choices:     350
+Max/avg:     7/4.38
+Computing end components.
+Finished computing end components.
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-07-03
+Warning: Gurobi version mismatch between Java 9.5.1 and C library 9.5.2
+Warning: Gurobi version mismatch between Java 9.5.1 and Jni 9.5.2
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+Set parameter Quad to value 1
+LP problem construction finished in 0.037 s.
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 150 rows, 738 columns and 1860 nonzeros
+Model fingerprint: 0x9f7c6a19
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  Objective range  [1e+00, 4e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-01, 1e+00]
+Presolve removed 11 rows and 14 columns
+Presolve time: 0.00s
+Presolved: 139 rows, 724 columns, 1844 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.4800000e+02   5.128985e+02   0.000000e+00      0s
+      52    3.2714286e+00   0.000000e+00   0.000000e+00      0s
+
+Use crossover to convert LP symmetric solution to basic solution...
+Crossover log...
+
+       0 DPushes remaining with DInf 0.0000000e+00                 0s
+
+       7 PPushes remaining with PInf 0.0000000e+00                 0s
+       0 PPushes remaining with PInf 0.0000000e+00                 0s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.1684043e-18      0s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+      64    3.2714286e+00   0.000000e+00   0.000000e+00      0s
+
+Solved in 64 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  3.271428571e+00
+LP solving took 0.006 s.
+
+Value in the initial state: 3.2714285714285714
+
+Time for model checking: 0.071 seconds.
+
+Result: 3.2714285714285714
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"withvirus"}max=? [ S ], R{"clean"}max=? [ S ])
+
+Warning: Switching to explicit engine to allow verification of the formula.
+Computing end components.
+Finished computing end components.
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-07-03
+Warning: Gurobi version mismatch between Java 9.5.1 and C library 9.5.2
+Warning: Gurobi version mismatch between Java 9.5.1 and Jni 9.5.2
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+Set parameter Quad to value 1
+LP problem construction finished in 0.008 s.
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 149 rows, 738 columns and 1752 nonzeros
+Model fingerprint: 0x7cbaee42
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  Objective range  [1e+00, 4e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 11 rows and 14 columns
+Presolve time: 0.00s
+Presolved: 138 rows, 724 columns, 1740 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.4800000e+02   5.128985e+02   0.000000e+00      0s
+      15    4.0000000e+00   0.000000e+00   0.000000e+00      0s
+
+Use crossover to convert LP symmetric solution to basic solution...
+Crossover log...
+
+       0 DPushes remaining with DInf 0.0000000e+00                 0s
+
+       3 PPushes remaining with PInf 0.0000000e+00                 0s
+       0 PPushes remaining with PInf 0.0000000e+00                 0s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 8.6736174e-19      0s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+      24    4.0000000e+00   0.000000e+00   0.000000e+00      0s
+
+Solved in 24 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  4.000000000e+00
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 149 rows, 738 columns and 1752 nonzeros
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    9.6912195e+01   3.059756e+02   0.000000e+00      0s
+     110    1.7073171e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 110 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  1.707317073e-01
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 149 rows, 738 columns and 1752 nonzeros
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  Objective range  [9e-02, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    4.2518293e+00   1.765929e+02   0.000000e+00      0s
+      29    4.2682927e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 29 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  4.268292683e-01
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 149 rows, 738 columns and 1752 nonzeros
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    7.3170732e-01   8.250000e+00   0.000000e+00      0s
+       5    1.7073171e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 5 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  1.707317073e-01
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 149 rows, 738 columns and 1752 nonzeros
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  Objective range  [2e-01, 2e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4953049e+01   3.113968e+02   0.000000e+00      0s
+      13    6.8292683e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 13 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  6.829268293e-01
+Approximated pareto front in 4/10000 iterations with tolerance 0.01
+Exported Pareto curve. To see it, run
+ etc/scripts/pareto-plot.py examples/virus/results/virus2.pareto
+
+Value in the initial state: [(3.1707317073170733, 0.17073170731707316), (4.0, 0.0)]
+
+Time for model checking: 0.058 seconds.
+
+Result: [(3.1707317073170733, 0.17073170731707316), (4.0, 0.0)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"withvirus"}max=? [ S ], R{"clean"}>=0.15 [ S ], S>=0.1 [ "noneInfected" ])
+
+Warning: Switching to explicit engine to allow verification of the formula.
+Computing end components.
+Finished computing end components.
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-07-03
+Warning: Gurobi version mismatch between Java 9.5.1 and C library 9.5.2
+Warning: Gurobi version mismatch between Java 9.5.1 and Jni 9.5.2
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+Set parameter Quad to value 1
+LP problem construction finished in 0.01 s.
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 151 rows, 738 columns and 1861 nonzeros
+Model fingerprint: 0x4251f624
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  Objective range  [1e+00, 4e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-01, 1e+00]
+Presolve removed 11 rows and 13 columns
+Presolve time: 0.00s
+Presolved: 140 rows, 725 columns, 1846 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.4756350e+02   5.123438e+02   0.000000e+00      0s
+      52    2.8714286e+00   0.000000e+00   0.000000e+00      0s
+
+Use crossover to convert LP symmetric solution to basic solution...
+Crossover log...
+
+       5 PPushes remaining with PInf 0.0000000e+00                 0s
+       0 PPushes remaining with PInf 0.0000000e+00                 0s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.1684043e-18      0s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+      60    2.8714286e+00   0.000000e+00   0.000000e+00      0s
+
+Solved in 60 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  2.871428571e+00
+LP solving took 0.004 s.
+
+Value in the initial state: 2.8714285714285714
+
+Time for model checking: 0.019 seconds.
+
+Result: 2.8714285714285714
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"withvirus"}max=? [ S ], R{"clean"}>=0.15 [ S ], S>=0.1 [ "noneInfected" ], P>=1 [ F "someFirewallBreached" ])
+
+Warning: Switching to explicit engine to allow verification of the formula.
+
+Building deterministic automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.
+Time for DRA translation: 0.012 seconds.
+
+Constructing MDP-DRA product...
+Time for product construction: 0.006 seconds, product has 96 states (80 initial), 638 transitions, 430 choices, dist max/avg = 7/4.48.
+Computing end components.
+Finished computing end components.
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-07-03
+Warning: Gurobi version mismatch between Java 9.5.1 and C library 9.5.2
+Warning: Gurobi version mismatch between Java 9.5.1 and Jni 9.5.2
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+Set parameter Quad to value 1
+LP problem construction finished in 0.015 s.
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 152 rows, 738 columns and 1862 nonzeros
+Model fingerprint: 0x430c5c46
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  Objective range  [1e+00, 4e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-01, 1e+00]
+Presolve time: 0.00s
+
+Solved in 0 iterations and 0.00 seconds (0.00 work units)
+Infeasible model
+LP solving took 0.001 s.
+
+Value in the initial state: NaN
+
+Time for model checking: 0.047 seconds.
+
+Result: NaN
+
+---------------------------------------------------------------------
+
+Note: There were 5 warnings during computation.
+

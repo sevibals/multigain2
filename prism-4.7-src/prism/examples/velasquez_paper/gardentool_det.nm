@@ -1,0 +1,50 @@
+// This example corresponds to the model from figure 2 of the paper "Controller Synthesis for Omega-Regular and Steady-State Specifications" by Alvaro Velasquez et al. with Dirac transition distributions
+
+mdp
+
+module lecture
+
+    state: [0..8] init 0;
+
+    [aright] state=0 -> (state'=1);
+    [adown] state=0 -> (state'=3);
+
+    [bright] state=1 -> (state'=2);
+    [bdown] state=1 -> (state'=4);
+    [bleft] state=1 -> (state'=0);
+
+    [cdown] state=2 -> (state'=5);
+    [cleft] state=2 -> (state'=1);
+
+    [dright] state=3 -> (state'=4);
+    [ddown] state=3 -> (state'=6);
+    [dup] state=3 -> (state'=0);
+
+    [eright] state=4 -> (state'=5);
+    [edown] state=4 -> (state'=7);
+    [eleft] state=4 -> (state'=3);
+    [eup] state=4 -> (state'=1);
+
+    [fdown] state=5 -> (state'=8);
+    [fleft] state=5 -> (state'=4);
+    [fup] state=5 -> (state'=2);
+
+    [gright] state=6 -> (state'=7);
+    [gup] state=6 -> (state'=3);
+
+    [hright] state=7 -> (state'=8);
+    [hleft] state=7 -> (state'=6);
+    [hup] state=7 -> (state'=4);
+
+    [ileft] state=8 -> (state'=7);
+    [iup] state=8 -> (state'=5);
+
+endmodule
+
+label "home" = state=0;
+label "danger" = state=1 | state=7;
+label "tool" = state=8;
+
+rewards "extinguish"
+    (state=1 | state=7) : 1;
+endrewards

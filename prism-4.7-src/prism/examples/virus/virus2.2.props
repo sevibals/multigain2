@@ -1,0 +1,3 @@
+multi(R{"withvirus"}max=? [S])
+multi(R{"clean"}max=? [S])
+multi(R{"withvirus"}max=? [S],R{"clean"}>=0.15 [S])

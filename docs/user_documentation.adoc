@@ -1,0 +1,7 @@
+= MultiGain 2.0 - User Documentation
+:toc:
+
+include::introduction.adoc[]
+include::getting_started.adoc[]
+include::user_guide.adoc[]
+include::common_errors.adoc[]

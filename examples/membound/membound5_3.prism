@@ -1,0 +1,42 @@
+mdp
+
+module membound
+
+	state: [0..8] init 0;
+
+	[ss0t0] state=0 -> (state'=0);
+	[ss0t4] state=0 -> (state'=4);
+	[ss0t2] state=0 -> (state'=2);
+	[ss1t3] state=1 -> (state'=3);
+	[ss1t1] state=1 -> (state'=1);
+	[ss1t4] state=1 -> (state'=4);
+	[ss1t0] state=1 -> (state'=0);
+	[ss1t2] state=1 -> (state'=2);
+	[ss2t2] state=2 -> (state'=2);
+	[ss2t3] state=2 -> (state'=3);
+	[ss2t1] state=2 -> (state'=1);
+	[ss3t1] state=3 -> (state'=1);
+	[ss3t4] state=3 -> (state'=4);
+	[ss3t3] state=3 -> (state'=3);
+	[ss3t0] state=3 -> (state'=0);
+	[ss3t2] state=3 -> (state'=2);
+	[ss4t0] state=4 -> (state'=0);
+	[ss4t3] state=4 -> (state'=3);
+	[ss4t2] state=4 -> (state'=2);
+	[ss4t4] state=4 -> (state'=4);
+	[ss4t1] state=4 -> (state'=1);
+	[acc5t6] state=5 -> (state'=6);
+	[acc5t7] state=5 -> (state'=7);
+	[acc6t7] state=6 -> (state'=7);
+	[acc6t5] state=6 -> (state'=5);
+	[acc6t6] state=6 -> (state'=6);
+	[acc7t5] state=7 -> (state'=5);
+	[acc7t7] state=7 -> (state'=7);
+	[sw1t7] state=1 -> (state'=7);
+	[sw3t7] state=3 -> (state'=7);
+	[ba5t2] state=5 -> (state'=2);
+	[ba7t3] state=7 -> (state'=3);
+endmodule
+
+label "ss" = state=0 | state=1 | state=2 | state=3 | state=4;
+label "acc" = state=5 | state=6 | state=7;

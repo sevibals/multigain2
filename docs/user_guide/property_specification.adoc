@@ -1,0 +1,56 @@
+[#property_spec]
+=== Property Specification
+
+==== Query Wrappers
+As entry point for *MultiGain 2.0* functionality every query in the property file has to be wrapped with the `multi(...)`, `mlessmulti(...)`, `unichain(...)` or `detmulti(...)` keyword.
+
+The `*multi*` keyword describes the standard functionality of *MultiGain 2.0*. It allows for an LTL-Specification, Steady-State-Specifications and arbitrary many (numeric) reward specification.
+
+The `*mlessmulti*` keyword may be used in case the `multi` keyword results in an unbound memory policy. The policy allows for an additional integer literal at the front of the property list. This integer fixes the maximum number of steps the policy takes before visiting an accepting state again in the long run. The resulting policy therefore requires only finite memory.
+The tool will then ouput the minimal relaxation factor `delta` footnote:[Křetínský, J.: Ltl-constrained steady-state policy synthesis. In: Zhou, Z.H. (ed.) Proceedings of the Thirtieth International Joint Conference on Artificial Intelligence, IJCAI-21. pp. 4104–4111] we have to relax the steady-state and boolean reward constraints with. Since the objective function is preoccupied with `delta` it is not possible to specify numerical reward properties in an `mlessmulti` query.
+
+The `*unichain*` keyword allows the same properties as a standard `multi` query with a maximum of one numeric reward-specifications. *MultiGain 2.0* will then compute if there exists a solution to the query whose corresponding policy constitutes a unichain on the MDP.
+This is achieved by iteratively searching through the maximum end components of the MDP. If a numeric reward is specified, *MultiGain 2.0* will return the unichain solution maximizing (or minimizing) the respective reward structure.
+
+The `*detmulti*` keyword allows for an LTL-Specification and arbitrary many Steady-State-Specifications. *MultiGain 2.0* will compute a deterministic unichain policy following the approach by A. Velasquez et al.footnote:[Velasquez, A., Alkhouri, I., Beckus, A., Trivedi, A., Atia, G.: Controller synthesis for omega-
+regular and steady-state specifications. In: Proceedings of the 21st International Conference
+on Autonomous Agents and Multiagent Systems. p. 1310–1318. AAMAS ’22, International
+Foundation for Autonomous Agents and Multiagent Systems, Richland, SC (2022)]
+
+==== Accepting Frequency Bound
+This is exclusively allowed at the start of the property list in an `mlessmulti` query. The bound is denoted as a single integer literal, as in the examples below.
+It specifies the maximum number of steps the policy takes before visiting an accepting state again in the long run.
+
+==== Reward-Specification
+Reward constraints can be specified using the `R` operator. These may be of boolean (non-numeric) (`>=`,`\<=`) or numeric (`max=?`, `min=?`) nature. Numeric reward specifications aim to optimise the corresponding rewards value. If more than one numeric specifications are included, *MultiGain 2.0* will compute the pareto curve.
+
+==== LTL-Specification
+LTL formulas may be specified using the `P` operator. The notation does not differ from the standard Prism
+notation for temporal logics. Only one LTL specification may be specified per query.
+
+==== Steady-State-Specification
+Steady-State constraints can be defined with the `S` operator. The notation does not differ from the
+standard Prism notation for steady-state-constraints. You can specify multiple steady-state-constraints per query.
+
+TIP: To specify a Steady-State-Constraint with an equality operator, please default
+to using two `S` operators, with `\<=` and `>=`.
+
+==== Examples
+
+----
+multi(R{"reward1"}max=? [S], R{"reward2"}>=0.25 [S], S>=0.25 ["ssLabel"], P>=1 [F state!=2])
+----
+----
+multi(R{"reward1"}max=? [ S ], R{"reward2"}max=? [ S ], P>=1 [ G state!=1 ], S>=0.5 [ "someLabel" ])
+----
+----
+mlessmulti(100, P>=1 [ G F "acc" ], S>=1 [ "ss" ])
+----
+----
+unichain(R{"unbalanced"}max=? [S], P>=1 [(F "a") | (F "b")])
+----
+----
+detmulti(P>=0.75 [(! "danger") U "tool"], S>=0.75 ["home"], S<=1 ["home"])
+----
+
+NOTE: More examples can be found in the `examples` directory.

@@ -1,0 +1,38 @@
+// This model describes the small-size example used in the lecture corresponding to the practical course on which this project is based on
+
+mdp
+
+module lecture
+
+    state: [0..4] init 0;
+
+    [a] state=0 -> (state'=1);
+    [b] state=1 -> (state'=0);
+    [c] state=1 -> 1/3: (state'=1) + 1/3: (state'=2) + 1/3: (state'=3);
+    [d] state=2 -> (state'=2);
+    [e] state=3 -> (state'=3);
+    [f] state=1 -> 0.5: (state'=4) + 0.5: (state'=3);
+
+endmodule
+
+rewards "reward1"
+	 state=0 : 0;
+	 state=1 : 0;
+	 state=2 : 1;
+	 state=3 : 0;
+	 state=4 : 0;
+endrewards
+
+rewards "reward2"
+	 state=0 : 0;
+	 state=1 : 0;
+	 state=2 : 0;
+	 state=3 : 0;
+	 state=4 : 2;
+endrewards
+
+label "ssLabel" = state=1 | state=0;
+label "ltlLabel" = state=2;
+
+
+

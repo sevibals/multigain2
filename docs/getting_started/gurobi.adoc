@@ -1,0 +1,21 @@
+[#gurobi]
+=== Gurobi
+
+:hide-uri-scheme:
+
+MultiGain2.0 uses an LP solver as back-end, with `lpsolve` per default included in the sources. There is also the option of using the commercial solver Gurobi, which for licensing reasons cannot be included as part of the distribution. If you want to use Gurobi with MultiGain2.0, you need to follow these steps. Otherwise, skip directly to the xref:#installation[installation].
+
+Obtain and download Gurobi and install the licence. Instructions for linux can be found at https://gurobi.com. It may be noticed, that Gurobi offers free licenses for academic purposes. You can find documentation for your operating system here: https://gurobi.com/documentation/quickstart.html
+
+Before installing and each use of MultiGain, the `GUROBI_HOME` environment variable must be set.
+[source,shell]
+----
+export GUROBI_HOME="opt/gurobi952/linux64"
+----
+NOTE: The path may vary depending on the installed version of Gurobi and your operating system. You can find which path is the correct one for your system by browsing the Gurobi Quick start guide: https://www.gurobi.com/documentation/quickstart.html
+
+You can always check if the variable is set correctly by calling:
+[source,shell]
+----
+echo $GUROBI_HOME
+----

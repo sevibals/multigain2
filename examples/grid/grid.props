@@ -1,0 +1,9 @@
+//multi(P>=0.5 [(F "a") & (F "b") & (F "c")], S>=0.01 ["d"], S<=0.5 ["d"])
+//multi(P>=0.5 [(F "a") U "b"], S>=0.01 ["d"], S<=0.5 ["d"])
+//multi(P>=0.5 [(G F "a") | (F G "b")], S>=0.01 ["d"], S<=0.5 ["d"])
+//multi(P>=0.5 [(G (! "b")) & (G F "a")], S>=0.01 ["d"], S<=0.5 ["d"])
+//With mean-payoff rewards
+multi(R{"default"}max=? [S], P>=0.5 [(F "a") & (F "b") & (F "c")], S>=0.01 ["d"], S<=0.5 ["d"])
+//multi(R{"default"}max=? [S], P>=0.5 [(F "a") U "b"], S>=0.01 ["d"], S<=0.5 ["d"])
+//multi(R{"default"}max=? [S], P>=0.5 [(G F "a") | (F G "b")], S>=0.01 ["d"], S<=0.5 ["d"])
+//multi(R{"default"}max=? [S], P>=0.5 [(G (! "b")) & (G F "a")], S>=0.01 ["d"], S<=0.5 ["d"])

@@ -1,0 +1,4 @@
+== Introduction
+
+We present *MultiGain 2.0*, a tool for the formal verification of probabilistic systems that involve a multidimensional reward structure and are subject to steady-state constraints as well as Linear-Temporal-Logic specifications. This tool is built on top of the *PRISM model checker* and incorporates multi-objective capabilities of the controller synthesis tool *MultiGain* footnote:[Brázdil, Tomáš & Chatterjee, Krishnendu & Forejt, Vojtěch & Kucera, Antonín. (2015). MultiGain: A Controller Synthesis Tool for MDPs with Multiple Mean-Payoff Objectives.]. Our tool also provides an approach for finite memory solutions and the capability for 2- and 3-dimensional visualization of Pareto curves to aid the trade-off analysis in multi-objective scenarios.
+

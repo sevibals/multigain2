@@ -1,0 +1,48 @@
+mdp
+
+module grid
+
+    state: [0..8] init 0;
+
+    [right0] state=0 -> (state'=1);
+    [down0] state=0 -> (state'=3);
+
+    [right1] state=1 -> (state'=2);
+    [down1] state=1 -> (state'=4);
+    [left1] state=1 -> (state'=0);
+
+    [down2] state=2 -> (state'=5);
+    [left2] state=2 -> (state'=1);
+
+    [right3] state=3 -> (state'=4);
+    [down] state=3 -> (state'=6);
+    [up3] state=3 -> (state'=0);
+
+    [right4] state=4 -> (state'=5);
+    [down4] state=4 -> (state'=7);
+    [left4] state=4 -> (state'=3);
+    [up4] state=4 -> (state'=1);
+
+    [down5] state=5 -> (state'=8);
+    [left5] state=5 -> (state'=4);
+    [up5] state=5 -> (state'=2);
+
+    [right6] state=6 -> (state'=7);
+    [up6] state=6 -> (state'=3);
+
+    [right7] state=7 -> (state'=8);
+    [left7] state=7 -> (state'=6);
+    [up7] state=7 -> (state'=4);
+
+    [left8] state=8 -> (state'=7);
+    [up8] state=8 -> (state'=5);
+
+endmodule
+
+label "home" = state=0;
+label "danger" = state=4 | state=7;
+label "tool" = state=8;
+
+rewards "extinguish"
+    state=4 | state=7 : 1;
+endrewards

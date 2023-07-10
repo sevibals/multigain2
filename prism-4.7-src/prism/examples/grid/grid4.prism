@@ -1,0 +1,96 @@
+mdp
+
+module grid
+
+	state: [0..15] init 0;
+
+	[right0] state=0 -> 0.8: (state'=1) + 0.1: (state'=0) + 0.1: (state'=4);
+	[down0] state=0 -> 0.8: (state'=4) + 0.1: (state'=0) + 0.1: (state'=1);
+	[left0] state=0 -> 0.9: (state'=0) + 0.1: (state'=4);
+	[up0] state=0 -> 0.9: (state'=0) + 0.1: (state'=1);
+
+	[right1] state=1 -> 0.8: (state'=2) + 0.1: (state'=1) + 0.1: (state'=5);
+	[down1] state=1 -> 0.8: (state'=5) + 0.1: (state'=0) + 0.1: (state'=2);
+	[left1] state=1 -> 0.8: (state'=0) + 0.1: (state'=1) + 0.1: (state'=5);
+	[up1] state=1 -> 0.8: (state'=1) + 0.1: (state'=0) + 0.1: (state'=2);
+
+	[right2] state=2 -> 0.8: (state'=3) + 0.1: (state'=2) + 0.1: (state'=6);
+	[down2] state=2 -> 0.8: (state'=6) + 0.1: (state'=1) + 0.1: (state'=3);
+	[left2] state=2 -> 0.8: (state'=1) + 0.1: (state'=2) + 0.1: (state'=6);
+	[up2] state=2 -> 0.8: (state'=2) + 0.1: (state'=1) + 0.1: (state'=3);
+
+	[right3] state=3 -> 0.9: (state'=3) + 0.1: (state'=7);
+	[down3] state=3 -> 0.8: (state'=7) + 0.1: (state'=2) + 0.1: (state'=3);
+	[left3] state=3 -> 0.8: (state'=2) + 0.1: (state'=3) + 0.1: (state'=7);
+	[up3] state=3 -> 0.9: (state'=3) + 0.1: (state'=2);
+
+	[right4] state=4 -> 0.8: (state'=5) + 0.1: (state'=0) + 0.1: (state'=8);
+	[down4] state=4 -> 0.8: (state'=8) + 0.1: (state'=4) + 0.1: (state'=5);
+	[left4] state=4 -> 0.8: (state'=4) + 0.1: (state'=0) + 0.1: (state'=8);
+	[up4] state=4 -> 0.8: (state'=0) + 0.1: (state'=4) + 0.1: (state'=5);
+
+	[right5] state=5 -> 0.8: (state'=6) + 0.1: (state'=1) + 0.1: (state'=9);
+	[down5] state=5 -> 0.8: (state'=9) + 0.1: (state'=4) + 0.1: (state'=6);
+	[left5] state=5 -> 0.8: (state'=4) + 0.1: (state'=1) + 0.1: (state'=9);
+	[up5] state=5 -> 0.8: (state'=1) + 0.1: (state'=4) + 0.1: (state'=6);
+
+	[right6] state=6 -> 0.8: (state'=7) + 0.1: (state'=2) + 0.1: (state'=10);
+	[down6] state=6 -> 0.8: (state'=10) + 0.1: (state'=5) + 0.1: (state'=7);
+	[left6] state=6 -> 0.8: (state'=5) + 0.1: (state'=2) + 0.1: (state'=10);
+	[up6] state=6 -> 0.8: (state'=2) + 0.1: (state'=5) + 0.1: (state'=7);
+
+	[right7] state=7 -> 0.8: (state'=7) + 0.1: (state'=3) + 0.1: (state'=11);
+	[down7] state=7 -> 0.8: (state'=11) + 0.1: (state'=6) + 0.1: (state'=7);
+	[left7] state=7 -> 0.8: (state'=6) + 0.1: (state'=3) + 0.1: (state'=11);
+	[up7] state=7 -> 0.8: (state'=3) + 0.1: (state'=6) + 0.1: (state'=7);
+
+	[right8] state=8 -> 0.8: (state'=9) + 0.1: (state'=4) + 0.1: (state'=12);
+	[down8] state=8 -> 0.8: (state'=12) + 0.1: (state'=8) + 0.1: (state'=9);
+	[left8] state=8 -> 0.8: (state'=8) + 0.1: (state'=4) + 0.1: (state'=12);
+	[up8] state=8 -> 0.8: (state'=4) + 0.1: (state'=8) + 0.1: (state'=9);
+
+	[right9] state=9 -> 0.8: (state'=10) + 0.1: (state'=5) + 0.1: (state'=13);
+	[down9] state=9 -> 0.8: (state'=13) + 0.1: (state'=8) + 0.1: (state'=10);
+	[left9] state=9 -> 0.8: (state'=8) + 0.1: (state'=5) + 0.1: (state'=13);
+	[up9] state=9 -> 0.8: (state'=5) + 0.1: (state'=8) + 0.1: (state'=10);
+
+	[right10] state=10 -> 0.8: (state'=11) + 0.1: (state'=6) + 0.1: (state'=14);
+	[down10] state=10 -> 0.8: (state'=14) + 0.1: (state'=9) + 0.1: (state'=11);
+	[left10] state=10 -> 0.8: (state'=9) + 0.1: (state'=6) + 0.1: (state'=14);
+	[up10] state=10 -> 0.8: (state'=6) + 0.1: (state'=9) + 0.1: (state'=11);
+
+	[right11] state=11 -> 0.8: (state'=11) + 0.1: (state'=7) + 0.1: (state'=15);
+	[down11] state=11 -> 0.8: (state'=15) + 0.1: (state'=10) + 0.1: (state'=11);
+	[left11] state=11 -> 0.8: (state'=10) + 0.1: (state'=7) + 0.1: (state'=15);
+	[up11] state=11 -> 0.8: (state'=7) + 0.1: (state'=10) + 0.1: (state'=11);
+
+	[right12] state=12 -> 0.8: (state'=13) + 0.1: (state'=8) + 0.1: (state'=12);
+	[down12] state=12 -> 0.9: (state'=12) + 0.1: (state'=13);
+	[left12] state=12 -> 0.9: (state'=12) + 0.1: (state'=8);
+	[up12] state=12 -> 0.8: (state'=8) + 0.1: (state'=12) + 0.1: (state'=13);
+
+	[right13] state=13 -> 0.8: (state'=14) + 0.1: (state'=9) + 0.1: (state'=13);
+	[down13] state=13 -> 0.8: (state'=13) + 0.1: (state'=12) + 0.1: (state'=14);
+	[left13] state=13 -> 0.8: (state'=12) + 0.1: (state'=9) + 0.1: (state'=13);
+	[up13] state=13 -> 0.8: (state'=9) + 0.1: (state'=12) + 0.1: (state'=14);
+
+	[right14] state=14 -> 0.8: (state'=15) + 0.1: (state'=10) + 0.1: (state'=14);
+	[down14] state=14 -> 0.8: (state'=14) + 0.1: (state'=13) + 0.1: (state'=15);
+	[left14] state=14 -> 0.8: (state'=13) + 0.1: (state'=10) + 0.1: (state'=14);
+	[up14] state=14 -> 0.8: (state'=10) + 0.1: (state'=13) + 0.1: (state'=15);
+
+	[right15] state=15 -> 0.9: (state'=15) + 0.1: (state'=11);
+	[down15] state=15 -> 0.9: (state'=15) + 0.1: (state'=14);
+	[left15] state=15 -> 0.8: (state'=14) + 0.1: (state'=11) + 0.1: (state'=15);
+	[up15] state=15 -> 0.8: (state'=11) + 0.1: (state'=14) + 0.1: (state'=15);
+
+endmodule
+
+label "a" = state=9 | state=1 | state=0 | state=4;
+label "b" = state=5 | state=14 | state=13 | state=11;
+label "c" = state=3 | state=15 | state=2 | state=8;
+label "d" = state=6 | state=7 | state=10 | state=12;
+
+rewards "default"
+    state=3 | state=15 | state=2 | state=8 : 1;
+endrewards

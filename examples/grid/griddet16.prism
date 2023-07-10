@@ -1,0 +1,1295 @@
+mdp
+
+module grid
+
+	state: [0..255] init 0;
+
+	[right0] state=0 -> (state'=1);
+	[down0] state=0 -> (state'=16);
+	[left0] state=0 -> (state'=0);
+	[up0] state=0 -> (state'=0);
+
+	[right1] state=1 -> (state'=2);
+	[down1] state=1 -> (state'=17);
+	[left1] state=1 -> (state'=0);
+	[up1] state=1 -> (state'=1);
+
+	[right2] state=2 -> (state'=3);
+	[down2] state=2 -> (state'=18);
+	[left2] state=2 -> (state'=1);
+	[up2] state=2 -> (state'=2);
+
+	[right3] state=3 -> (state'=4);
+	[down3] state=3 -> (state'=19);
+	[left3] state=3 -> (state'=2);
+	[up3] state=3 -> (state'=3);
+
+	[right4] state=4 -> (state'=5);
+	[down4] state=4 -> (state'=20);
+	[left4] state=4 -> (state'=3);
+	[up4] state=4 -> (state'=4);
+
+	[right5] state=5 -> (state'=6);
+	[down5] state=5 -> (state'=21);
+	[left5] state=5 -> (state'=4);
+	[up5] state=5 -> (state'=5);
+
+	[right6] state=6 -> (state'=7);
+	[down6] state=6 -> (state'=22);
+	[left6] state=6 -> (state'=5);
+	[up6] state=6 -> (state'=6);
+
+	[right7] state=7 -> (state'=8);
+	[down7] state=7 -> (state'=23);
+	[left7] state=7 -> (state'=6);
+	[up7] state=7 -> (state'=7);
+
+	[right8] state=8 -> (state'=9);
+	[down8] state=8 -> (state'=24);
+	[left8] state=8 -> (state'=7);
+	[up8] state=8 -> (state'=8);
+
+	[right9] state=9 -> (state'=10);
+	[down9] state=9 -> (state'=25);
+	[left9] state=9 -> (state'=8);
+	[up9] state=9 -> (state'=9);
+
+	[right10] state=10 -> (state'=11);
+	[down10] state=10 -> (state'=26);
+	[left10] state=10 -> (state'=9);
+	[up10] state=10 -> (state'=10);
+
+	[right11] state=11 -> (state'=12);
+	[down11] state=11 -> (state'=27);
+	[left11] state=11 -> (state'=10);
+	[up11] state=11 -> (state'=11);
+
+	[right12] state=12 -> (state'=13);
+	[down12] state=12 -> (state'=28);
+	[left12] state=12 -> (state'=11);
+	[up12] state=12 -> (state'=12);
+
+	[right13] state=13 -> (state'=14);
+	[down13] state=13 -> (state'=29);
+	[left13] state=13 -> (state'=12);
+	[up13] state=13 -> (state'=13);
+
+	[right14] state=14 -> (state'=15);
+	[down14] state=14 -> (state'=30);
+	[left14] state=14 -> (state'=13);
+	[up14] state=14 -> (state'=14);
+
+	[right15] state=15 -> (state'=15);
+	[down15] state=15 -> (state'=31);
+	[left15] state=15 -> (state'=14);
+	[up15] state=15 -> (state'=15);
+
+	[right16] state=16 -> (state'=17);
+	[down16] state=16 -> (state'=32);
+	[left16] state=16 -> (state'=16);
+	[up16] state=16 -> (state'=0);
+
+	[right17] state=17 -> (state'=18);
+	[down17] state=17 -> (state'=33);
+	[left17] state=17 -> (state'=16);
+	[up17] state=17 -> (state'=1);
+
+	[right18] state=18 -> (state'=19);
+	[down18] state=18 -> (state'=34);
+	[left18] state=18 -> (state'=17);
+	[up18] state=18 -> (state'=2);
+
+	[right19] state=19 -> (state'=20);
+	[down19] state=19 -> (state'=35);
+	[left19] state=19 -> (state'=18);
+	[up19] state=19 -> (state'=3);
+
+	[right20] state=20 -> (state'=21);
+	[down20] state=20 -> (state'=36);
+	[left20] state=20 -> (state'=19);
+	[up20] state=20 -> (state'=4);
+
+	[right21] state=21 -> (state'=22);
+	[down21] state=21 -> (state'=37);
+	[left21] state=21 -> (state'=20);
+	[up21] state=21 -> (state'=5);
+
+	[right22] state=22 -> (state'=23);
+	[down22] state=22 -> (state'=38);
+	[left22] state=22 -> (state'=21);
+	[up22] state=22 -> (state'=6);
+
+	[right23] state=23 -> (state'=24);
+	[down23] state=23 -> (state'=39);
+	[left23] state=23 -> (state'=22);
+	[up23] state=23 -> (state'=7);
+
+	[right24] state=24 -> (state'=25);
+	[down24] state=24 -> (state'=40);
+	[left24] state=24 -> (state'=23);
+	[up24] state=24 -> (state'=8);
+
+	[right25] state=25 -> (state'=26);
+	[down25] state=25 -> (state'=41);
+	[left25] state=25 -> (state'=24);
+	[up25] state=25 -> (state'=9);
+
+	[right26] state=26 -> (state'=27);
+	[down26] state=26 -> (state'=42);
+	[left26] state=26 -> (state'=25);
+	[up26] state=26 -> (state'=10);
+
+	[right27] state=27 -> (state'=28);
+	[down27] state=27 -> (state'=43);
+	[left27] state=27 -> (state'=26);
+	[up27] state=27 -> (state'=11);
+
+	[right28] state=28 -> (state'=29);
+	[down28] state=28 -> (state'=44);
+	[left28] state=28 -> (state'=27);
+	[up28] state=28 -> (state'=12);
+
+	[right29] state=29 -> (state'=30);
+	[down29] state=29 -> (state'=45);
+	[left29] state=29 -> (state'=28);
+	[up29] state=29 -> (state'=13);
+
+	[right30] state=30 -> (state'=31);
+	[down30] state=30 -> (state'=46);
+	[left30] state=30 -> (state'=29);
+	[up30] state=30 -> (state'=14);
+
+	[right31] state=31 -> (state'=31);
+	[down31] state=31 -> (state'=47);
+	[left31] state=31 -> (state'=30);
+	[up31] state=31 -> (state'=15);
+
+	[right32] state=32 -> (state'=33);
+	[down32] state=32 -> (state'=48);
+	[left32] state=32 -> (state'=32);
+	[up32] state=32 -> (state'=16);
+
+	[right33] state=33 -> (state'=34);
+	[down33] state=33 -> (state'=49);
+	[left33] state=33 -> (state'=32);
+	[up33] state=33 -> (state'=17);
+
+	[right34] state=34 -> (state'=35);
+	[down34] state=34 -> (state'=50);
+	[left34] state=34 -> (state'=33);
+	[up34] state=34 -> (state'=18);
+
+	[right35] state=35 -> (state'=36);
+	[down35] state=35 -> (state'=51);
+	[left35] state=35 -> (state'=34);
+	[up35] state=35 -> (state'=19);
+
+	[right36] state=36 -> (state'=37);
+	[down36] state=36 -> (state'=52);
+	[left36] state=36 -> (state'=35);
+	[up36] state=36 -> (state'=20);
+
+	[right37] state=37 -> (state'=38);
+	[down37] state=37 -> (state'=53);
+	[left37] state=37 -> (state'=36);
+	[up37] state=37 -> (state'=21);
+
+	[right38] state=38 -> (state'=39);
+	[down38] state=38 -> (state'=54);
+	[left38] state=38 -> (state'=37);
+	[up38] state=38 -> (state'=22);
+
+	[right39] state=39 -> (state'=40);
+	[down39] state=39 -> (state'=55);
+	[left39] state=39 -> (state'=38);
+	[up39] state=39 -> (state'=23);
+
+	[right40] state=40 -> (state'=41);
+	[down40] state=40 -> (state'=56);
+	[left40] state=40 -> (state'=39);
+	[up40] state=40 -> (state'=24);
+
+	[right41] state=41 -> (state'=42);
+	[down41] state=41 -> (state'=57);
+	[left41] state=41 -> (state'=40);
+	[up41] state=41 -> (state'=25);
+
+	[right42] state=42 -> (state'=43);
+	[down42] state=42 -> (state'=58);
+	[left42] state=42 -> (state'=41);
+	[up42] state=42 -> (state'=26);
+
+	[right43] state=43 -> (state'=44);
+	[down43] state=43 -> (state'=59);
+	[left43] state=43 -> (state'=42);
+	[up43] state=43 -> (state'=27);
+
+	[right44] state=44 -> (state'=45);
+	[down44] state=44 -> (state'=60);
+	[left44] state=44 -> (state'=43);
+	[up44] state=44 -> (state'=28);
+
+	[right45] state=45 -> (state'=46);
+	[down45] state=45 -> (state'=61);
+	[left45] state=45 -> (state'=44);
+	[up45] state=45 -> (state'=29);
+
+	[right46] state=46 -> (state'=47);
+	[down46] state=46 -> (state'=62);
+	[left46] state=46 -> (state'=45);
+	[up46] state=46 -> (state'=30);
+
+	[right47] state=47 -> (state'=47);
+	[down47] state=47 -> (state'=63);
+	[left47] state=47 -> (state'=46);
+	[up47] state=47 -> (state'=31);
+
+	[right48] state=48 -> (state'=49);
+	[down48] state=48 -> (state'=64);
+	[left48] state=48 -> (state'=48);
+	[up48] state=48 -> (state'=32);
+
+	[right49] state=49 -> (state'=50);
+	[down49] state=49 -> (state'=65);
+	[left49] state=49 -> (state'=48);
+	[up49] state=49 -> (state'=33);
+
+	[right50] state=50 -> (state'=51);
+	[down50] state=50 -> (state'=66);
+	[left50] state=50 -> (state'=49);
+	[up50] state=50 -> (state'=34);
+
+	[right51] state=51 -> (state'=52);
+	[down51] state=51 -> (state'=67);
+	[left51] state=51 -> (state'=50);
+	[up51] state=51 -> (state'=35);
+
+	[right52] state=52 -> (state'=53);
+	[down52] state=52 -> (state'=68);
+	[left52] state=52 -> (state'=51);
+	[up52] state=52 -> (state'=36);
+
+	[right53] state=53 -> (state'=54);
+	[down53] state=53 -> (state'=69);
+	[left53] state=53 -> (state'=52);
+	[up53] state=53 -> (state'=37);
+
+	[right54] state=54 -> (state'=55);
+	[down54] state=54 -> (state'=70);
+	[left54] state=54 -> (state'=53);
+	[up54] state=54 -> (state'=38);
+
+	[right55] state=55 -> (state'=56);
+	[down55] state=55 -> (state'=71);
+	[left55] state=55 -> (state'=54);
+	[up55] state=55 -> (state'=39);
+
+	[right56] state=56 -> (state'=57);
+	[down56] state=56 -> (state'=72);
+	[left56] state=56 -> (state'=55);
+	[up56] state=56 -> (state'=40);
+
+	[right57] state=57 -> (state'=58);
+	[down57] state=57 -> (state'=73);
+	[left57] state=57 -> (state'=56);
+	[up57] state=57 -> (state'=41);
+
+	[right58] state=58 -> (state'=59);
+	[down58] state=58 -> (state'=74);
+	[left58] state=58 -> (state'=57);
+	[up58] state=58 -> (state'=42);
+
+	[right59] state=59 -> (state'=60);
+	[down59] state=59 -> (state'=75);
+	[left59] state=59 -> (state'=58);
+	[up59] state=59 -> (state'=43);
+
+	[right60] state=60 -> (state'=61);
+	[down60] state=60 -> (state'=76);
+	[left60] state=60 -> (state'=59);
+	[up60] state=60 -> (state'=44);
+
+	[right61] state=61 -> (state'=62);
+	[down61] state=61 -> (state'=77);
+	[left61] state=61 -> (state'=60);
+	[up61] state=61 -> (state'=45);
+
+	[right62] state=62 -> (state'=63);
+	[down62] state=62 -> (state'=78);
+	[left62] state=62 -> (state'=61);
+	[up62] state=62 -> (state'=46);
+
+	[right63] state=63 -> (state'=63);
+	[down63] state=63 -> (state'=79);
+	[left63] state=63 -> (state'=62);
+	[up63] state=63 -> (state'=47);
+
+	[right64] state=64 -> (state'=65);
+	[down64] state=64 -> (state'=80);
+	[left64] state=64 -> (state'=64);
+	[up64] state=64 -> (state'=48);
+
+	[right65] state=65 -> (state'=66);
+	[down65] state=65 -> (state'=81);
+	[left65] state=65 -> (state'=64);
+	[up65] state=65 -> (state'=49);
+
+	[right66] state=66 -> (state'=67);
+	[down66] state=66 -> (state'=82);
+	[left66] state=66 -> (state'=65);
+	[up66] state=66 -> (state'=50);
+
+	[right67] state=67 -> (state'=68);
+	[down67] state=67 -> (state'=83);
+	[left67] state=67 -> (state'=66);
+	[up67] state=67 -> (state'=51);
+
+	[right68] state=68 -> (state'=69);
+	[down68] state=68 -> (state'=84);
+	[left68] state=68 -> (state'=67);
+	[up68] state=68 -> (state'=52);
+
+	[right69] state=69 -> (state'=70);
+	[down69] state=69 -> (state'=85);
+	[left69] state=69 -> (state'=68);
+	[up69] state=69 -> (state'=53);
+
+	[right70] state=70 -> (state'=71);
+	[down70] state=70 -> (state'=86);
+	[left70] state=70 -> (state'=69);
+	[up70] state=70 -> (state'=54);
+
+	[right71] state=71 -> (state'=72);
+	[down71] state=71 -> (state'=87);
+	[left71] state=71 -> (state'=70);
+	[up71] state=71 -> (state'=55);
+
+	[right72] state=72 -> (state'=73);
+	[down72] state=72 -> (state'=88);
+	[left72] state=72 -> (state'=71);
+	[up72] state=72 -> (state'=56);
+
+	[right73] state=73 -> (state'=74);
+	[down73] state=73 -> (state'=89);
+	[left73] state=73 -> (state'=72);
+	[up73] state=73 -> (state'=57);
+
+	[right74] state=74 -> (state'=75);
+	[down74] state=74 -> (state'=90);
+	[left74] state=74 -> (state'=73);
+	[up74] state=74 -> (state'=58);
+
+	[right75] state=75 -> (state'=76);
+	[down75] state=75 -> (state'=91);
+	[left75] state=75 -> (state'=74);
+	[up75] state=75 -> (state'=59);
+
+	[right76] state=76 -> (state'=77);
+	[down76] state=76 -> (state'=92);
+	[left76] state=76 -> (state'=75);
+	[up76] state=76 -> (state'=60);
+
+	[right77] state=77 -> (state'=78);
+	[down77] state=77 -> (state'=93);
+	[left77] state=77 -> (state'=76);
+	[up77] state=77 -> (state'=61);
+
+	[right78] state=78 -> (state'=79);
+	[down78] state=78 -> (state'=94);
+	[left78] state=78 -> (state'=77);
+	[up78] state=78 -> (state'=62);
+
+	[right79] state=79 -> (state'=79);
+	[down79] state=79 -> (state'=95);
+	[left79] state=79 -> (state'=78);
+	[up79] state=79 -> (state'=63);
+
+	[right80] state=80 -> (state'=81);
+	[down80] state=80 -> (state'=96);
+	[left80] state=80 -> (state'=80);
+	[up80] state=80 -> (state'=64);
+
+	[right81] state=81 -> (state'=82);
+	[down81] state=81 -> (state'=97);
+	[left81] state=81 -> (state'=80);
+	[up81] state=81 -> (state'=65);
+
+	[right82] state=82 -> (state'=83);
+	[down82] state=82 -> (state'=98);
+	[left82] state=82 -> (state'=81);
+	[up82] state=82 -> (state'=66);
+
+	[right83] state=83 -> (state'=84);
+	[down83] state=83 -> (state'=99);
+	[left83] state=83 -> (state'=82);
+	[up83] state=83 -> (state'=67);
+
+	[right84] state=84 -> (state'=85);
+	[down84] state=84 -> (state'=100);
+	[left84] state=84 -> (state'=83);
+	[up84] state=84 -> (state'=68);
+
+	[right85] state=85 -> (state'=86);
+	[down85] state=85 -> (state'=101);
+	[left85] state=85 -> (state'=84);
+	[up85] state=85 -> (state'=69);
+
+	[right86] state=86 -> (state'=87);
+	[down86] state=86 -> (state'=102);
+	[left86] state=86 -> (state'=85);
+	[up86] state=86 -> (state'=70);
+
+	[right87] state=87 -> (state'=88);
+	[down87] state=87 -> (state'=103);
+	[left87] state=87 -> (state'=86);
+	[up87] state=87 -> (state'=71);
+
+	[right88] state=88 -> (state'=89);
+	[down88] state=88 -> (state'=104);
+	[left88] state=88 -> (state'=87);
+	[up88] state=88 -> (state'=72);
+
+	[right89] state=89 -> (state'=90);
+	[down89] state=89 -> (state'=105);
+	[left89] state=89 -> (state'=88);
+	[up89] state=89 -> (state'=73);
+
+	[right90] state=90 -> (state'=91);
+	[down90] state=90 -> (state'=106);
+	[left90] state=90 -> (state'=89);
+	[up90] state=90 -> (state'=74);
+
+	[right91] state=91 -> (state'=92);
+	[down91] state=91 -> (state'=107);
+	[left91] state=91 -> (state'=90);
+	[up91] state=91 -> (state'=75);
+
+	[right92] state=92 -> (state'=93);
+	[down92] state=92 -> (state'=108);
+	[left92] state=92 -> (state'=91);
+	[up92] state=92 -> (state'=76);
+
+	[right93] state=93 -> (state'=94);
+	[down93] state=93 -> (state'=109);
+	[left93] state=93 -> (state'=92);
+	[up93] state=93 -> (state'=77);
+
+	[right94] state=94 -> (state'=95);
+	[down94] state=94 -> (state'=110);
+	[left94] state=94 -> (state'=93);
+	[up94] state=94 -> (state'=78);
+
+	[right95] state=95 -> (state'=95);
+	[down95] state=95 -> (state'=111);
+	[left95] state=95 -> (state'=94);
+	[up95] state=95 -> (state'=79);
+
+	[right96] state=96 -> (state'=97);
+	[down96] state=96 -> (state'=112);
+	[left96] state=96 -> (state'=96);
+	[up96] state=96 -> (state'=80);
+
+	[right97] state=97 -> (state'=98);
+	[down97] state=97 -> (state'=113);
+	[left97] state=97 -> (state'=96);
+	[up97] state=97 -> (state'=81);
+
+	[right98] state=98 -> (state'=99);
+	[down98] state=98 -> (state'=114);
+	[left98] state=98 -> (state'=97);
+	[up98] state=98 -> (state'=82);
+
+	[right99] state=99 -> (state'=100);
+	[down99] state=99 -> (state'=115);
+	[left99] state=99 -> (state'=98);
+	[up99] state=99 -> (state'=83);
+
+	[right100] state=100 -> (state'=101);
+	[down100] state=100 -> (state'=116);
+	[left100] state=100 -> (state'=99);
+	[up100] state=100 -> (state'=84);
+
+	[right101] state=101 -> (state'=102);
+	[down101] state=101 -> (state'=117);
+	[left101] state=101 -> (state'=100);
+	[up101] state=101 -> (state'=85);
+
+	[right102] state=102 -> (state'=103);
+	[down102] state=102 -> (state'=118);
+	[left102] state=102 -> (state'=101);
+	[up102] state=102 -> (state'=86);
+
+	[right103] state=103 -> (state'=104);
+	[down103] state=103 -> (state'=119);
+	[left103] state=103 -> (state'=102);
+	[up103] state=103 -> (state'=87);
+
+	[right104] state=104 -> (state'=105);
+	[down104] state=104 -> (state'=120);
+	[left104] state=104 -> (state'=103);
+	[up104] state=104 -> (state'=88);
+
+	[right105] state=105 -> (state'=106);
+	[down105] state=105 -> (state'=121);
+	[left105] state=105 -> (state'=104);
+	[up105] state=105 -> (state'=89);
+
+	[right106] state=106 -> (state'=107);
+	[down106] state=106 -> (state'=122);
+	[left106] state=106 -> (state'=105);
+	[up106] state=106 -> (state'=90);
+
+	[right107] state=107 -> (state'=108);
+	[down107] state=107 -> (state'=123);
+	[left107] state=107 -> (state'=106);
+	[up107] state=107 -> (state'=91);
+
+	[right108] state=108 -> (state'=109);
+	[down108] state=108 -> (state'=124);
+	[left108] state=108 -> (state'=107);
+	[up108] state=108 -> (state'=92);
+
+	[right109] state=109 -> (state'=110);
+	[down109] state=109 -> (state'=125);
+	[left109] state=109 -> (state'=108);
+	[up109] state=109 -> (state'=93);
+
+	[right110] state=110 -> (state'=111);
+	[down110] state=110 -> (state'=126);
+	[left110] state=110 -> (state'=109);
+	[up110] state=110 -> (state'=94);
+
+	[right111] state=111 -> (state'=111);
+	[down111] state=111 -> (state'=127);
+	[left111] state=111 -> (state'=110);
+	[up111] state=111 -> (state'=95);
+
+	[right112] state=112 -> (state'=113);
+	[down112] state=112 -> (state'=128);
+	[left112] state=112 -> (state'=112);
+	[up112] state=112 -> (state'=96);
+
+	[right113] state=113 -> (state'=114);
+	[down113] state=113 -> (state'=129);
+	[left113] state=113 -> (state'=112);
+	[up113] state=113 -> (state'=97);
+
+	[right114] state=114 -> (state'=115);
+	[down114] state=114 -> (state'=130);
+	[left114] state=114 -> (state'=113);
+	[up114] state=114 -> (state'=98);
+
+	[right115] state=115 -> (state'=116);
+	[down115] state=115 -> (state'=131);
+	[left115] state=115 -> (state'=114);
+	[up115] state=115 -> (state'=99);
+
+	[right116] state=116 -> (state'=117);
+	[down116] state=116 -> (state'=132);
+	[left116] state=116 -> (state'=115);
+	[up116] state=116 -> (state'=100);
+
+	[right117] state=117 -> (state'=118);
+	[down117] state=117 -> (state'=133);
+	[left117] state=117 -> (state'=116);
+	[up117] state=117 -> (state'=101);
+
+	[right118] state=118 -> (state'=119);
+	[down118] state=118 -> (state'=134);
+	[left118] state=118 -> (state'=117);
+	[up118] state=118 -> (state'=102);
+
+	[right119] state=119 -> (state'=120);
+	[down119] state=119 -> (state'=135);
+	[left119] state=119 -> (state'=118);
+	[up119] state=119 -> (state'=103);
+
+	[right120] state=120 -> (state'=121);
+	[down120] state=120 -> (state'=136);
+	[left120] state=120 -> (state'=119);
+	[up120] state=120 -> (state'=104);
+
+	[right121] state=121 -> (state'=122);
+	[down121] state=121 -> (state'=137);
+	[left121] state=121 -> (state'=120);
+	[up121] state=121 -> (state'=105);
+
+	[right122] state=122 -> (state'=123);
+	[down122] state=122 -> (state'=138);
+	[left122] state=122 -> (state'=121);
+	[up122] state=122 -> (state'=106);
+
+	[right123] state=123 -> (state'=124);
+	[down123] state=123 -> (state'=139);
+	[left123] state=123 -> (state'=122);
+	[up123] state=123 -> (state'=107);
+
+	[right124] state=124 -> (state'=125);
+	[down124] state=124 -> (state'=140);
+	[left124] state=124 -> (state'=123);
+	[up124] state=124 -> (state'=108);
+
+	[right125] state=125 -> (state'=126);
+	[down125] state=125 -> (state'=141);
+	[left125] state=125 -> (state'=124);
+	[up125] state=125 -> (state'=109);
+
+	[right126] state=126 -> (state'=127);
+	[down126] state=126 -> (state'=142);
+	[left126] state=126 -> (state'=125);
+	[up126] state=126 -> (state'=110);
+
+	[right127] state=127 -> (state'=127);
+	[down127] state=127 -> (state'=143);
+	[left127] state=127 -> (state'=126);
+	[up127] state=127 -> (state'=111);
+
+	[right128] state=128 -> (state'=129);
+	[down128] state=128 -> (state'=144);
+	[left128] state=128 -> (state'=128);
+	[up128] state=128 -> (state'=112);
+
+	[right129] state=129 -> (state'=130);
+	[down129] state=129 -> (state'=145);
+	[left129] state=129 -> (state'=128);
+	[up129] state=129 -> (state'=113);
+
+	[right130] state=130 -> (state'=131);
+	[down130] state=130 -> (state'=146);
+	[left130] state=130 -> (state'=129);
+	[up130] state=130 -> (state'=114);
+
+	[right131] state=131 -> (state'=132);
+	[down131] state=131 -> (state'=147);
+	[left131] state=131 -> (state'=130);
+	[up131] state=131 -> (state'=115);
+
+	[right132] state=132 -> (state'=133);
+	[down132] state=132 -> (state'=148);
+	[left132] state=132 -> (state'=131);
+	[up132] state=132 -> (state'=116);
+
+	[right133] state=133 -> (state'=134);
+	[down133] state=133 -> (state'=149);
+	[left133] state=133 -> (state'=132);
+	[up133] state=133 -> (state'=117);
+
+	[right134] state=134 -> (state'=135);
+	[down134] state=134 -> (state'=150);
+	[left134] state=134 -> (state'=133);
+	[up134] state=134 -> (state'=118);
+
+	[right135] state=135 -> (state'=136);
+	[down135] state=135 -> (state'=151);
+	[left135] state=135 -> (state'=134);
+	[up135] state=135 -> (state'=119);
+
+	[right136] state=136 -> (state'=137);
+	[down136] state=136 -> (state'=152);
+	[left136] state=136 -> (state'=135);
+	[up136] state=136 -> (state'=120);
+
+	[right137] state=137 -> (state'=138);
+	[down137] state=137 -> (state'=153);
+	[left137] state=137 -> (state'=136);
+	[up137] state=137 -> (state'=121);
+
+	[right138] state=138 -> (state'=139);
+	[down138] state=138 -> (state'=154);
+	[left138] state=138 -> (state'=137);
+	[up138] state=138 -> (state'=122);
+
+	[right139] state=139 -> (state'=140);
+	[down139] state=139 -> (state'=155);
+	[left139] state=139 -> (state'=138);
+	[up139] state=139 -> (state'=123);
+
+	[right140] state=140 -> (state'=141);
+	[down140] state=140 -> (state'=156);
+	[left140] state=140 -> (state'=139);
+	[up140] state=140 -> (state'=124);
+
+	[right141] state=141 -> (state'=142);
+	[down141] state=141 -> (state'=157);
+	[left141] state=141 -> (state'=140);
+	[up141] state=141 -> (state'=125);
+
+	[right142] state=142 -> (state'=143);
+	[down142] state=142 -> (state'=158);
+	[left142] state=142 -> (state'=141);
+	[up142] state=142 -> (state'=126);
+
+	[right143] state=143 -> (state'=143);
+	[down143] state=143 -> (state'=159);
+	[left143] state=143 -> (state'=142);
+	[up143] state=143 -> (state'=127);
+
+	[right144] state=144 -> (state'=145);
+	[down144] state=144 -> (state'=160);
+	[left144] state=144 -> (state'=144);
+	[up144] state=144 -> (state'=128);
+
+	[right145] state=145 -> (state'=146);
+	[down145] state=145 -> (state'=161);
+	[left145] state=145 -> (state'=144);
+	[up145] state=145 -> (state'=129);
+
+	[right146] state=146 -> (state'=147);
+	[down146] state=146 -> (state'=162);
+	[left146] state=146 -> (state'=145);
+	[up146] state=146 -> (state'=130);
+
+	[right147] state=147 -> (state'=148);
+	[down147] state=147 -> (state'=163);
+	[left147] state=147 -> (state'=146);
+	[up147] state=147 -> (state'=131);
+
+	[right148] state=148 -> (state'=149);
+	[down148] state=148 -> (state'=164);
+	[left148] state=148 -> (state'=147);
+	[up148] state=148 -> (state'=132);
+
+	[right149] state=149 -> (state'=150);
+	[down149] state=149 -> (state'=165);
+	[left149] state=149 -> (state'=148);
+	[up149] state=149 -> (state'=133);
+
+	[right150] state=150 -> (state'=151);
+	[down150] state=150 -> (state'=166);
+	[left150] state=150 -> (state'=149);
+	[up150] state=150 -> (state'=134);
+
+	[right151] state=151 -> (state'=152);
+	[down151] state=151 -> (state'=167);
+	[left151] state=151 -> (state'=150);
+	[up151] state=151 -> (state'=135);
+
+	[right152] state=152 -> (state'=153);
+	[down152] state=152 -> (state'=168);
+	[left152] state=152 -> (state'=151);
+	[up152] state=152 -> (state'=136);
+
+	[right153] state=153 -> (state'=154);
+	[down153] state=153 -> (state'=169);
+	[left153] state=153 -> (state'=152);
+	[up153] state=153 -> (state'=137);
+
+	[right154] state=154 -> (state'=155);
+	[down154] state=154 -> (state'=170);
+	[left154] state=154 -> (state'=153);
+	[up154] state=154 -> (state'=138);
+
+	[right155] state=155 -> (state'=156);
+	[down155] state=155 -> (state'=171);
+	[left155] state=155 -> (state'=154);
+	[up155] state=155 -> (state'=139);
+
+	[right156] state=156 -> (state'=157);
+	[down156] state=156 -> (state'=172);
+	[left156] state=156 -> (state'=155);
+	[up156] state=156 -> (state'=140);
+
+	[right157] state=157 -> (state'=158);
+	[down157] state=157 -> (state'=173);
+	[left157] state=157 -> (state'=156);
+	[up157] state=157 -> (state'=141);
+
+	[right158] state=158 -> (state'=159);
+	[down158] state=158 -> (state'=174);
+	[left158] state=158 -> (state'=157);
+	[up158] state=158 -> (state'=142);
+
+	[right159] state=159 -> (state'=159);
+	[down159] state=159 -> (state'=175);
+	[left159] state=159 -> (state'=158);
+	[up159] state=159 -> (state'=143);
+
+	[right160] state=160 -> (state'=161);
+	[down160] state=160 -> (state'=176);
+	[left160] state=160 -> (state'=160);
+	[up160] state=160 -> (state'=144);
+
+	[right161] state=161 -> (state'=162);
+	[down161] state=161 -> (state'=177);
+	[left161] state=161 -> (state'=160);
+	[up161] state=161 -> (state'=145);
+
+	[right162] state=162 -> (state'=163);
+	[down162] state=162 -> (state'=178);
+	[left162] state=162 -> (state'=161);
+	[up162] state=162 -> (state'=146);
+
+	[right163] state=163 -> (state'=164);
+	[down163] state=163 -> (state'=179);
+	[left163] state=163 -> (state'=162);
+	[up163] state=163 -> (state'=147);
+
+	[right164] state=164 -> (state'=165);
+	[down164] state=164 -> (state'=180);
+	[left164] state=164 -> (state'=163);
+	[up164] state=164 -> (state'=148);
+
+	[right165] state=165 -> (state'=166);
+	[down165] state=165 -> (state'=181);
+	[left165] state=165 -> (state'=164);
+	[up165] state=165 -> (state'=149);
+
+	[right166] state=166 -> (state'=167);
+	[down166] state=166 -> (state'=182);
+	[left166] state=166 -> (state'=165);
+	[up166] state=166 -> (state'=150);
+
+	[right167] state=167 -> (state'=168);
+	[down167] state=167 -> (state'=183);
+	[left167] state=167 -> (state'=166);
+	[up167] state=167 -> (state'=151);
+
+	[right168] state=168 -> (state'=169);
+	[down168] state=168 -> (state'=184);
+	[left168] state=168 -> (state'=167);
+	[up168] state=168 -> (state'=152);
+
+	[right169] state=169 -> (state'=170);
+	[down169] state=169 -> (state'=185);
+	[left169] state=169 -> (state'=168);
+	[up169] state=169 -> (state'=153);
+
+	[right170] state=170 -> (state'=171);
+	[down170] state=170 -> (state'=186);
+	[left170] state=170 -> (state'=169);
+	[up170] state=170 -> (state'=154);
+
+	[right171] state=171 -> (state'=172);
+	[down171] state=171 -> (state'=187);
+	[left171] state=171 -> (state'=170);
+	[up171] state=171 -> (state'=155);
+
+	[right172] state=172 -> (state'=173);
+	[down172] state=172 -> (state'=188);
+	[left172] state=172 -> (state'=171);
+	[up172] state=172 -> (state'=156);
+
+	[right173] state=173 -> (state'=174);
+	[down173] state=173 -> (state'=189);
+	[left173] state=173 -> (state'=172);
+	[up173] state=173 -> (state'=157);
+
+	[right174] state=174 -> (state'=175);
+	[down174] state=174 -> (state'=190);
+	[left174] state=174 -> (state'=173);
+	[up174] state=174 -> (state'=158);
+
+	[right175] state=175 -> (state'=175);
+	[down175] state=175 -> (state'=191);
+	[left175] state=175 -> (state'=174);
+	[up175] state=175 -> (state'=159);
+
+	[right176] state=176 -> (state'=177);
+	[down176] state=176 -> (state'=192);
+	[left176] state=176 -> (state'=176);
+	[up176] state=176 -> (state'=160);
+
+	[right177] state=177 -> (state'=178);
+	[down177] state=177 -> (state'=193);
+	[left177] state=177 -> (state'=176);
+	[up177] state=177 -> (state'=161);
+
+	[right178] state=178 -> (state'=179);
+	[down178] state=178 -> (state'=194);
+	[left178] state=178 -> (state'=177);
+	[up178] state=178 -> (state'=162);
+
+	[right179] state=179 -> (state'=180);
+	[down179] state=179 -> (state'=195);
+	[left179] state=179 -> (state'=178);
+	[up179] state=179 -> (state'=163);
+
+	[right180] state=180 -> (state'=181);
+	[down180] state=180 -> (state'=196);
+	[left180] state=180 -> (state'=179);
+	[up180] state=180 -> (state'=164);
+
+	[right181] state=181 -> (state'=182);
+	[down181] state=181 -> (state'=197);
+	[left181] state=181 -> (state'=180);
+	[up181] state=181 -> (state'=165);
+
+	[right182] state=182 -> (state'=183);
+	[down182] state=182 -> (state'=198);
+	[left182] state=182 -> (state'=181);
+	[up182] state=182 -> (state'=166);
+
+	[right183] state=183 -> (state'=184);
+	[down183] state=183 -> (state'=199);
+	[left183] state=183 -> (state'=182);
+	[up183] state=183 -> (state'=167);
+
+	[right184] state=184 -> (state'=185);
+	[down184] state=184 -> (state'=200);
+	[left184] state=184 -> (state'=183);
+	[up184] state=184 -> (state'=168);
+
+	[right185] state=185 -> (state'=186);
+	[down185] state=185 -> (state'=201);
+	[left185] state=185 -> (state'=184);
+	[up185] state=185 -> (state'=169);
+
+	[right186] state=186 -> (state'=187);
+	[down186] state=186 -> (state'=202);
+	[left186] state=186 -> (state'=185);
+	[up186] state=186 -> (state'=170);
+
+	[right187] state=187 -> (state'=188);
+	[down187] state=187 -> (state'=203);
+	[left187] state=187 -> (state'=186);
+	[up187] state=187 -> (state'=171);
+
+	[right188] state=188 -> (state'=189);
+	[down188] state=188 -> (state'=204);
+	[left188] state=188 -> (state'=187);
+	[up188] state=188 -> (state'=172);
+
+	[right189] state=189 -> (state'=190);
+	[down189] state=189 -> (state'=205);
+	[left189] state=189 -> (state'=188);
+	[up189] state=189 -> (state'=173);
+
+	[right190] state=190 -> (state'=191);
+	[down190] state=190 -> (state'=206);
+	[left190] state=190 -> (state'=189);
+	[up190] state=190 -> (state'=174);
+
+	[right191] state=191 -> (state'=191);
+	[down191] state=191 -> (state'=207);
+	[left191] state=191 -> (state'=190);
+	[up191] state=191 -> (state'=175);
+
+	[right192] state=192 -> (state'=193);
+	[down192] state=192 -> (state'=208);
+	[left192] state=192 -> (state'=192);
+	[up192] state=192 -> (state'=176);
+
+	[right193] state=193 -> (state'=194);
+	[down193] state=193 -> (state'=209);
+	[left193] state=193 -> (state'=192);
+	[up193] state=193 -> (state'=177);
+
+	[right194] state=194 -> (state'=195);
+	[down194] state=194 -> (state'=210);
+	[left194] state=194 -> (state'=193);
+	[up194] state=194 -> (state'=178);
+
+	[right195] state=195 -> (state'=196);
+	[down195] state=195 -> (state'=211);
+	[left195] state=195 -> (state'=194);
+	[up195] state=195 -> (state'=179);
+
+	[right196] state=196 -> (state'=197);
+	[down196] state=196 -> (state'=212);
+	[left196] state=196 -> (state'=195);
+	[up196] state=196 -> (state'=180);
+
+	[right197] state=197 -> (state'=198);
+	[down197] state=197 -> (state'=213);
+	[left197] state=197 -> (state'=196);
+	[up197] state=197 -> (state'=181);
+
+	[right198] state=198 -> (state'=199);
+	[down198] state=198 -> (state'=214);
+	[left198] state=198 -> (state'=197);
+	[up198] state=198 -> (state'=182);
+
+	[right199] state=199 -> (state'=200);
+	[down199] state=199 -> (state'=215);
+	[left199] state=199 -> (state'=198);
+	[up199] state=199 -> (state'=183);
+
+	[right200] state=200 -> (state'=201);
+	[down200] state=200 -> (state'=216);
+	[left200] state=200 -> (state'=199);
+	[up200] state=200 -> (state'=184);
+
+	[right201] state=201 -> (state'=202);
+	[down201] state=201 -> (state'=217);
+	[left201] state=201 -> (state'=200);
+	[up201] state=201 -> (state'=185);
+
+	[right202] state=202 -> (state'=203);
+	[down202] state=202 -> (state'=218);
+	[left202] state=202 -> (state'=201);
+	[up202] state=202 -> (state'=186);
+
+	[right203] state=203 -> (state'=204);
+	[down203] state=203 -> (state'=219);
+	[left203] state=203 -> (state'=202);
+	[up203] state=203 -> (state'=187);
+
+	[right204] state=204 -> (state'=205);
+	[down204] state=204 -> (state'=220);
+	[left204] state=204 -> (state'=203);
+	[up204] state=204 -> (state'=188);
+
+	[right205] state=205 -> (state'=206);
+	[down205] state=205 -> (state'=221);
+	[left205] state=205 -> (state'=204);
+	[up205] state=205 -> (state'=189);
+
+	[right206] state=206 -> (state'=207);
+	[down206] state=206 -> (state'=222);
+	[left206] state=206 -> (state'=205);
+	[up206] state=206 -> (state'=190);
+
+	[right207] state=207 -> (state'=207);
+	[down207] state=207 -> (state'=223);
+	[left207] state=207 -> (state'=206);
+	[up207] state=207 -> (state'=191);
+
+	[right208] state=208 -> (state'=209);
+	[down208] state=208 -> (state'=224);
+	[left208] state=208 -> (state'=208);
+	[up208] state=208 -> (state'=192);
+
+	[right209] state=209 -> (state'=210);
+	[down209] state=209 -> (state'=225);
+	[left209] state=209 -> (state'=208);
+	[up209] state=209 -> (state'=193);
+
+	[right210] state=210 -> (state'=211);
+	[down210] state=210 -> (state'=226);
+	[left210] state=210 -> (state'=209);
+	[up210] state=210 -> (state'=194);
+
+	[right211] state=211 -> (state'=212);
+	[down211] state=211 -> (state'=227);
+	[left211] state=211 -> (state'=210);
+	[up211] state=211 -> (state'=195);
+
+	[right212] state=212 -> (state'=213);
+	[down212] state=212 -> (state'=228);
+	[left212] state=212 -> (state'=211);
+	[up212] state=212 -> (state'=196);
+
+	[right213] state=213 -> (state'=214);
+	[down213] state=213 -> (state'=229);
+	[left213] state=213 -> (state'=212);
+	[up213] state=213 -> (state'=197);
+
+	[right214] state=214 -> (state'=215);
+	[down214] state=214 -> (state'=230);
+	[left214] state=214 -> (state'=213);
+	[up214] state=214 -> (state'=198);
+
+	[right215] state=215 -> (state'=216);
+	[down215] state=215 -> (state'=231);
+	[left215] state=215 -> (state'=214);
+	[up215] state=215 -> (state'=199);
+
+	[right216] state=216 -> (state'=217);
+	[down216] state=216 -> (state'=232);
+	[left216] state=216 -> (state'=215);
+	[up216] state=216 -> (state'=200);
+
+	[right217] state=217 -> (state'=218);
+	[down217] state=217 -> (state'=233);
+	[left217] state=217 -> (state'=216);
+	[up217] state=217 -> (state'=201);
+
+	[right218] state=218 -> (state'=219);
+	[down218] state=218 -> (state'=234);
+	[left218] state=218 -> (state'=217);
+	[up218] state=218 -> (state'=202);
+
+	[right219] state=219 -> (state'=220);
+	[down219] state=219 -> (state'=235);
+	[left219] state=219 -> (state'=218);
+	[up219] state=219 -> (state'=203);
+
+	[right220] state=220 -> (state'=221);
+	[down220] state=220 -> (state'=236);
+	[left220] state=220 -> (state'=219);
+	[up220] state=220 -> (state'=204);
+
+	[right221] state=221 -> (state'=222);
+	[down221] state=221 -> (state'=237);
+	[left221] state=221 -> (state'=220);
+	[up221] state=221 -> (state'=205);
+
+	[right222] state=222 -> (state'=223);
+	[down222] state=222 -> (state'=238);
+	[left222] state=222 -> (state'=221);
+	[up222] state=222 -> (state'=206);
+
+	[right223] state=223 -> (state'=223);
+	[down223] state=223 -> (state'=239);
+	[left223] state=223 -> (state'=222);
+	[up223] state=223 -> (state'=207);
+
+	[right224] state=224 -> (state'=225);
+	[down224] state=224 -> (state'=240);
+	[left224] state=224 -> (state'=224);
+	[up224] state=224 -> (state'=208);
+
+	[right225] state=225 -> (state'=226);
+	[down225] state=225 -> (state'=241);
+	[left225] state=225 -> (state'=224);
+	[up225] state=225 -> (state'=209);
+
+	[right226] state=226 -> (state'=227);
+	[down226] state=226 -> (state'=242);
+	[left226] state=226 -> (state'=225);
+	[up226] state=226 -> (state'=210);
+
+	[right227] state=227 -> (state'=228);
+	[down227] state=227 -> (state'=243);
+	[left227] state=227 -> (state'=226);
+	[up227] state=227 -> (state'=211);
+
+	[right228] state=228 -> (state'=229);
+	[down228] state=228 -> (state'=244);
+	[left228] state=228 -> (state'=227);
+	[up228] state=228 -> (state'=212);
+
+	[right229] state=229 -> (state'=230);
+	[down229] state=229 -> (state'=245);
+	[left229] state=229 -> (state'=228);
+	[up229] state=229 -> (state'=213);
+
+	[right230] state=230 -> (state'=231);
+	[down230] state=230 -> (state'=246);
+	[left230] state=230 -> (state'=229);
+	[up230] state=230 -> (state'=214);
+
+	[right231] state=231 -> (state'=232);
+	[down231] state=231 -> (state'=247);
+	[left231] state=231 -> (state'=230);
+	[up231] state=231 -> (state'=215);
+
+	[right232] state=232 -> (state'=233);
+	[down232] state=232 -> (state'=248);
+	[left232] state=232 -> (state'=231);
+	[up232] state=232 -> (state'=216);
+
+	[right233] state=233 -> (state'=234);
+	[down233] state=233 -> (state'=249);
+	[left233] state=233 -> (state'=232);
+	[up233] state=233 -> (state'=217);
+
+	[right234] state=234 -> (state'=235);
+	[down234] state=234 -> (state'=250);
+	[left234] state=234 -> (state'=233);
+	[up234] state=234 -> (state'=218);
+
+	[right235] state=235 -> (state'=236);
+	[down235] state=235 -> (state'=251);
+	[left235] state=235 -> (state'=234);
+	[up235] state=235 -> (state'=219);
+
+	[right236] state=236 -> (state'=237);
+	[down236] state=236 -> (state'=252);
+	[left236] state=236 -> (state'=235);
+	[up236] state=236 -> (state'=220);
+
+	[right237] state=237 -> (state'=238);
+	[down237] state=237 -> (state'=253);
+	[left237] state=237 -> (state'=236);
+	[up237] state=237 -> (state'=221);
+
+	[right238] state=238 -> (state'=239);
+	[down238] state=238 -> (state'=254);
+	[left238] state=238 -> (state'=237);
+	[up238] state=238 -> (state'=222);
+
+	[right239] state=239 -> (state'=239);
+	[down239] state=239 -> (state'=255);
+	[left239] state=239 -> (state'=238);
+	[up239] state=239 -> (state'=223);
+
+	[right240] state=240 -> (state'=241);
+	[down240] state=240 -> (state'=240);
+	[left240] state=240 -> (state'=240);
+	[up240] state=240 -> (state'=224);
+
+	[right241] state=241 -> (state'=242);
+	[down241] state=241 -> (state'=241);
+	[left241] state=241 -> (state'=240);
+	[up241] state=241 -> (state'=225);
+
+	[right242] state=242 -> (state'=243);
+	[down242] state=242 -> (state'=242);
+	[left242] state=242 -> (state'=241);
+	[up242] state=242 -> (state'=226);
+
+	[right243] state=243 -> (state'=244);
+	[down243] state=243 -> (state'=243);
+	[left243] state=243 -> (state'=242);
+	[up243] state=243 -> (state'=227);
+
+	[right244] state=244 -> (state'=245);
+	[down244] state=244 -> (state'=244);
+	[left244] state=244 -> (state'=243);
+	[up244] state=244 -> (state'=228);
+
+	[right245] state=245 -> (state'=246);
+	[down245] state=245 -> (state'=245);
+	[left245] state=245 -> (state'=244);
+	[up245] state=245 -> (state'=229);
+
+	[right246] state=246 -> (state'=247);
+	[down246] state=246 -> (state'=246);
+	[left246] state=246 -> (state'=245);
+	[up246] state=246 -> (state'=230);
+
+	[right247] state=247 -> (state'=248);
+	[down247] state=247 -> (state'=247);
+	[left247] state=247 -> (state'=246);
+	[up247] state=247 -> (state'=231);
+
+	[right248] state=248 -> (state'=249);
+	[down248] state=248 -> (state'=248);
+	[left248] state=248 -> (state'=247);
+	[up248] state=248 -> (state'=232);
+
+	[right249] state=249 -> (state'=250);
+	[down249] state=249 -> (state'=249);
+	[left249] state=249 -> (state'=248);
+	[up249] state=249 -> (state'=233);
+
+	[right250] state=250 -> (state'=251);
+	[down250] state=250 -> (state'=250);
+	[left250] state=250 -> (state'=249);
+	[up250] state=250 -> (state'=234);
+
+	[right251] state=251 -> (state'=252);
+	[down251] state=251 -> (state'=251);
+	[left251] state=251 -> (state'=250);
+	[up251] state=251 -> (state'=235);
+
+	[right252] state=252 -> (state'=253);
+	[down252] state=252 -> (state'=252);
+	[left252] state=252 -> (state'=251);
+	[up252] state=252 -> (state'=236);
+
+	[right253] state=253 -> (state'=254);
+	[down253] state=253 -> (state'=253);
+	[left253] state=253 -> (state'=252);
+	[up253] state=253 -> (state'=237);
+
+	[right254] state=254 -> (state'=255);
+	[down254] state=254 -> (state'=254);
+	[left254] state=254 -> (state'=253);
+	[up254] state=254 -> (state'=238);
+
+	[right255] state=255 -> (state'=255);
+	[down255] state=255 -> (state'=255);
+	[left255] state=255 -> (state'=254);
+	[up255] state=255 -> (state'=239);
+
+endmodule
+
+label "a" = state=84 | state=75 | state=121 | state=168 | state=248 | state=70 | state=184 | state=31 | state=227 | state=79 | state=170 | state=128 | state=22 | state=42 | state=38 | state=190 | state=54 | state=231 | state=147 | state=204 | state=163 | state=211 | state=174 | state=109 | state=154 | state=161 | state=247 | state=153 | state=57 | state=91 | state=152 | state=249 | state=111 | state=210 | state=219 | state=51 | state=140 | state=253 | state=239 | state=108 | state=63 | state=7 | state=82 | state=102 | state=59 | state=132 | state=141 | state=179 | state=33 | state=242 | state=217 | state=80 | state=118 | state=246 | state=4 | state=135 | state=15 | state=244 | state=83 | state=53 | state=52 | state=9 | state=69 | state=125;
+label "b" = state=101 | state=233 | state=215 | state=71 | state=146 | state=232 | state=29 | state=65 | state=58 | state=212 | state=96 | state=26 | state=159 | state=195 | state=6 | state=100 | state=61 | state=243 | state=199 | state=139 | state=93 | state=193 | state=37 | state=117 | state=237 | state=126 | state=149 | state=27 | state=113 | state=1 | state=178 | state=89 | state=150 | state=207 | state=56 | state=177 | state=250 | state=23 | state=123 | state=45 | state=55 | state=197 | state=220 | state=28 | state=34 | state=44 | state=50 | state=114 | state=222 | state=148 | state=187 | state=129 | state=188 | state=216 | state=11 | state=3 | state=95 | state=196 | state=144 | state=43 | state=228 | state=49 | state=230 | state=92;
+label "c" = state=62 | state=214 | state=251 | state=181 | state=225 | state=86 | state=46 | state=99 | state=30 | state=189 | state=20 | state=155 | state=60 | state=98 | state=254 | state=241 | state=66 | state=167 | state=192 | state=130 | state=94 | state=90 | state=165 | state=16 | state=156 | state=131 | state=162 | state=180 | state=236 | state=106 | state=206 | state=183 | state=2 | state=224 | state=182 | state=238 | state=21 | state=67 | state=12 | state=151 | state=221 | state=19 | state=172 | state=107 | state=137 | state=200 | state=5 | state=157 | state=122 | state=39 | state=104 | state=134 | state=81 | state=120 | state=133 | state=25 | state=40 | state=235 | state=213 | state=202 | state=201 | state=18 | state=169 | state=47;
+label "d" = state=0 | state=8 | state=10 | state=13 | state=14 | state=17 | state=24 | state=32 | state=35 | state=36 | state=41 | state=48 | state=64 | state=68 | state=72 | state=73 | state=74 | state=76 | state=77 | state=78 | state=85 | state=87 | state=88 | state=97 | state=103 | state=105 | state=110 | state=112 | state=115 | state=116 | state=119 | state=124 | state=127 | state=136 | state=138 | state=142 | state=143 | state=145 | state=158 | state=160 | state=164 | state=166 | state=171 | state=173 | state=175 | state=176 | state=185 | state=186 | state=191 | state=194 | state=198 | state=203 | state=205 | state=208 | state=209 | state=218 | state=223 | state=226 | state=229 | state=234 | state=240 | state=245 | state=252 | state=255;
+rewards "default"
+	state=62 | state=214 | state=251 | state=181 | state=225 | state=86 | state=46 | state=99 | state=30 | state=189 | state=20 | state=155 | state=60 | state=98 | state=254 | state=241 | state=66 | state=167 | state=192 | state=130 | state=94 | state=90 | state=165 | state=16 | state=156 | state=131 | state=162 | state=180 | state=236 | state=106 | state=206 | state=183 | state=2 | state=224 | state=182 | state=238 | state=21 | state=67 | state=12 | state=151 | state=221 | state=19 | state=172 | state=107 | state=137 | state=200 | state=5 | state=157 | state=122 | state=39 | state=104 | state=134 | state=81 | state=120 | state=133 | state=25 | state=40 | state=235 | state=213 | state=202 | state=201 | state=18 | state=169 | state=47 : 1;
+endrewards

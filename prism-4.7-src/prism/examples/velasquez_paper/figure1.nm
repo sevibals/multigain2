@@ -1,0 +1,42 @@
+// This example corresponds to the model from figure 1 of the paper "Controller Synthesis for Omega-Regular and Steady-State Specifications" by Alvaro Velasquez et al.
+
+mdp
+
+module lecture
+
+    state: [0..6] init 4;
+
+    [a0] state=0 -> (state'=1);
+    [a1] state=0 -> (state'=2);
+    [a2] state=0 -> (state'=1);
+    [a3] state=0 -> (state'=0);
+    [a0] state=1 -> (state'=0);
+    [a1] state=1 -> (state'=3);
+    [a2] state=1 -> (state'=3);
+    [a3] state=1 -> (state'=1);
+    [a0] state=2 -> (state'=3);
+    [a1] state=2 -> (state'=2);
+    [a2] state=2 -> (state'=3);
+    [a3] state=2 -> (state'=0);
+    [a0] state=3 -> (state'=2);
+    [a1] state=3 -> (state'=1);
+    [a2] state=3 -> (state'=3);
+    [a3] state=3 -> (state'=1);
+    [a0] state=4 -> (state'=0);
+    [a1] state=4 -> (state'=0);
+    [a2] state=4 -> (state'=4);
+    [a3] state=4 -> (state'=5);
+    [a0] state=5 -> (state'=5);
+    [a1] state=5 -> (state'=6);
+    [a2] state=5 -> (state'=4);
+    [a3] state=5 -> (state'=6);
+    [a0] state=6 -> (state'=6);
+    [a1] state=6 -> (state'=4);
+    [a2] state=6 -> (state'=5);
+    [a3] state=6 -> (state'=5);
+
+endmodule
+
+label "a" = state=0 | state=1 | state=2;
+label "c" = state=3;
+label "all" = state=0 | state=1 | state=2 | state=3 | state=4 | state=5 | state=6;

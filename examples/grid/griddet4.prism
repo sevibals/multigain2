@@ -1,0 +1,95 @@
+mdp
+
+module grid
+
+	state: [0..15] init 0;
+
+	[right0] state=0 -> (state'=1);
+	[down0] state=0 -> (state'=4);
+	[left0] state=0 -> (state'=0);
+	[up0] state=0 -> (state'=0);
+
+	[right1] state=1 -> (state'=2);
+	[down1] state=1 -> (state'=5);
+	[left1] state=1 -> (state'=0);
+	[up1] state=1 -> (state'=1);
+
+	[right2] state=2 -> (state'=3);
+	[down2] state=2 -> (state'=6);
+	[left2] state=2 -> (state'=1);
+	[up2] state=2 -> (state'=2);
+
+	[right3] state=3 -> (state'=3);
+	[down3] state=3 -> (state'=7);
+	[left3] state=3 -> (state'=2);
+	[up3] state=3 -> (state'=3);
+
+	[right4] state=4 -> (state'=5);
+	[down4] state=4 -> (state'=8);
+	[left4] state=4 -> (state'=4);
+	[up4] state=4 -> (state'=0);
+
+	[right5] state=5 -> (state'=6);
+	[down5] state=5 -> (state'=9);
+	[left5] state=5 -> (state'=4);
+	[up5] state=5 -> (state'=1);
+
+	[right6] state=6 -> (state'=7);
+	[down6] state=6 -> (state'=10);
+	[left6] state=6 -> (state'=5);
+	[up6] state=6 -> (state'=2);
+
+	[right7] state=7 -> (state'=7);
+	[down7] state=7 -> (state'=11);
+	[left7] state=7 -> (state'=6);
+	[up7] state=7 -> (state'=3);
+
+	[right8] state=8 -> (state'=9);
+	[down8] state=8 -> (state'=12);
+	[left8] state=8 -> (state'=8);
+	[up8] state=8 -> (state'=4);
+
+	[right9] state=9 -> (state'=10);
+	[down9] state=9 -> (state'=13);
+	[left9] state=9 -> (state'=8);
+	[up9] state=9 -> (state'=5);
+
+	[right10] state=10 -> (state'=11);
+	[down10] state=10 -> (state'=14);
+	[left10] state=10 -> (state'=9);
+	[up10] state=10 -> (state'=6);
+
+	[right11] state=11 -> (state'=11);
+	[down11] state=11 -> (state'=15);
+	[left11] state=11 -> (state'=10);
+	[up11] state=11 -> (state'=7);
+
+	[right12] state=12 -> (state'=13);
+	[down12] state=12 -> (state'=12);
+	[left12] state=12 -> (state'=12);
+	[up12] state=12 -> (state'=8);
+
+	[right13] state=13 -> (state'=14);
+	[down13] state=13 -> (state'=13);
+	[left13] state=13 -> (state'=12);
+	[up13] state=13 -> (state'=9);
+
+	[right14] state=14 -> (state'=15);
+	[down14] state=14 -> (state'=14);
+	[left14] state=14 -> (state'=13);
+	[up14] state=14 -> (state'=10);
+
+	[right15] state=15 -> (state'=15);
+	[down15] state=15 -> (state'=15);
+	[left15] state=15 -> (state'=14);
+	[up15] state=15 -> (state'=11);
+
+endmodule
+
+label "a" = state=3 | state=11 | state=13 | state=5;
+label "b" = state=14 | state=7 | state=12 | state=15;
+label "c" = state=4 | state=0 | state=1 | state=9;
+label "d" = state=2 | state=6 | state=8 | state=10;
+rewards "default"
+	state=4 | state=0 | state=1 | state=9 : 1;
+endrewards

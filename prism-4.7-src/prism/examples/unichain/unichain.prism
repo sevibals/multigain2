@@ -1,0 +1,34 @@
+//Example of an MDP where no unichain of the product can constitute a solution to the LTL threshold AND the Steady-State constraints
+//Any long run on the product may visit state 1 but never state 2 or the otherway around, thus conflicting with the Steady-State constraints
+
+mdp
+
+module grid
+
+	state: [0..3] init 0;
+
+	[right0] state=0 -> (state'=1);
+	[down0] state=0 -> (state'=2);
+	[left0] state=0 -> (state'=0);
+	[up0] state=0 -> (state'=0);
+
+	[right1] state=1 -> (state'=1);
+	[down1] state=1 -> (state'=3);
+	[left1] state=1 -> (state'=0);
+	[up1] state=1 -> (state'=1);
+
+	[right2] state=2 -> (state'=3);
+	[down2] state=2 -> (state'=2);
+	[left2] state=2 -> (state'=2);
+	[up2] state=2 -> (state'=0);
+
+	[right3] state=3 -> (state'=3);
+	[down3] state=3 -> (state'=3);
+	[left3] state=3 -> (state'=2);
+	[up3] state=3 -> (state'=1);
+
+endmodule
+
+label "a" = state=1;
+label "b" = state=2;
+label "d" = state=3;

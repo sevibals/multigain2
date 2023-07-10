@@ -1,0 +1,30 @@
+mdp
+
+module test
+
+    state: [0..3] init 0;
+
+    [a0] state=0 -> (state'=0);
+    [a1] state=0 -> (state'=2);
+    [a2] state=0 -> (state'=1);
+    [a3] state=0 -> (state'=0);
+
+    [a0] state=1 -> (state'=0);
+    [a1] state=1 -> (state'=3);
+    [a2] state=1 -> (state'=1);
+    [a3] state=1 -> (state'=1);
+
+    [a0] state=2 -> (state'=2);
+    [a1] state=2 -> (state'=2);
+    [a2] state=2 -> (state'=3);
+    [a3] state=2 -> (state'=0);
+
+    [a0] state=3 -> (state'=2);
+    [a1] state=3 -> (state'=3);
+    [a2] state=3 -> (state'=3);
+    [a3] state=3 -> (state'=1);
+
+endmodule
+
+label "a" = state=0 | state=1 | state=2;
+label "c" = state=3;

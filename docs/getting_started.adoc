@@ -1,0 +1,9 @@
+== Getting Started
+
+include::getting_started/requirements.adoc[]
+
+include::getting_started/gurobi.adoc[]
+
+include::getting_started/installation.adoc[]
+
+include::getting_started/pareto.adoc[]

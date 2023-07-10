@@ -1,0 +1,41 @@
+[#installation]
+=== Installation
+
+Download the provided `multigain2.zip`, open a terminal and switch into the directory the downloaded file is in.
+Then extract the artefact and install it:
+[source,shell]
+----
+
+unzip multigain2.zip
+cd multigain2
+cd prism-4.7-src/prism
+make clean_all
+make
+----
+
+[NOTE]
+====
+If the environment variable `GUROBI_HOME` is not set expect the following message during compilation:
+----
+GUROBI HOME is not set. Not compiling Gurobi support
+make[1]: Leaving directory ’.../multiObjective/prism/prism/ext/gurobi´
+----
+This is not an error message, but a warning.
+====
+You can test if the installation finished correctly by running this example:
+[source,shell]
+----
+bin/prism examples/example.prism examples/example.props
+----
+
+==== Install with Gurobi
+If you want to use Gurobi you additionally have to copy the Gurobi library files into the library folder:
+[source,shell]
+----
+cp -r $GUROBI_HOME/lib/* lib/
+----
+Test your Gurobi installation by running the example with gurobi
+----
+bin/prism examples/example.prism examples/example.props --gurobi
+----
+TIP: If you want to use Gurobi in an IntelliJ run configuration you have to mark `prism/ext/solver/gurobi` as source

@@ -1,0 +1,52 @@
+=== Basic Usage
+
+Create your own model and run configuration by following the official Prism instructions on the link:http://www.prismmodelchecker.org/manual/ThePRISMLanguage/Introduction[PRISM language] and the
+link:http://www.prismmodelchecker.org/manual/PropertySpecification/Introduction[Prism Property Specification]
+footnote:[
+We offer some new functionality: xref:#property_spec[Property Specification]
+].
+
+The now created model can be checked by adapting and running the following general command from the root directory of the project (i.e. the `multigain2` directory):
+[source,shell]
+----
+bin/multigain2 path_to_model_file path_to_property_file [--gurobi] [--exportpareto] [--exportstrat]
+----
+If the command throws any error messages, try setting up a fresh symlink:
+[source,shell]
+----
+rm bin/multigain2
+ln -s prism-4.7-src/prism/bin/prism bin/multigain2
+----
+
+A selection of example models and benchmarks can be found in the `examples` directory. Applying the command may look as follows:
+[source,shell]
+----
+bin/multigain2 examples/meanpayoff/pacman.10.prism examples/meanpayoff/pacman.props
+----
+
+Each of the `examples` subdirectories further contains a shell script named `run.sh`, which runs all contained models and logs the output in the corresponding `results` subdirectory.
+
+The standard command may also be extended with optional flags.
+
+--gurobi:: Uses Gurobi as the LP solver instead of the default `lpsolve`.
+PRISM needs to be built with Gurobi support see xref:#gurobi[how to build with Gurobi].
+
+--exportpareto [.underline]`pareto_file`:: Export the pareto curve to [.underline]`pareto_file` when checking properties with multiple numerical objectives.
+NOTE: This will overwrite the file so only one pareto query should be present in the [.underline]`prism_property_file`.
+
+To plot the generated pareto file you can use the provided script as follows:
+[source,shell]
+----
+python prism-4.7-src/prism/etc/scripts/pareto-plot.py path_to_pareto_file
+----
+
+--exportstrat [.underline]`"policy_filename":"type=type_name"`:: Export the computed policy to [.underline]`policy_filename`. The parameter `type_name` may be one of the following strings:
+
+`*dot*`: The policy is exported as two (partial) copies of the (product) MDP representing the transient and recurrent behaviour and actions connecting the two according to the switch probabilities. Each action label is prefixed with [T], [R] or [SW] indicating whether they belong to the transient or recurrent behaviour or the switch between both respectively. The action labels are further extended with the probability value as assigned by the policy.
+For example an action `act`, which our policy would choose with probability 0.75 in the recurrent run is labelled on the exported MDP as `[R]act:0.75`.
+
+`*actions*`: The policy is exported as a more lightweight textfile in table format sectioned in transient and recurrent behaviour. Each of the rows consists of a state of the (product) model, the distribution over the state's actions and the switch probability from transient to recurrent behaviour.
+
+
+NOTE: The `exportstrat` flag may not be used when computing a pareto curve (i.e. more than one numerical reward property specified). Furthermore, since the policy computed by the `detmulti` keyword is deterministic and memoryless, both `type_name` options export the strategy on the original MDP.
+

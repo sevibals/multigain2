@@ -1,0 +1,214 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Mon Aug 08 13:20:56 CEST 2022
+Hostname: JakobMac.local
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism examples/pareto3d.nm examples/pareto3d.props --exportpareto examples/results/pareto3d.pareto --gurobi
+
+Parsing model file "examples/pareto3d.nm"...
+
+Type:        MDP
+Modules:     lecture 
+Variables:   state 
+
+Parsing properties file "examples/pareto3d.props"...
+
+1 property:
+(1) multi(R{"reward1"}max=? [ S ], R{"reward2"}max=? [ S ], R{"reward3"}max=? [ S ], P>=1 [ G state!=1 ], S>=0.5 [ "someLabel" ])
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"reward1"}max=? [ S ], R{"reward2"}max=? [ S ], R{"reward3"}max=? [ S ], P>=1 [ G state!=1 ], S>=0.5 [ "someLabel" ])
+
+Warning: Switching to explicit engine to allow verification of the formula.
+
+Building model...
+
+Computing reachable states... 10 states
+Reachable states exploration and model construction done in 0.006 secs.
+Sorting reachable states list...
+
+Time for model construction: 0.021 seconds.
+
+Warning: Deadlocks detected and fixed in 7 states
+
+Type:        MDP
+States:      10 (1 initial)
+Transitions: 20
+Choices:     15
+Max/avg:     5/1.50
+
+Building deterministic automaton (for G "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.
+Time for DRA translation: 0.011 seconds.
+
+Constructing MDP-DRA product...
+Time for product construction: 0.003 seconds, product has 10 states (10 initial), 20 transitions, 15 choices, dist max/avg = 5/1.50.
+Computing end components.
+Finished computing end components.
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-07-03
+Warning: Gurobi version mismatch between Java 9.5.1 and C library 9.5.2
+Warning: Gurobi version mismatch between Java 9.5.1 and Jni 9.5.2
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+Set parameter Quad to value 1
+LP problem construction finished in 0.036 s.
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 29 rows, 37 columns and 86 nonzeros
+Model fingerprint: 0xec40ff28
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [2e+00, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-01, 1e+00]
+Presolve removed 27 rows and 22 columns
+Presolve time: 0.00s
+Presolved: 2 rows, 15 columns, 9 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.2108000e+00   4.516000e-01   0.000000e+00      0s
+       2    8.0000000e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.01 seconds (0.00 work units)
+Optimal objective  8.000000000e-01
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 29 rows, 37 columns and 86 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [2e+00, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-01, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    6.0000000e+29   3.100000e+30   6.000000e-01      0s
+       2    8.0000000e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  8.000000000e-01
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 29 rows, 37 columns and 86 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [2e+00, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-01, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    8.0000000e+29   3.100000e+30   8.000000e-01      0s
+       2    6.0000000e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  6.000000000e-01
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 29 rows, 37 columns and 86 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [9e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-01, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.8571429e+28   2.800000e+30   2.857143e-02      0s
+       1    3.5714286e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 1 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  3.571428571e-01
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 29 rows, 37 columns and 86 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [8e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-01, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    3.6000000e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 0 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  3.600000000e-01
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 29 rows, 37 columns and 86 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [9e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-01, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    3.5555556e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 0 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  3.555555556e-01
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 29 rows, 37 columns and 86 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [9e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-01, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    3.5714286e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 0 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  3.571428571e-01
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 29 rows, 37 columns and 86 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [8e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-01, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    3.6000000e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 0 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  3.600000000e-01
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 29 rows, 37 columns and 86 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [9e-01, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-01, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    3.5555556e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 0 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  3.555555556e-01
+Gurobi Optimizer version 9.5.2 build v9.5.2rc0 (mac64[x86])
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 29 rows, 37 columns and 86 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [1e+00, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-01, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    4.0000000e+29   4.400000e+30   4.000000e-01      0s
+       1    4.0000000e-01   0.000000e+00   0.000000e+00      0s
+
+Solved in 1 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  4.000000000e-01
+Approximated pareto front in 8/10000 iterations with tolerance 0.01
+Exported Pareto curve. To see it, run
+ etc/scripts/pareto-plot.py examples/results/pareto3d.pareto
+
+Value in the initial state: [(0.8, 0.0, 0.0), (0.0, 0.8, 0.0), (0.0, 0.3, 0.4), (0.3, 0.0, 0.4), (0.0, 0.0, 0.6)]
+
+Time for model checking: 0.095 seconds.
+
+Result: [(0.8, 0.0, 0.0), (0.0, 0.8, 0.0), (0.0, 0.3, 0.4), (0.3, 0.0, 0.4), (0.0, 0.0, 0.6)]
+
+---------------------------------------------------------------------
+
+Note: There were 2 warnings during computation.
+
