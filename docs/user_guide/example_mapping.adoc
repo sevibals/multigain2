@@ -3,7 +3,7 @@
 
 In the following section we will clarify the models and property files provided in the `examples` directory in the order of the respective subdirectories. The checkmark and cross indicate if the files have been used in experiments of my master's thesis or not respectively.
 
-==== grid directory
+==== examples/grid
 
 This directory contains all models used in my thesis and during development, that are based on the gridworld model.
 
@@ -15,11 +15,11 @@ icon:check[] `*griddet#.prism*` These comprise the models used for the experimen
 
 icon:check[] `*python scripts*` The `grid_prism.py` and `grid_prism_det.py` scripts have been associated with the previous model files, for the generation of randomized gridworld models as described in Setup 1 of my thesis. Both expect a single commandline argument specifying the gridworld size as an integer. Furthermore `grid_prism_det_ss.py` may be used to generate the model input files for the experiments on scaling the steady-state constraints. A second commandline argument is expected as an integer indicating the number `D` of SS constraints to generate. Note that `D` must be smaller than 1/4 of the amount of cells of the grid model. The `grid_prism_det_pareto.py` script is provided for the generation of randomized models for the experiments on scaling the LRA rewards. Similarly a second commandline argument is expected to specify the number of reward structures to generate.
 
-==== meanpayoff directory
+==== examples/meanpayoff
 
 This directory contains all models used for the benchmark evaluation and comparison with the PET tool included in the thesis. The provided run script executes all benchmarks of Table 5.2. Note that this is only a single run of each model, not the average over 5 runs. Note that the unichain queries are also not included, since they lead to some timeouts. To verify the times listed in the table, feel free to substitute the `multi` keyword of the property files with the `unichain` keyword.
 
-==== membound directory
+==== examples/membound
 
 This directory contains models for the experiments on unbounded-memory policy solutions.
 
@@ -27,7 +27,7 @@ icon:check[] `*membound1_1.prism*` This file contains the example from Figure 4.
 
 icon:close[] `*membound2_1.prism*` A "bloated" version of the previous example. It is easily comprehensible and may help for the understanding of the unbounded-memory problem and the `mlessmulti` keyword when used with the membound.props` property file. It is encouraged to play with the memory bound integer of the property file.
 
-==== pareto directory
+==== examples/pareto
 
 This directory contains examples for the comprehension and visualization of the Pareto approximation. It is encouraged to use the provided runscript for automatic execution, export and visualization of the examples.
 
@@ -35,13 +35,13 @@ icon:check[] `*pareto2d.prism, pareto2d.props*` These files are model and proper
 
 icon:check[] `*pareto3d.prism, pareto3d.props*` These files are model and property file for an example of a non-trivial 3-dimensional Pareto frontier approximation. The computed Pareto curve matches the one displayed in Figure 4.15 of my thesis.
 
-==== thesis directory
+==== examples/thesis
 
 This directory contains the model and property files for the running example of Section 4.4.1 of my thesis as depicted in Figure 4.8.
 Note that it is only possible to provide property queries for Figure 4.9 and Figures 4.13/4.14 since the other Figures demonstrate theoretical solution not computed with the final version of *MultiGain 2.0*.
 The included runscript executes the `multi` and `mlessmulti` query as described in my thesis.
 
-==== unichain directory
+==== examples/unichain
 
 icon:close[] `*unichain.prism, unichain.props*` These files contain an example where no policy satisfying the specification may constitute a unichain. Further details are commented in the files.
 
@@ -49,7 +49,7 @@ icon:check[] `*unichain2.prism, unichain2.props*` These files contain the exampl
 
 icon:check[] `*unichain_reward.prism, unichain_reward.props*` These files contain the example depicted in Figure 4.7 of my thesis. Feel free to test, that the equivalent `multi` query as of the property file achieves a greater mean payoff.
 
-==== velasquez_paper directory
+==== examples/velasquez_paper
 
 This directory contains the examplary models of the paper from Velasquez et al. proposing the deterministic policy approach. These have been useful in evaluating the correctness of my implementation.
 
