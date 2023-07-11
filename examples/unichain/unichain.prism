@@ -1,5 +1,5 @@
 //Example of an MDP where no unichain of the product can constitute a solution to the LTL threshold AND the Steady-State constraints
-//Any long run on the product may visit state 1 but never state 2 or the otherway around, thus conflicting with the Steady-State constraints
+//Any long run on the product may visit state 1 but never state 2 or the other way around, thus conflicting with the Steady-State constraints
 
 mdp
 

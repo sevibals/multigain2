@@ -1,1 +1,1 @@
-detmulti(P>=0.5 [G (F "a" & (X "c"))])
+detmulti(P>=1 [G (F "a" & (X "c"))])

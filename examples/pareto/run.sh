@@ -23,8 +23,8 @@ if ! [ -z "$GUROBI_HOME" ]
 then
  gurobi_flag=--gurobi
 fi
-$prism_ex pareto2d.nm pareto2d.props --exportpareto $result_dir/pareto2d.pareto $gurobi_flag > $result_dir/pareto2d.log
-$prism_ex pareto3d.nm pareto3d.props --exportpareto $result_dir/pareto3d.pareto $gurobi_flag > $result_dir/pareto3d.log
+$prism_ex pareto2d.prism pareto2d.props --exportpareto $result_dir/pareto2d.pareto $gurobi_flag > $result_dir/pareto2d.log
+$prism_ex pareto3d.prism pareto3d.props --exportpareto $result_dir/pareto3d.pareto $gurobi_flag > $result_dir/pareto3d.log
 
 python ../../prism-4.7-src/prism/etc/scripts/pareto-plot.py $result_dir/pareto2d.pareto
 python ../../prism-4.7-src/prism/etc/scripts/pareto-plot.py $result_dir/pareto3d.pareto

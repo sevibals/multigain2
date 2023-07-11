@@ -1,2 +1,0 @@
-//"live": Pmax=? [F (p1=10)];
-multi(R{"live"}max=? [S]);

@@ -1,0 +1,29 @@
+// This example corresponds to the model used in the section "Non-deterministic Policy Synthesis" of my thesis
+
+mdp
+
+module thesis
+
+    state: [0..4] init 0;
+
+    [a0] state=0 -> (state'=1);
+    [a1] state=0 -> (state'=2);
+
+    [b0] state=1 -> (state'=1);
+
+    [c0] state=2 -> (state'=2);
+    [c1] state=2 -> (state'=3);
+
+    [d0] state=3 -> (state'=3);
+    [d1] state=3 -> (state'=2);
+    [d2] state=3 -> (state'=4);
+
+    [e0] state=4 -> (state'=3);
+
+endmodule
+
+label "acc" = state=4;
+
+rewards "default"
+    state=2 : 1;
+endrewards
