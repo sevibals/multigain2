@@ -1,8 +1,8 @@
 import sys
 import random
 
-def generate_grid(size):
-    with open("griddet{}.prism".format(str(size)), "w") as file:
+def generate_grid(size, lra):
+    with open("griddet{}_pareto{}.prism".format(str(size), str(lra)), "w") as file:
         grid_size = size**2
         file.write("mdp\n\nmodule grid\n\n\tstate: [0..{}] init 0;\n\n".format(str(grid_size-1)))
         for i in range(0,grid_size):
@@ -14,22 +14,22 @@ def generate_grid(size):
             action = "\t[right{}] state={} -> ".format(str(i), str(i))
             action += "(state'={});\n".format(str(state_right))
             file.write(action)
-            
+
             #down_action
             action = "\t[down{}] state={} -> ".format(str(i), str(i))
             action += "(state'={});\n".format(str(state_down))
             file.write(action)
-            
+
             #left_action
             action = "\t[left{}] state={} -> ".format(str(i), str(i))
             action += "(state'={});\n".format(str(state_left))
             file.write(action)
-            
+
             #up_action
             action = "\t[up{}] state={} -> ".format(str(i), str(i))
             action += "(state'={});\n".format(str(state_up))
             file.write(action)
-            
+
             file.write("\n")
         file.write("endmodule\n\n")
         #file.write("label \"home\" = state=0;\n")
@@ -61,13 +61,15 @@ def generate_grid(size):
             label_string += "state={} | ".format(str(i))
         file.write(label_string[:-3] + ";\n\n")
         #file.write("label \"tool\" = state={};\n\n".format(str(size**2-1)))
-        file.write("rewards \"default\"\n\t")
-        reward_str = ""
-        for i in c:
-            reward_str += "state={} | ".format(str(i))
-        file.write(reward_str[:-3] + " : 1;\n")
-        file.write("endrewards")
-    
-    
+        for i in range(lra):
+            file.write("rewards \"default{}\"\n\t".format(str(i)))
+            reward_str = ""
+            parts = [a, b, c, labelless_states]
+            for i in parts[i]:
+                reward_str += "state={} | ".format(str(i))
+            file.write(reward_str[:-3] + " : 1;\n")
+            file.write("endrewards\n")
+
+
 if __name__ == "__main__":
-    generate_grid(int(sys.argv[1]))
+    generate_grid(int(sys.argv[1]), int(sys.argv[2]))

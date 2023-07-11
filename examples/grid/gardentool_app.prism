@@ -1,4 +1,4 @@
-// This example corresponds to the model from figure 2 of the paper "Controller Synthesis for Omega-Regular and Steady-State Specifications" by Alvaro Velasquez et al. with Dirac transition distributions
+// This example corresponds to the model from the Application section of Chapter 4 of my master's thesis
 
 mdp
 
@@ -42,9 +42,9 @@ module lecture
 endmodule
 
 label "home" = state=0;
-label "danger" = state=1 | state=7;
+label "danger" = state=4 | state=7;
 label "tool" = state=8;
 
 rewards "extinguish"
-    (state=1 | state=7) : 1;
+    (state=4 | state=7) : 1;
 endrewards

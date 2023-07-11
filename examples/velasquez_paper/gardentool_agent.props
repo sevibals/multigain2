@@ -1,1 +1,1 @@
-detmulti(P>=0.75 [(! "danger") U "tool"], S>=0.75 ["home"], S<=1 ["home"])
+detmulti(P>=1 [(! "danger") U "tool"], S>=0.75["home"], S<=1["home"])

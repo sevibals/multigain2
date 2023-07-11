@@ -1,2 +1,0 @@
-//multi(R{"unbalanced"}max=? [S], P>=1 [(F "a") | (F "b")])
-unichain(R{"unbalanced"}max=? [S], P>=1 [(F "a") | (F "b")])

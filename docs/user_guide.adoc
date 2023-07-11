@@ -2,5 +2,6 @@
 
 include::user_guide/basic_usage.adoc[]
 include::user_guide/property_specification.adoc[]
+include::user_guide/example_mapping.adoc[]
 
 

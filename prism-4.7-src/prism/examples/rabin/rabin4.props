@@ -1,2 +1,0 @@
-multi(R{"trying"}>=3.5 [S], R{"critical"}>=0.3 [S])
-multi(R{"trying"}>=3.6 [S], R{"critical"}>=0.2 [S])

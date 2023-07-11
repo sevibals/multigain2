@@ -1,4 +1,5 @@
 = MultiGain 2.0 - User Documentation
+:icons: font
 :toc:
 
 include::introduction.adoc[]

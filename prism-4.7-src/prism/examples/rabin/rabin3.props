@@ -1,5 +1,0 @@
-multi(R{"trying"}max=? [S], R{"critical"}>=0.2 [S])
-multi(R{"trying"}max=? [S], R{"critical"}>=0.3 [S])
-multi(R{"trying"}max=? [S], R{"critical"}>=0.4 [S])
-//the following property does not finish in reasonable time (hours)
-//mlessmulti(R{"trying"}>=2.57 [S], R{"critical"}>=0.4 [S])

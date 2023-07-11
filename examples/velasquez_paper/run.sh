@@ -23,6 +23,6 @@ if ! [ -z "$GUROBI_HOME" ]
 then
  gurobi_flag=--gurobi
 fi
-$prism_ex figure1.nm figure1.props $gurobi_flag --exportstrat "$result_dir/figure1_policy.txt":"type=dot" > $result_dir/figure1.log
-$prism_ex gardentool_agent.nm gardentool_agent.props $gurobi_flag --exportstrat "$result_dir/gardentool_agent_policy.txt":"type=actions" > $result_dir/gardentool_agent.log
+$prism_ex figure1.prism figure1.props $gurobi_flag --exportstrat "$result_dir/figure1_policy.txt":"type=dot" > $result_dir/figure1.log
+$prism_ex gardentool_agent.prism gardentool_agent.props $gurobi_flag --exportstrat "$result_dir/gardentool_agent_policy.txt":"type=actions" > $result_dir/gardentool_agent.log
 

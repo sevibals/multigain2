@@ -2,7 +2,7 @@ import sys
 import random
 
 def generate_grid(size, ss):
-    with open("griddet{}.prism".format(str(size)), "w") as file:
+    with open("griddet{}_ss{}.prism".format(str(size), str(ss)), "w") as file:
         grid_size = size**2
         file.write("mdp\n\nmodule grid\n\n\tstate: [0..{}] init 0;\n\n".format(str(grid_size-1)))
         for i in range(0,grid_size):
