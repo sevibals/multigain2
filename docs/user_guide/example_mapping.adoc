@@ -5,7 +5,7 @@ In the following section we will clarify the models and property files provided 
 
 ==== examples/grid
 
-This directory contains all models used in my thesis and during development, that are based on the gridworld model.
+This directory contains all models used in my thesis and during development, that are based on the gridworld model. The corresponding property files contain commented out queries for a better understanding of how to tune the parameters.
 
 icon:check[] `*gardentool_app.prism, gardentool_app.props*` These contain the model and property file used for the examplary gridworld application of Chapter 4 of the thesis.
 
@@ -13,11 +13,15 @@ icon:close[] `*grid#.prism*` These files contain gridworld models with non-Dirac
 
 icon:check[] `*griddet#.prism*` These comprise the models used for the experimental evaluation of the thesis as described in Setup 1. They have been generated using the `grid_prism_det.py` script.
 
+icon:check[] `*griddet#_ss#.prism*` These files contain the models used for experiments on steady-state constraint scaling. For a better overview only one such file is pregenerated and included in the run script. The other testcases may be simulated using the generator python script `grid_prism_det_ss.py` and provided property file `grid_ss.props`.
+
+icon:check[] `*griddet#_pareto#.prism*` These files contain the models used for experiments on LRA constraint scaling. For a better overview only one such file is pregenerated and included in the run script. The other testcases may be simulated using the generator python script `grid_prism_det_pareto.py` and provided property file `grid_pareto.props`.
+
 icon:check[] `*python scripts*` The `grid_prism.py` and `grid_prism_det.py` scripts have been associated with the previous model files, for the generation of randomized gridworld models as described in Setup 1 of my thesis. Both expect a single commandline argument specifying the gridworld size as an integer. Furthermore `grid_prism_det_ss.py` may be used to generate the model input files for the experiments on scaling the steady-state constraints. A second commandline argument is expected as an integer indicating the number `D` of SS constraints to generate. Note that `D` must be smaller than 1/4 of the amount of cells of the grid model. The `grid_prism_det_pareto.py` script is provided for the generation of randomized models for the experiments on scaling the LRA rewards. Similarly a second commandline argument is expected to specify the number of reward structures to generate.
 
 ==== examples/meanpayoff
 
-This directory contains all models used for the benchmark evaluation and comparison with the PET tool included in the thesis. The provided run script executes all benchmarks of Table 5.2. Note that this is only a single run of each model, not the average over 5 runs. Note that the unichain queries are also not included, since they lead to some timeouts. To verify the times listed in the table, feel free to substitute the `multi` keyword of the property files with the `unichain` keyword.
+This directory contains all models used for the benchmark evaluation and comparison with the PET tool included in the thesis. The provided run script executes all benchmarks of Table 5.2. This is only a single run of each model, not the average over 5 runs. Note that the unichain queries are also not included, since they lead to some timeouts. To verify the times listed in the table, feel free to substitute the `multi` keyword of the property files with the `unichain` keyword.
 
 ==== examples/membound
 
@@ -39,15 +43,15 @@ icon:check[] `*pareto3d.prism, pareto3d.props*` These files are model and proper
 
 This directory contains the model and property files for the running example of Section 4.4.1 of my thesis as depicted in Figure 4.8.
 Note that it is only possible to provide property queries for Figure 4.9 and Figures 4.13/4.14 since the other Figures demonstrate theoretical solution not computed with the final version of *MultiGain 2.0*.
-The included runscript executes the `multi` and `mlessmulti` query as described in my thesis.
+The included runscript executes the `multi` (Figure 4.9) and `mlessmulti` (Figure 4.13/4.14) query as described in my thesis.
 
 ==== examples/unichain
 
-icon:close[] `*unichain.prism, unichain.props*` These files contain an example where no policy satisfying the specification may constitute a unichain. Further details are commented in the files.
+icon:close[] `*unichain.prism, unichain.props*` These files contain an example where no policy satisfying the specification may constitute a unichain. Thus the result is `false`. Further details are commented in the files.
 
-icon:check[] `*unichain2.prism, unichain2.props*` These files contain the example depicted in Figure 4.6 of my thesis. The example is first solved with a `multi` query and subsequently with a `unichain` query. The latter is not able to find a unichain solution satisfying the SS specification.
+icon:check[] `*unichain2.prism, unichain2.props*` These files contain the example depicted in Figure 4.6 of my thesis. The example is first solved with a `multi` query and subsequently with a `unichain` query. The latter is not able to find a unichain solution satisfying the SS specification. Note that a `multi` query does find a solution and hence returns `true`.
 
-icon:check[] `*unichain_reward.prism, unichain_reward.props*` These files contain the example depicted in Figure 4.7 of my thesis. Feel free to test, that the equivalent `multi` query as of the property file achieves a greater mean payoff.
+icon:check[] `*unichain_reward.prism, unichain_reward.props*` These files contain the example depicted in Figure 4.7 of my thesis. Feel free to verify, that the equivalent `multi` query as included in the property file does not achieve a greater mean payoff, and in fact computes the same policy.
 
 ==== examples/velasquez_paper
 
@@ -55,6 +59,6 @@ This directory contains the examplary models of the paper from Velasquez et al. 
 
 icon:check[] `*figure1.prism, figure1.props*` This example is depicted in Figure 5.4(a) of my thesis. For the experiments on changing the constant epsilon contact a developer or try to change the constant directly in the source code and rebuild the project.
 
-icon:check[] `*gardentool_agent.prism, gardentool_agent.props*` This example is depicted in Figure 5.6(a) of my thesis.
+icon:check[] `*gardentool_agent.prism, gardentool_agent_ss#.props*` These contain the model depicted in Figure 5.6 of my thesis. The two property files compute the policy corresponding to the two subfigures (a) and (b).
 
 The provided runscript executes the examples and exports the corresponding deterministic policies in DOT format and table format respectively for better readability.

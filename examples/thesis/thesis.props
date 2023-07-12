@@ -1,2 +1,0 @@
-multi(R{"default"}max=?[S], P>=1 [G F "acc"])
-mlessmulti(4, R{"default"}max=?[S], P>=1 [G F "acc"])

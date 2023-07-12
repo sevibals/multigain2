@@ -23,6 +23,6 @@ if ! [ -z "$GUROBI_HOME" ]
 then
  gurobi_flag=--gurobi
 fi
-$prism_ex membound1_1.prism membound.props $gurobi_flag --exportstrat "$result_dir/membound1_1_policy.txt":"type=dot" > $result_dir/membound1_1.log
-$prism_ex membound2_1.prism membound.props $gurobi_flag --exportstrat "$result_dir/membound2_1_policy.txt":"type=actions" > $result_dir/membound2_1.log
+$prism_ex membound1_1.prism membound.props $gurobi_flag --exportstrat "$result_dir/membound1_1.policy":"type=dot" > $result_dir/membound1_1.log
+$prism_ex membound2_1.prism membound.props $gurobi_flag --exportstrat "$result_dir/membound2_1.policy":"type=actions" > $result_dir/membound2_1.log
 
