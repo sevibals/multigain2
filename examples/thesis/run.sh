@@ -7,7 +7,7 @@ if ! [ -e ../../results ]
 then
   mkdir ../../results
 fi
-result_dir=../../results/membound
+result_dir=../../results/thesis
 if ! [ -e $result_dir ]
 then
   mkdir $result_dir
@@ -23,6 +23,5 @@ if ! [ -z "$GUROBI_HOME" ]
 then
  gurobi_flag=--gurobi
 fi
-$prism_ex membound1_1.prism membound.props $gurobi_flag --exportstrat "$result_dir/membound1_1.policy":"type=dot" > $result_dir/membound1_1.log
-$prism_ex membound2_1.prism membound.props $gurobi_flag --exportstrat "$result_dir/membound2_1.policy":"type=actions" > $result_dir/membound2_1.log
-
+$prism_ex thesis.prism thesis_multi.props $gurobi_flag --exportstrat "$result_dir/thesis_multi.policy":"type=dot" > $result_dir/thesis_multi.log
+$prism_ex thesis.prism thesis_mlessmulti.props $gurobi_flag --exportstrat "$result_dir/thesis_mlessmulti.policy":"type=dot" > $result_dir/thesis_mlessmulti.log

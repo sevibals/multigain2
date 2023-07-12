@@ -1,1 +1,1 @@
-multi(P>=1 [(! "danger") U "tool"], S>=0.25 ["home"])
+multi(R{"extinguish"}max=?[S], P>=1 [(! "danger") U "tool"], S>=0.25 ["home"])

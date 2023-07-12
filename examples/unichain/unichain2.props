@@ -1,2 +1,2 @@
-multi(S>=0.5 ["c"], S>=0.5["d"])
-unichain(S>=0.5 ["c"], S>=0.5["d"])
+multi(S>=0.5 ["gridL"], S>=0.5["gridR"])
+unichain(S>=0.5 ["gridL"], S>=0.5["gridR"])

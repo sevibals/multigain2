@@ -1,0 +1,4 @@
+//scaling the quantitative LRA constraints
+//multi(R{"default0"}max=? [S], R{"default1"}max=? [S], P>=1 [(F "a") U "b"], S>=0.01 ["d"], S<=0.5 ["d"])
+multi(R{"default0"}max=? [S], R{"default1"}max=? [S], R{"default2"}max=? [S], P>=1 [(F "a") U "b"], S>=0.01 ["d"], S<=0.5 ["d"])
+//multi(R{"default0"}max=? [S], R{"default1"}max=? [S], R{"default2"}max=? [S], R{"default3"}max=? [S], P>=1 [(F "a") U "b"], S>=0.01 ["d"], S<=0.5 ["d"])

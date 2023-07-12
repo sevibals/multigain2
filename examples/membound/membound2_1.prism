@@ -1,3 +1,5 @@
+// comment out the marked actions, recompute the policy and comprehend the new solution
+
 mdp
 
 module membound
@@ -8,10 +10,13 @@ module membound
 	[ss0t0] state=0 -> (state'=0);
 	[ss1t1] state=1 -> (state'=1);
 	[ss1t0] state=1 -> (state'=0);
-	[acc2t2] state=2 -> (state'=2);
-	[sw0t2] state=0 -> (state'=2);
 	[sw1t2] state=1 -> (state'=2);
 	[ba2t0] state=2 -> (state'=0);
+
+	// mark
+	[acc2t2] state=2 -> (state'=2);
+    [sw0t2] state=0 -> (state'=2);
+
 endmodule
 
 label "ss" = state=0 | state=1;

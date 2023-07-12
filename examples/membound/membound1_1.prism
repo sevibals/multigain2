@@ -4,9 +4,9 @@ module membound
 
 	state: [0..2] init 0;
 
-	[ss0t0] state=0 -> (state'=0);
-	[sw0t1] state=0 -> (state'=1);
-	[ba1t0] state=1 -> (state'=0);
+	[a] state=0 -> (state'=0);
+	[b] state=0 -> (state'=1);
+	[c] state=1 -> (state'=0);
 endmodule
 
 label "ss" = state=0;

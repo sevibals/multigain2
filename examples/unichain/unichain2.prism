@@ -56,5 +56,5 @@ endmodule
 
 label "a" = state=0;
 label "b" = state=4;
-label "c" = state=0 | state=1 | state=2 | state=3;
-label "d" = state=4 | state=5 | state=6 | state=7;
+label "gridL" = state=0 | state=1 | state=2 | state=3;
+label "gridR" = state=4 | state=5 | state=6 | state=7;
