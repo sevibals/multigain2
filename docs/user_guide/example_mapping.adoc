@@ -59,6 +59,6 @@ This directory contains the examplary models of the paper from Velasquez et al. 
 
 icon:check[] `*figure1.prism, figure1.props*` This example is depicted in Figure 5.4(a) of my thesis. For the experiments on changing the constant epsilon contact a developer or try to change the constant directly in the source code and rebuild the project.
 
-icon:check[] `*gardentool_agent.prism, gardentool_agent.props*` This example is depicted in Figure 5.6(a) of my thesis.
+icon:check[] `*gardentool_agent.prism, gardentool_agent_ss#.props*` These contain the model depicted in Figure 5.6 of my thesis. The two property files compute the policy corresponding to the two subfigures (a) and (b).
 
 The provided runscript executes the examples and exports the corresponding deterministic policies in DOT format and table format respectively for better readability.
