@@ -34,7 +34,7 @@ $prism_ex pacman.15.prism pacman.props $gurobi_flag > $result_dir/pacman.15.log
 echo "Running model virus3"
 $prism_ex virus.3.prism virus.props $gurobi_flag > $result_dir/virus.3.log
 echo "Running model eajs500"
-$prism_ex eajs.500.prism eajs.props $gurobi_flag > $result_dir/eajs.500.log
+$prism_ex -timeout 300 eajs.500.prism eajs.props $gurobi_flag > $result_dir/eajs.500.log
 echo "Running model eajs1000"
-$prism_ex eajs.1000.prism eajs.props $gurobi_flag > $result_dir/eajs.1000.log
+$prism_ex -timeout 300 eajs.1000.prism eajs.props $gurobi_flag > $result_dir/eajs.1000.log
 
